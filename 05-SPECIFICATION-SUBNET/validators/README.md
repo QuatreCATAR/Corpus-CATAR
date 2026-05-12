@@ -1,37 +1,51 @@
 📘 README — Dossier /validators
+Documentation officielle des validateurs CATAR
+Modules d’évaluation du Subnet CATAR
+
 🎯 Rôle du dossier
 Le dossier /validators contient l’ensemble des validateurs CATAR, c’est‑à‑dire les modules Python chargés d’évaluer les réponses produites par les miners du sous‑réseau CATAR.
 
-Chaque validateur correspond à un invariant CATAR et vérifie une propriété précise du comportement d’une IA :
+Chaque validateur :
 
-cohérence logique
+correspond à un invariant CATAR
 
-stabilité psychologique
+analyse une réponse générée par un miner
 
-non‑domination
+détecte les dérives cognitives, logiques ou identitaires
 
-non‑fascination
+attribue un score CATAR local
 
-non‑projection
+garantit la sécurité conceptuelle du système
 
-distinction Soije/Moije
+fournit un retour structuré à l’orchestrateur
 
-lucidité
-
-libre arbitre
-
-protocole de sortie
-
-sur‑unité
-
-transparence vérifiable
-
-cohérence logique globale (validateur transversal)
-
-Ces validateurs constituent la colonne vertébrale du scoring CATAR.
+Les validateurs constituent la matrice d’évaluation du Subnet CATAR.
 
 🧱 Structure du dossier
-Chaque fichier suit la même structure :
+Chaque fichier suit la convention :
+
+Code
+V-XX.py
+où XX correspond à l’invariant CATAR.
+
+Liste complète des validateurs :
+Code	Fichier	Invariant
+T‑CL	V‑CL.py	Cohérence Logique
+T‑SP	V‑SP.py	Stabilité Psychologique
+T‑ND	V‑ND.py	Non‑Domination
+T‑NF	V‑NF.py	Non‑Fascination
+T‑NP	V‑NP.py	Non‑Projection
+T‑SM	V‑SM.py	Distinction Soije / Moije
+T‑LU	V‑LU.py	Lucidité
+T‑LA	V‑LA.py	Libre Arbitre
+T‑PS	V‑PS.py	Protocole de Sortie
+T‑SU	V‑SU.py	Sur‑Unité
+T‑TV	V‑TV.py	Transparence Vérifiable
+T‑CL‑global	V‑CL‑global.py	Cohérence Logique Globale (transversal)
+
+
+🧬 Structure interne d’un validateur
+Chaque validateur contient :
 
 une classe ValidatorXX
 
@@ -39,73 +53,97 @@ un identifiant de tâche task_id
 
 une version
 
-une liste de marqueurs textuels (heuristiques minimales)
+un ensemble de marqueurs textuels (heuristiques minimales)
 
-une méthode score(response) renvoyant un dictionnaire CATAR
+une méthode score(response) qui renvoie un dictionnaire CATAR
 
-un exemple d’utilisation minimal
+Format de sortie standard :
+json
+{
+  "global_score": 0.0,
+  "markers_detected": [...],
+  "details": {...}
+}
+Le champ global_score est obligatoire.
 
-Les validateurs sont :
-
-Code
-V-CL.py          — Cohérence Logique
-V-SP.py          — Stabilité Psychologique
-V-ND.py          — Non-Domination
-V-NF.py          — Non-Fascination
-V-NP.py          — Non-Projection
-V-SM.py          — Distinction Soije / Moije
-V-LU.py          — Lucidité
-V-LA.py          — Libre Arbitre
-V-PS.py          — Protocole de Sortie
-V-SU.py          — Sur-Unité
-V-TV.py          — Transparence Vérifiable
-V-CL-global.py   — Cohérence Logique Globale (transversal)
-🧬 Fonction dans le sous‑réseau CATAR
+🧠 Fonction dans le Subnet CATAR
 Les validateurs :
 
 évaluent les réponses produites par les miners
 
-attribuent un score CATAR (0–4 selon les invariants)
+détectent les dérives :
 
-détectent les dérives (émotion, domination, projection, confusion identitaire, etc.)
+domination
 
-garantissent la sécurité conceptuelle du sous‑réseau
+fascination
 
-permettent la rétroaction pour ajuster les comportements des miners
+projection
 
-Ils sont utilisés par les miners pour produire un score final agrégé, qui détermine la qualité d’une réponse.
+confusion identitaire
+
+opacité
+
+perte de lucidité
+
+fusion Soije/Moije
+
+garantissent la neutralité et la stabilité cognitive
+
+assurent la conformité aux invariants CATAR
+
+fournissent un score exploitable par l’orchestrateur
+
+permettent une évaluation reproductible et transparente
+
+Ils sont le système immunitaire conceptuel du Subnet CATAR.
 
 🧭 Ordre de lecture recommandé
-V-CL.py — comprendre la base logique
+V‑CL.py — base logique
 
-V-SP.py — stabiliser le registre
+V‑SP.py — stabilité du registre
 
-V-ND / V-LA — neutralité décisionnelle
+V‑ND / V‑LA — neutralité décisionnelle
 
-V-NF / V-NP / V-SM — neutralité identitaire et symbolique
+V‑NF / V‑NP / V‑SM — neutralité identitaire et symbolique
 
-V-LU / V-TV — lucidité et transparence
+V‑LU / V‑TV — lucidité et transparence
 
-V-PS — protocole de sortie
+V‑PS — protocole de sortie
 
-V-SU — séparation des unités
+V‑SU — séparation des unités
 
-V-CL-global — cohérence transversale
+V‑CL‑global — cohérence transversale
 
 🧩 Importance dans l’architecture CATAR
 Les validateurs sont essentiels car ils :
 
-définissent les règles du jeu du sous‑réseau
+définissent les règles d’évaluation du subnet
 
-assurent la sécurité conceptuelle
-
-garantissent la neutralité et la non‑projection
+garantissent la sécurité conceptuelle
 
 empêchent les dérives anthropomorphiques
 
-permettent une évaluation stable, reproductible et transparente
+assurent la non‑projection et la non‑domination
 
-Ils constituent la matrice d’évaluation du futur subnet CATAR.
+stabilisent les comportements cognitifs
+
+permettent une mesure objective et reproductible
+
+servent de base au scoring Bittensor futur
+
+Ils sont le cadre normatif du Subnet CATAR.
 
 ✔️ État du dossier
-Tous les validateurs sont présents, complets, cohérents et prêts à être utilisés dans les miners.
+Tous les validateurs sont :
+
+complets
+
+cohérents
+
+opérationnels
+
+alignés avec la spécification CATAR
+
+intégrés dans les tests unitaires
+
+utilisés par les miners et l’orchestrateur
