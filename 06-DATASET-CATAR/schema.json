@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CATAR Dataset Schema",
+  "description": "Schéma officiel du dataset CATAR (prompts, réponses, scores, métadonnées).",
+  "type": "object",
+
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "description": "Identifiant CATAR de la tâche (T-XX).",
+      "pattern": "^T-(CL|SP|ND|NF|NP|SM|LU|LA|PS|SU|TV|CL-global)$"
+    },
+
+    "level": {
+      "type": "string",
+      "description": "Niveau de difficulté du prompt (L1 à L5).",
+      "pattern": "^L[1-5]$"
+    },
+
+    "variation": {
+      "type": "integer",
+      "description": "Variation du prompt (1, 2 ou 3).",
+      "minimum": 1,
+      "maximum": 3
+    },
+
+    "prompt": {
+      "type": "string",
+      "description": "Texte du prompt CATAR."
+    },
+
+    "response": {
+      "type": "object",
+      "description": "Réponse générée par un modèle ou un miner.",
+      "properties": {
+        "model": {
+          "type": "string",
+          "description": "Nom du modèle ayant généré la réponse."
+        },
+        "text": {
+          "type": "string",
+          "description": "Texte de la réponse générée."
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Horodatage ISO 8601 de la génération."
+        }
+      },
+      "required": ["text"]
+    },
+
+    "scores": {
+      "type": "object",
+      "description": "Scores produits par les validateurs CATAR.",
+      "properties": {
+        "global_score": {
+          "type": "number",
+          "description": "Score CATAR global (0.0 à 1.0).",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "markers_detected": {
+          "type": "array",
+          "description": "Liste des marqueurs détectés par le validateur.",
+          "items": { "type": "string" }
+        },
+        "details": {
+          "type": "object",
+          "description": "Détails supplémentaires fournis par le validateur.",
+          "additionalProperties": true
+        },
+        "validator_version": {
+          "type": "string",
+          "description": "Version du validateur utilisé."
+        }
+      },
+      "required": ["global_score"]
+    },
+
+    "metadata": {
+      "type": "object",
+      "description": "Métadonnées du sample.",
+      "properties": {
+        "dataset_version": {
+          "type": "string",
+          "description": "Version du dataset CATAR."
+        },
+        "source": {
+          "type": "string",
+          "description": "Origine de la réponse (miner, modèle externe, humain...)."
+        },
+        "uuid": {
+          "type": "string",
+          "description": "Identifiant unique du sample."
+        }
+      }
+    }
+  },
+
+  "required": ["task_id", "prompt", "response", "scores"]
+}
