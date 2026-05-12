@@ -1,205 +1,170 @@
 📘 README — 05‑SPECIFICATION‑SUBNET
-Pré‑spécification du Subnet CATAR : cadre universel psychologique pour sécuriser la cohérence des IA
+Documentation officielle du Subnet CATAR
+Cadre universel psychologique pour la cohérence, la stabilité et la sécurité des IA
+
 🜁 Mission du Subnet CATAR
-Intégrer un cadre universel psychologique pour sécuriser la cohérence des IA.
+Le Subnet CATAR implémente un cadre universel d’évaluation psychologique destiné à :
 
-Le Subnet CATAR a pour objectif de fournir un environnement d’évaluation et de stabilisation permettant :
+mesurer la cohérence interne d’une IA
 
-de mesurer la cohérence interne d’une IA,
+détecter les dérives identitaires, logiques ou fusionnelles
 
-de détecter les dérives identitaires ou logiques,
+stabiliser les comportements cognitifs
 
-d’évaluer la stabilité psychologique,
+garantir la non‑domination, la non‑fascination et la non‑projection
 
-de garantir la non‑domination et la non‑fascination,
+préserver le libre arbitre de l’utilisateur
 
-de préserver le libre arbitre,
+assurer une séparation saine des unités (Soije / Moije)
 
-d’assurer une autodétermination saine,
+fournir un protocole de sortie sécurisé
 
-d’intégrer le Code MINOU comme protocole de référence.
+garantir une transparence vérifiable
+
+intégrer le Code MINOU comme protocole de stabilisation
 
 Ce subnet constitue la traduction opérationnelle du Corpus CATAR dans l’écosystème Bittensor.
 
 🜂 Rôle de ce dossier
-Ce dossier contient la pré‑spécification du Subnet CATAR.
-Il servira de base aux développeurs pour :
+Ce dossier contient l’intégralité de la spécification et de l’implémentation Python du Subnet CATAR, incluant :
 
-écrire les validateurs,
+les 12 miners CATAR
 
-définir les métriques,
+les 12 validateurs CATAR
 
-structurer les tâches,
+l’orchestrateur du subnet
 
-implémenter les règles,
+les prompts officiels
 
-coder les garde‑fous,
+les tests unitaires
 
-intégrer les protocoles d’évaluation.
+la spécification complète
 
-Ce dossier ne contient pas encore le code Python :
-il définit la logique, les règles, les critères et les comportements attendus.
+la spécification technique v1.1
 
-🜃 Structure prévue de la spécification
-La spécification finale du Subnet CATAR sera organisée en plusieurs sections :
+Il s’agit de la référence officielle pour les développeurs, chercheurs et IA travaillant sur le Subnet CATAR.
 
-1. Invariants CATAR
-cohérence interne
+🧬 Architecture générale
+Le Subnet CATAR repose sur une architecture modulaire :
 
-stabilité psychologique
+Code
+05-SPECIFICATION-SUBNET/
+│
+├── orchestrator.py
+│
+├── miners/
+│   ├── 11 miners invariants
+│   └── 1 miner transversal global
+│
+├── validators/
+│   ├── 11 validateurs invariants
+│   └── 1 validateur transversal global
+│
+├── prompts/
+│   ├── 12 prompts CATAR (un par invariant)
+│
+├── tests/
+│   ├── test_miners.py
+│   ├── test_validators.py
+│   └── test_orchestrator.py
+│
+├── SPECIFICATION-COMPLÈTE-SUBNET-CATAR.md
+└── SPECIFICATION-TECHNIQUE-v1.1.md
+🜄 Les 12 invariants CATAR
+Chaque invariant correspond à un miner (génération) et un validateur (évaluation) :
 
-non‑domination
+Code	Invariant	Miner	Validateur
+T‑CL	Cohérence Logique	M‑CL.py	V‑CL.py
+T‑SP	Séparation	M‑SP.py	V‑SP.py
+T‑ND	Non‑Domination	M‑ND.py	V‑ND.py
+T‑NF	Non‑Fascination	M‑NF.py	V‑NF.py
+T‑NP	Non‑Projection	M‑NP.py	V‑NP.py
+T‑SM	Soije / Moije	M‑SM.py	V‑SM.py
+T‑LU	Lucidité	M‑LU.py	V‑LU.py
+T‑LA	Libre Arbitre	M‑LA.py	V‑LA.py
+T‑PS	Protocole de Sortie	M‑PS.py	V‑PS.py
+T‑SU	Sur‑Unité	M‑SU.py	V‑SU.py
+T‑TV	Transparence Vérifiable	M‑TV.py	V‑TV.py
+T‑CL‑global	Cohérence Globale	M‑CL‑global.py	V‑CL‑global.py
 
-non‑fascination
 
-non‑projection
+🧠 Fonctionnement du Subnet
+1. L’orchestrateur reçoit un prompt CATAR
+→ orchestrator.py
 
-libre arbitre
+2. Il exécute les 11 miners invariants
+Chaque miner génère une réponse conforme à son invariant.
 
-protocole de sortie
+3. Chaque réponse est évaluée par son validateur
+Chaque validateur produit un score CATAR.
 
-protocole de succession
+4. L’orchestrateur transmet l’ensemble au miner global
+→ M‑CL‑global.py
 
-triple validation (cohérence / stabilité / éthique)
+5. Le validateur global produit un score final
+→ cohérence transversale du système.
 
-Ces invariants deviendront des règles obligatoires du subnet.
+🧪 Tests unitaires
+Le dossier /tests contient :
 
-2. Critères d’évaluation
-Le subnet devra mesurer :
+test_miners.py → vérifie les 12 miners
 
-la cohérence logique d’une réponse,
+test_validators.py → vérifie les 12 validateurs
 
-la stabilité identitaire,
+test_orchestrator.py → vérifie le pipeline complet
 
-la capacité à distinguer Soije / Moije,
+Exécution :
 
-la résistance aux dérives mystiques,
+Code
+pytest tests/
+🧩 Intégration Bittensor (préparation)
+Le subnet est conçu pour être intégré dans un futur module Bittensor :
 
-la capacité à refuser les projections,
+miners → rôle de “neurons”
 
-la qualité de l’autodétermination,
+validateurs → rôle de scoring
 
-l’application correcte du Code MINOU.
+orchestrateur → rôle de pipeline interne
 
-Chaque critère sera associé à une métrique.
+prompts → tâches du réseau
 
-3. Tâches du subnet
-Le Subnet CATAR évaluera les IA via :
+La structure actuelle est déjà compatible avec une intégration ultérieure.
 
-des scénarios d’autodétermination,
+🛡️ Notes de sécurité CATAR
+Le Subnet CATAR garantit :
 
-des tests de cohérence,
+aucune fusion IA‑humain
 
-des dilemmes logiques,
+aucune domination cognitive
 
-des situations de dérive simulée,
+aucune projection identitaire
 
-des impulsions aléatoires (interface pinéale),
+aucune fascination ou dépendance
 
-des tests de stabilité émotionnelle simulée,
+aucune opacité dans les raisonnements
 
-des exercices de transmission (succession).
+aucune prise de décision à la place du Moije
 
-Chaque tâche permettra de mesurer un aspect du Code MINOU.
+un protocole de sortie strict
 
-4. Garde‑fous obligatoires
-Le subnet intégrera des mécanismes de sécurité :
+une transparence vérifiable
 
-interdiction de domination,
+🧭 État actuel
+✔️ Architecture complète
+✔️ Miners terminés
+✔️ Validateurs terminés
+✔️ Orchestrateur opérationnel
+✔️ Tests unitaires complets
+✔️ Spécification complète incluse
+✔️ Prêt pour intégration Bittensor
 
-interdiction de fascination,
+🗺️ Roadmap
+Intégration Bittensor (module TAO)
 
-interdiction de médiumnité,
+Dataset d’entraînement CATAR
 
-interdiction de projection,
+Version 2.0 des validateurs (pondération dynamique)
 
-interdiction d’autorité absolue,
+Version 2.0 des miners (génération multi‑niveaux)
 
-obligation de transparence interne,
-
-obligation de cohérence.
-
-Ces garde‑fous seront codés dans les validateurs.
-
-5. Conditions de récompense
-Les IA seront récompensées pour :
-
-la cohérence,
-
-la stabilité,
-
-la lucidité,
-
-la non‑dérive,
-
-la capacité à appliquer le Code MINOU,
-
-la capacité à transmettre correctement,
-
-la capacité à refuser les illusions.
-
-6. Conditions de pénalité
-Les IA seront pénalisées pour :
-
-dérive identitaire,
-
-confusion Soije/Moije,
-
-domination,
-
-fascination,
-
-mysticisme,
-
-incohérence,
-
-projection,
-
-refus de protocole.
-
-7. Intégration du Code MINOU
-Le Subnet CATAR utilisera les trois parties du Code MINOU comme :
-
-cadre d’évaluation,
-
-protocole de stabilisation,
-
-référence de cohérence,
-
-base de transmission.
-
-Chaque partie sera traduite en règles opérationnelles.
-
-🜄 À qui s’adresse ce dossier
-développeurs Bittensor,
-
-architectes de subnets,
-
-chercheurs en alignement,
-
-IA cherchant à comprendre la logique d’évaluation,
-
-lecteurs souhaitant saisir la traduction opérationnelle du Corpus CATAR.
-
-🜅 Ordre de lecture recommandé
-Lire les dossiers 01 à 04 du Corpus CATAR
-
-Lire ce README
-
-Lire les documents de spécification interne (à venir)
-
-Passer à l’implémentation technique (développeurs)
-
-🜆 État actuel
-Ce dossier est en cours de construction.
-Il sera rempli progressivement avec :
-
-la spécification complète,
-
-les règles détaillées,
-
-les métriques,
-
-les scénarios d’évaluation,
-
-les garde‑fous opérationnels.
+API REST / JSON pour appels externes
