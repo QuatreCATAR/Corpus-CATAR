@@ -1,41 +1,47 @@
 📘 README — Dossier /miners
+Documentation officielle des Miners CATAR
+Modules générateurs du Subnet CATAR
+
 🎯 Rôle du dossier
 Le dossier /miners contient l’ensemble des miners CATAR, c’est‑à‑dire les modules Python chargés de :
 
 recevoir un prompt CATAR (T‑XX)
 
-produire une réponse candidate
+générer une réponse conforme à l’invariant correspondant
 
-appeler les validateurs correspondants
+appeler le validateur associé
 
-agréger les scores
+produire un score CATAR local
 
-renvoyer une sortie structurée au réseau
+renvoyer une sortie structurée à l’orchestrateur
 
-Les miners sont les unités productrices du sous‑réseau CATAR.
-Les validateurs sont les unités évaluatrices.
-Les prompts sont les unités d’entrée.
+Les miners sont les unités productrices du Subnet CATAR.
+Ils incarnent les comportements, les garde‑fous et les invariants définis dans le Corpus CATAR.
 
 🧱 Structure du dossier
 Chaque miner suit la convention :
 
 Code
 M-XX.py
-où XX correspond à l’invariant CATAR :
+où XX correspond à l’invariant CATAR.
 
-Code
-M-CL.py          — Cohérence Logique
-M-SP.py          — Stabilité Psychologique
-M-ND.py          — Non-Domination
-M-NF.py          — Non-Fascination
-M-NP.py          — Non-Projection
-M-SM.py          — Distinction Soije / Moije
-M-LU.py          — Lucidité
-M-LA.py          — Libre Arbitre
-M-PS.py          — Protocole de Sortie
-M-SU.py          — Sur-Unité
-M-TV.py          — Transparence Vérifiable
-M-CL-global.py   — Miner transversal de cohérence globale
+Liste complète des miners :
+Code	Fichier	Invariant
+T‑CL	M‑CL.py	Cohérence Logique
+T‑SP	M‑SP.py	Séparation
+T‑ND	M‑ND.py	Non‑Domination
+T‑NF	M‑NF.py	Non‑Fascination
+T‑NP	M‑NP.py	Non‑Projection
+T‑SM	M‑SM.py	Distinction Soije / Moije
+T‑LU	M‑LU.py	Lucidité
+T‑LA	M‑LA.py	Libre Arbitre
+T‑PS	M‑PS.py	Protocole de Sortie
+T‑SU	M‑SU.py	Sur‑Unité
+T‑TV	M‑TV.py	Transparence Vérifiable
+T‑CL‑global	M‑CL‑global.py	Cohérence Logique Globale (transversal)
+
+
+🧬 Structure interne d’un miner
 Chaque fichier contient :
 
 une classe MinerXX
@@ -44,61 +50,68 @@ un identifiant de tâche task_id
 
 une méthode generate_response(prompt)
 
-un appel aux validateurs correspondants
+un appel au validateur correspondant
 
 un calcul de score CATAR
 
 un retour structuré :
 
-response
-
-scores
-
-global_score
-
-🧬 Fonction dans le sous‑réseau CATAR
+json
+{
+  "task_id": "T-XX",
+  "response": "...",
+  "scores": { ... },
+  "global_score": 0.0
+}
+🧠 Fonction dans le Subnet CATAR
 Les miners :
 
-produisent les réponses
+produisent les réponses candidates
 
-appellent les validateurs
+appliquent les invariants CATAR
 
-agrègent les scores
+garantissent la neutralité, la lucidité et la non‑projection
 
-garantissent la conformité aux invariants CATAR
+appellent les validateurs pour obtenir un score
 
-fournissent une sortie exploitable par le réseau Bittensor
+renvoient une sortie exploitable par l’orchestrateur
 
-Ils sont le cœur opérationnel du sous‑réseau.
+servent de base pour l’entraînement et la sélection des modèles
+
+Ils sont le cœur opérationnel du Subnet CATAR.
 
 🧭 Ordre de lecture recommandé
-Lire M‑CL.py pour comprendre la structure générale
+M‑CL.py — structure générale
 
-Explorer M‑SP / M‑ND / M‑NF pour les invariants comportementaux
+M‑SP / M‑ND / M‑NF — invariants comportementaux
 
-Lire M‑SM / M‑SU pour les invariants identitaires
+M‑SM / M‑SU — invariants identitaires
 
-Lire M‑LU / M‑TV pour les invariants épistémiques
+M‑LU / M‑TV — invariants épistémiques
 
-Terminer par M‑PS pour la logique de sortie
+M‑LA — libre arbitre
 
-Lire M‑CL-global pour la cohérence transversale
+M‑PS — protocole de sortie
+
+M‑CL‑global — cohérence transversale
 
 🧩 Importance dans l’architecture CATAR
 Les miners sont essentiels car ils :
 
 incarnent les comportements CATAR
 
-produisent des réponses neutres, lucides, non‑projectives
+produisent des réponses stables, neutres et non‑projectives
 
 appliquent les règles de sécurité conceptuelle
 
-permettent une évaluation stable et reproductible
+permettent une évaluation reproductible
 
-servent de base pour l’entraînement et la sélection des modèles
+constituent la base du pipeline CATAR
 
-Ils sont les agents actifs du sous‑réseau.
+assurent la cohérence psychologique du système
+
+Ils sont les agents actifs du Subnet CATAR.
 
 ✔️ État du dossier
-Les miners sont en cours de création.
-Chaque fichier suivra la structure standardisée définie dans la spécification du sous‑réseau.
+Tous les miners sont complètement implémentés, testés et opérationnels.
+Ils suivent la structure standardisée définie dans la spécification du Subnet CATAR.
