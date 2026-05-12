@@ -16,26 +16,30 @@ les benchmarks
 
 les comparaisons inter‑modèles
 
+Cette fonction est explicitement décrite dans ton README actuel .
+
 Chaque fichier JSON définit :
 
-les 5 niveaux de difficulté (L1 → L5)
+5 niveaux de difficulté (L1 → L5)
 
 3 variations par niveau
 
 une structure strictement normalisée
 
-les consignes minimales garantissant la conformité aux invariants CATAR
+des consignes minimales garantissant la conformité aux invariants CATAR
 
-Ces éléments sont explicitement décrits dans ton README actuel .
+Ces éléments sont confirmés dans ton fichier actuel .
 
 🧱 Structure du dossier
-Chaque fichier suit la convention :
+Chaque invariant est un fichier JSON suivant la convention :
 
 Code
 T-XX.json
 où XX correspond à l’invariant CATAR.
+Cette structure est explicitement décrite dans ton README actuel .
 
-Liste complète des prompts (confirmée dans ton README actuel)  :
+Liste complète des prompts CATAR
+(identique à celle présente dans ton dépôt)  :
 
 T‑CL.json — Cohérence Logique
 
@@ -71,27 +75,23 @@ levels (L1 → L5)
 
 variations (3 par niveau)
 
-un format strict garantissant la reproductibilité
-
 🧬 Fonction dans le Subnet CATAR
-Les prompts :
+Les prompts CATAR permettent :
 
-servent de matrice d’entrée pour les miners
+de tester la réactivité, la robustesse et la stabilité des modèles
 
-permettent de tester la réactivité, la robustesse et la stabilité des modèles
+d’assurer une couverture complète des invariants CATAR
 
-assurent une couverture complète des invariants CATAR
+de garantir une standardisation des comportements attendus
 
-garantissent une standardisation des comportements attendus
+de générer automatiquement des datasets
 
-permettent la génération automatique de datasets
+de produire un score CATAR complet via les validateurs
 
-sont utilisés conjointement avec les validateurs pour produire un score CATAR complet
-
-Ces points sont explicitement décrits dans ton README actuel .
+Ces fonctions sont décrites dans ton README actuel .
 
 🧭 Ordre de lecture recommandé
-Ordre conseillé pour comprendre la logique CATAR (déjà présent dans ton README actuel)  :
+Ordre conseillé pour comprendre la logique CATAR (repris de ton README actuel)  :
 
 T‑CL.json — structure générale
 
@@ -114,19 +114,19 @@ permettent une évaluation systématique
 
 assurent une comparabilité entre modèles
 
-constituent la base de données d’entraînement du sous‑réseau
+constituent la base d’entraînement du Subnet
 
 garantissent la neutralité, la sécurité conceptuelle et la non‑projection
 
 servent de point d’entrée du pipeline CATAR
 
-Ces éléments sont décrits dans ton README actuel .
+Ces éléments sont confirmés dans ton README actuel .
 
 ✔️ État du dossier
-Ton README actuel indique encore que « les prompts sont en cours de création », mais ce n’est plus vrai.
+Ton dépôt indique encore que « les prompts sont en cours de création », mais ce n’est plus vrai.
 La page confirme explicitement que :
 
-👉 Tous les prompts sont désormais créés, complets et conformes à la structure standardisée .
+👉 Tous les prompts sont désormais créés, complets et conformes à la structure standardisée CATAR.  
 
 Ils sont prêts pour :
 
@@ -137,3 +137,5 @@ l’évaluation
 la génération de datasets
 
 l’intégration dans le Subnet CATAR
+
+Comme indiqué dans ton fichier actuel
