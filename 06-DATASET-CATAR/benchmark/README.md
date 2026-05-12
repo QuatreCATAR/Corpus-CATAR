@@ -18,6 +18,10 @@ les métadonnées essentielles
 
 les analyses globales
 
+les visualisations
+
+les comparaisons multi‑modèles
+
 Ce benchmark constitue la référence d’évaluation pour :
 
 les modèles IA compatibles CATAR
@@ -35,9 +39,14 @@ Code
 benchmark/
 │
 ├── CATAR-Benchmark-v1.json
-├── README.md
-└── (fichiers futurs)
-CATAR-Benchmark-v1.json
+├── build_benchmark.py
+├── visualize_benchmark.py
+├── compare_models.py
+├── export_benchmark_csv.py
+├── figures/
+│   └── *.png
+└── README.md
+📄 CATAR-Benchmark-v1.json
 Fichier principal généré par build_benchmark.py.
 Il contient, pour chaque sample :
 
@@ -53,7 +62,7 @@ global_score
 
 markers_detected
 
-validator_version
+validator_version  
 
 Ce fichier est la version consolidée du dataset CATAR.
 
@@ -87,22 +96,84 @@ la construction de dashboards d’analyse
 
 Il constitue la référence standardisée pour toute évaluation CATAR.
 
-🛠 Génération du benchmark
-Le benchmark est généré via :
+🛠 Scripts disponibles
+1. build_benchmark.py
+Construit le fichier CATAR-Benchmark-v1.json à partir de :
 
-Code
-python build_benchmark.py
-Ce script :
+/prompts/
 
-charge les prompts
+/responses/curated/
 
-charge les réponses nettoyées
+/scores/raw/
 
-charge les scores bruts
+Fonctions :
 
 associe chaque réponse à son score
 
-génère CATAR-Benchmark-v1.json
+génère le benchmark consolidé
+
+vérifie la cohérence des UUID
+
+Usage :
+
+Code
+python build_benchmark.py
+2. visualize_benchmark.py
+Génère automatiquement les visualisations dans /benchmark/figures/ :
+
+histogramme global des scores
+
+distribution par invariant
+
+heatmap de corrélation
+
+densité des scores
+
+Usage :
+
+Code
+python visualize_benchmark.py
+3. compare_models.py
+Permet de comparer plusieurs modèles IA entre eux à partir de plusieurs benchmarks.
+
+Génère :
+
+boxplot comparatif
+
+heatmap des moyennes par invariant
+
+densité comparative
+
+Usage :
+
+python
+compare_models({
+    "ModelA": "CATAR-Benchmark-v1.json",
+    "ModelB": "CATAR-Benchmark-v1-ModelB.json"
+})
+4. export_benchmark_csv.py
+Exporte le benchmark au format CSV :
+
+compatible Excel / Pandas / R
+
+colonnes nettoyées
+
+markers_detected convertis en chaîne
+
+Usage :
+
+Code
+python export_benchmark_csv.py
+🖼 Dossier /figures
+Contient toutes les visualisations générées automatiquement :
+
+global_distribution.png
+
+scores_by_invariant.png
+
+invariant_correlation_heatmap.png
+
+score_density.png
 
 🛡️ Principes CATAR respectés
 Le benchmark respecte strictement :
