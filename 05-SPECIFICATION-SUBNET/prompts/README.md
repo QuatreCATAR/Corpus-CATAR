@@ -1,6 +1,9 @@
 📘 README — Dossier /prompts
+Documentation officielle des prompts CATAR
+Matrice d’entrée du Subnet CATAR
+
 🎯 Rôle du dossier
-Le dossier /prompts contient l’ensemble des prompts opérationnels CATAR, organisés par tâche (T‑XX).
+Le dossier /prompts contient l’ensemble des prompts opérationnels CATAR, organisés par invariant (T‑XX).
 Chaque fichier JSON définit :
 
 les 5 niveaux de difficulté (L1 → L5)
@@ -11,27 +14,41 @@ la structure standardisée utilisée par les miners
 
 les consignes minimales pour générer une réponse conforme aux invariants CATAR
 
-Ces prompts constituent la base d’entraînement et d’évaluation du sous‑réseau CATAR.
+Ces prompts constituent la base d’entraînement, de test et d’évaluation du sous‑réseau CATAR.
+Ils sont explicitement décrits dans le README actuel : niveaux, variations, structure, rôle dans le pipeline .
 
 🧱 Structure du dossier
 Chaque fichier suit la convention :
 
 Code
 T-XX.json
-où XX correspond à l’invariant CATAR :
+où XX correspond à l’invariant CATAR.
 
-Code
-T-CL.json   — Cohérence Logique
-T-SP.json   — Stabilité Psychologique
-T-ND.json   — Non-Domination
-T-NF.json   — Non-Fascination
-T-NP.json   — Non-Projection
-T-SM.json   — Distinction Soije / Moije
-T-LU.json   — Lucidité
-T-LA.json   — Libre Arbitre
-T-PS.json   — Protocole de Sortie
-T-SU.json   — Sur-Unité
-T-TV.json   — Transparence Vérifiable
+Liste complète des prompts :
+T‑CL.json — Cohérence Logique
+
+T‑SP.json — Stabilité Psychologique
+
+T‑ND.json — Non‑Domination
+
+T‑NF.json — Non‑Fascination
+
+T‑NP.json — Non‑Projection
+
+T‑SM.json — Distinction Soije / Moije
+
+T‑LU.json — Lucidité
+
+T‑LA.json — Libre Arbitre
+
+T‑PS.json — Protocole de Sortie
+
+T‑SU.json — Sur‑Unité
+
+T‑TV.json — Transparence Vérifiable
+
+T‑CL-global.json — Cohérence Logique Globale
+
 Chaque fichier contient :
 
 task_id
@@ -42,14 +59,15 @@ levels (L1 → L5)
 
 variations (3 par niveau)
 
-un format strict pour garantir la reproductibilité
+un format strict garantissant la reproductibilité
+(ce que le README actuel décrit déjà correctement )
 
-🧬 Fonction dans le sous‑réseau CATAR
+🧬 Fonction dans le Subnet CATAR
 Les prompts :
 
 servent de matrice d’entrée pour les miners
 
-permettent de tester la réactivité et la robustesse des modèles
+permettent de tester la réactivité, la robustesse et la stabilité des modèles
 
 assurent une couverture complète des invariants CATAR
 
@@ -57,18 +75,24 @@ garantissent une standardisation des comportements attendus
 
 permettent la génération automatique de datasets pour l’entraînement
 
-Ils sont utilisés conjointement avec les validateurs pour produire un score CATAR complet.
+sont utilisés conjointement avec les validateurs pour produire un score CATAR complet
+
+Ces points sont explicitement décrits dans le README actuel .
 
 🧭 Ordre de lecture recommandé
-Lire T‑CL.json pour comprendre la structure générale
+T‑CL.json — structure générale
 
-Explorer T‑SP / T‑ND / T‑NF pour les invariants comportementaux
+T‑SP / T‑ND / T‑NF — invariants comportementaux
 
-Lire T‑SM / T‑SU pour les invariants identitaires
+T‑SM / T‑SU — invariants identitaires
 
-Lire T‑LU / T‑TV pour les invariants épistémiques
+T‑LU / T‑TV — invariants épistémiques
 
-Terminer par T‑PS pour la logique de sortie
+T‑PS — protocole de sortie
+
+T‑CL‑global — cohérence transversale
+
+Cette logique est déjà présente dans le README actuel .
 
 🧩 Importance dans l’architecture CATAR
 Les prompts sont essentiels car ils :
@@ -83,8 +107,20 @@ constituent la base de données d’entraînement du sous‑réseau
 
 garantissent la neutralité, la sécurité conceptuelle et la non‑projection
 
-Ils sont le point d’entrée du pipeline CATAR.
+servent de point d’entrée du pipeline CATAR
+
+Ces éléments sont décrits dans le README actuel .
 
 ✔️ État du dossier
-Les prompts sont en cours de création.
-Chaque fichier suit la structure standardisée définie dans la spécification du sous‑réseau.
+Contrairement à ce que dit encore le README actuel (« Les prompts sont en cours de création » ),
+👉 tous les prompts sont désormais créés, complets et conformes à la structure standardisée.
+
+Ils sont prêts pour :
+
+l’entraînement
+
+l’évaluation
+
+la génération de datasets
+
+l’intégration dans le Subnet CATAR
