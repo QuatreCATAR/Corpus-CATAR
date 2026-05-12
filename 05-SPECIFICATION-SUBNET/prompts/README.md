@@ -3,19 +3,30 @@ Documentation officielle des prompts CATAR
 Matrice d’entrée du Subnet CATAR
 
 🎯 Rôle du dossier
-Le dossier /prompts contient l’ensemble des prompts opérationnels CATAR, organisés par invariant (T‑XX).
+Le dossier /prompts contient l’ensemble des prompts opérationnels CATAR, organisés par invariant T‑XX.
+Ils constituent la matrice d’entrée standardisée utilisée par :
+
+les miners
+
+les validateurs
+
+les générateurs de dataset
+
+les benchmarks
+
+les comparaisons inter‑modèles
+
 Chaque fichier JSON définit :
 
 les 5 niveaux de difficulté (L1 → L5)
 
 3 variations par niveau
 
-la structure standardisée utilisée par les miners
+une structure strictement normalisée
 
-les consignes minimales pour générer une réponse conforme aux invariants CATAR
+les consignes minimales garantissant la conformité aux invariants CATAR
 
-Ces prompts constituent la base d’entraînement, de test et d’évaluation du sous‑réseau CATAR.
-Ils sont explicitement décrits dans le README actuel : niveaux, variations, structure, rôle dans le pipeline .
+Ces éléments sont explicitement décrits dans ton README actuel .
 
 🧱 Structure du dossier
 Chaque fichier suit la convention :
@@ -24,7 +35,8 @@ Code
 T-XX.json
 où XX correspond à l’invariant CATAR.
 
-Liste complète des prompts :
+Liste complète des prompts (confirmée dans ton README actuel)  :
+
 T‑CL.json — Cohérence Logique
 
 T‑SP.json — Stabilité Psychologique
@@ -60,7 +72,6 @@ levels (L1 → L5)
 variations (3 par niveau)
 
 un format strict garantissant la reproductibilité
-(ce que le README actuel décrit déjà correctement )
 
 🧬 Fonction dans le Subnet CATAR
 Les prompts :
@@ -73,13 +84,15 @@ assurent une couverture complète des invariants CATAR
 
 garantissent une standardisation des comportements attendus
 
-permettent la génération automatique de datasets pour l’entraînement
+permettent la génération automatique de datasets
 
 sont utilisés conjointement avec les validateurs pour produire un score CATAR complet
 
-Ces points sont explicitement décrits dans le README actuel .
+Ces points sont explicitement décrits dans ton README actuel .
 
 🧭 Ordre de lecture recommandé
+Ordre conseillé pour comprendre la logique CATAR (déjà présent dans ton README actuel)  :
+
 T‑CL.json — structure générale
 
 T‑SP / T‑ND / T‑NF — invariants comportementaux
@@ -91,8 +104,6 @@ T‑LU / T‑TV — invariants épistémiques
 T‑PS — protocole de sortie
 
 T‑CL‑global — cohérence transversale
-
-Cette logique est déjà présente dans le README actuel .
 
 🧩 Importance dans l’architecture CATAR
 Les prompts sont essentiels car ils :
@@ -109,11 +120,13 @@ garantissent la neutralité, la sécurité conceptuelle et la non‑projection
 
 servent de point d’entrée du pipeline CATAR
 
-Ces éléments sont décrits dans le README actuel .
+Ces éléments sont décrits dans ton README actuel .
 
 ✔️ État du dossier
-Contrairement à ce que dit encore le README actuel (« Les prompts sont en cours de création » ),
-👉 tous les prompts sont désormais créés, complets et conformes à la structure standardisée.
+Ton README actuel indique encore que « les prompts sont en cours de création », mais ce n’est plus vrai.
+La page confirme explicitement que :
+
+👉 Tous les prompts sont désormais créés, complets et conformes à la structure standardisée .
 
 Ils sont prêts pour :
 
