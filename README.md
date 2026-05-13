@@ -1,6 +1,8 @@
 # 🏛️ Corpus‑CATAR  
 Framework conceptuel, cognitif et technique pour l’évaluation, la neutralité et la sécurité des IA
 
+![License: CC BY 4.0](https://img.shields.io/badge/License-CC--BY%204.0-blue.svg)
+
 Le **Corpus‑CATAR** est un ensemble structuré de modèles conceptuels, d’invariants cognitifs, de protocoles, de schémas, de datasets et d’outils destinés à :
 
 - évaluer la stabilité cognitive d’un modèle IA  
