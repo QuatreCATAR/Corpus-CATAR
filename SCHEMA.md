@@ -4,28 +4,27 @@ Le Corpus‑CATAR est organisé en trois grandes strates :
 
 ### 1. Strate conceptuelle (01 → 05)
 Les fondations théoriques, métaphysiques et structurelles du modèle CATAR :
-- invariants cognitifs
-- Soije/Moije
-- équation D.Phi
-- Code MINOU
-- schémas et représentations
+- invariants cognitifs  
+- Soije/Moije  
+- équation D.Phi  
+- Code MINOU  
+- schémas et représentations  
 
 ### 2. Strate opérationnelle (06-DATASET-CATAR)
-Le Subnet CATAR : dataset, API, validateurs, scoring, benchmark, outils, documentation.
+Le Subnet CATAR : dataset, API, validateurs, scoring, benchmark, outils, documentation.  
 C’est la partie **exécutable**, reproductible et testable du Corpus.
 
 ### 3. Strate d’entrée/sortie (README + SCHEMA)
 Les documents maîtres qui permettent :
-- de comprendre l’ensemble
-- de naviguer dans le dépôt
-- de transmettre le modèle
+- de comprendre l’ensemble  
+- de naviguer dans le dépôt  
+- de transmettre le modèle  
 
 Chaque dossier est autonome mais articulé dans une architecture cohérente.
 
+---
 
-
-
-# Schéma global — Corpus‑CATAR (ASCII)
+# 🗺️ Schéma global — Corpus‑CATAR (ASCII)
 
 Corpus-CATAR/
 │
