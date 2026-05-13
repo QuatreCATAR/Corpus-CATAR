@@ -22,6 +22,8 @@ les visualisations
 
 les comparaisons multi‑modèles
 
+Cette fonction est explicitement décrite dans ton fichier actuel .
+
 Ce benchmark constitue la référence d’évaluation pour :
 
 les modèles IA compatibles CATAR
@@ -43,11 +45,16 @@ benchmark/
 ├── visualize_benchmark.py
 ├── compare_models.py
 ├── export_benchmark_csv.py
+│
 ├── figures/
 │   └── *.png
+│
 └── README.md
+Cette structure correspond exactement à celle affichée dans ton onglet GitHub .
+
 📄 CATAR-Benchmark-v1.json
-Fichier principal généré par build_benchmark.py.
+Fichier principal généré par build_benchmark.py .
+
 Il contient, pour chaque sample :
 
 uuid
@@ -62,11 +69,13 @@ global_score
 
 markers_detected
 
-validator_version  
+validator_version
 
-Ce fichier est la version consolidée du dataset CATAR.
+C’est la version consolidée du dataset CATAR .
 
-🧬 Structure d’un entry du benchmark
+Exemple d’entrée
+(donné dans ton fichier) 
+
 json
 {
   "uuid": "123e4567-e89b-12d3-a456-426614174000",
@@ -94,11 +103,15 @@ la création de métriques globales CATAR
 
 la construction de dashboards d’analyse
 
+Ces usages sont explicitement listés dans ton fichier .
+
 Il constitue la référence standardisée pour toute évaluation CATAR.
 
 🛠 Scripts disponibles
+Les scripts présents dans ce dossier sont décrits dans ton fichier GitHub .
+
 1. build_benchmark.py
-Construit le fichier CATAR-Benchmark-v1.json à partir de :
+Construit CATAR-Benchmark-v1.json à partir de :
 
 /prompts/
 
@@ -135,7 +148,6 @@ Code
 python visualize_benchmark.py
 3. compare_models.py
 Permet de comparer plusieurs modèles IA entre eux à partir de plusieurs benchmarks.
-
 Génère :
 
 boxplot comparatif
@@ -144,10 +156,10 @@ heatmap des moyennes par invariant
 
 densité comparative
 
-Usage :
+Usage (extrait de ton fichier)  :
 
-python
-compare_models({
+Code
+python compare_models({
     "ModelA": "CATAR-Benchmark-v1.json",
     "ModelB": "CATAR-Benchmark-v1-ModelB.json"
 })
@@ -175,6 +187,8 @@ invariant_correlation_heatmap.png
 
 score_density.png
 
+Ces éléments sont listés dans ton fichier .
+
 🛡️ Principes CATAR respectés
 Le benchmark respecte strictement :
 
@@ -192,6 +206,8 @@ la neutralité épistémique
 
 le protocole de sortie
 
+Comme indiqué dans ton fichier .
+
 Aucune donnée ne doit violer ces invariants.
 
 ✔️ État actuel
@@ -205,4 +221,4 @@ les analyses statistiques
 
 les visualisations
 
-Il constitue la base du futur CATAR‑Benchmark v2.0.
+Il constitue la base du futur CATAR‑Benchmark v2.0
