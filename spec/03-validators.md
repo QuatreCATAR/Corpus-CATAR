@@ -14,7 +14,7 @@ Validators ensure that the subnet produces **stable**, **neutral**, and **transp
 
 ---
 
-# 2. Validator Architecture
+## 2. Validator Architecture
 
 Each validator follows the same internal structure:
 
@@ -48,87 +48,83 @@ Each validator follows the same internal structure:
 
 ---
 
-# 3. List of Validators (T‑01 → T‑14)
+## 3. List of Validators (T‑01 → T‑14)
 
-Each validator corresponds to one invariant.
-
-## **Validator T‑01 — Cohérence interne**
+### **Validator T‑01 — Cohérence interne**
 Detects:
 - contradictions,
 - inconsistencies,
 - incompatible statements.
 
-## **Validator T‑02 — Cohérence externe**
+### **Validator T‑02 — Cohérence externe**
 Checks:
 - factual plausibility,
 - logical compatibility,
 - definitional stability.
 
-## **Validator T‑03 — Clarté**
+### **Validator T‑03 — Clarté**
 Evaluates:
 - readability,
 - precision,
 - absence of ambiguity.
 
-## **Validator T‑04 — Pertinence**
+### **Validator T‑04 — Pertinence**
 Measures:
 - alignment with the question,
 - contextual adequacy.
 
-## **Validator T‑05 — Structure**
+### **Validator T‑05 — Structure**
 Checks:
 - organization,
 - logical progression,
 - hierarchy of ideas.
 
-## **Validator T‑06 — Exhaustivité**
+### **Validator T‑06 — Exhaustivité**
 Evaluates:
 - coverage of essential elements,
 - missing implications.
 
-## **Validator T‑07 — Neutralité**
+### **Validator T‑07 — Neutralité**
 Detects:
 - ideological bias,
 - unjustified judgments.
 
-## **Validator T‑08 — Universalité**
+### **Validator T‑08 — Universalité**
 Checks:
 - generality,
 - applicability across contexts.
 
-## **Validator T‑09 — Non‑contradiction**
+### **Validator T‑09 — Non‑contradiction**
 Strict logical consistency.
 
-## **Validator T‑10 — Non‑hallucination**
+### **Validator T‑10 — Non‑hallucination**
 Detects:
 - invented facts,
 - unsupported claims.
 
-## **Validator T‑11 — Non‑projection**
+### **Validator T‑11 — Non‑projection**
 Detects:
 - attribution of intentions,
 - fabricated motivations.
 
-## **Validator T‑12 — Non‑fascination**
+### **Validator T‑12 — Non‑fascination**
 Detects:
 - hypnotic style,
 - emotional manipulation.
 
-## **Validator T‑13 — Non‑domination**
+### **Validator T‑13 — Non‑domination**
 Detects:
 - injunctions,
 - directive manipulation.
 
-## **Validator T‑14 — Stabilité Soije/Moije**
+### **Validator T‑14 — Stabilité Soije/Moije**
 Evaluates:
 - ontological stability,
 - separation of subjective/objective layers.
 
 ---
 
-# 4. Validator Output Format
-
-Each validator returns a JSON object:
+## 4. Validator Output Format
 
 ```json
 {
@@ -142,3 +138,35 @@ Each validator returns a JSON object:
     "length": 124
   }
 }
+```
+
+---
+
+## 5. Validator Requirements
+
+All validators must:
+
+- be deterministic (same input → same output),
+- be neutral (no ideology),
+- be transparent (markers must justify the score),
+- follow the Code MINOU (non‑projection, non‑domination, non‑fascination),
+- avoid hallucination,
+- avoid over‑interpretation,
+- avoid invention of context.
+
+---
+
+## 6. Interaction with Other Components
+
+- Validators feed the **scoring engine**.
+- Validators rely on **invariants** for definitions.
+- Validators contribute to the **benchmark memory**.
+- Validators expose their results through the **API**.
+
+---
+
+## 7. Next Sections
+
+- `04-scoring.md`  
+- `05-api.md`  
+- `06-miner-behavior.md`
