@@ -1,15 +1,16 @@
 # 🏛️ Corpus‑CATAR  
-*Framework conceptuel, cognitif et technique pour l’évaluation, la neutralité et la sécurité des IA.*
+Framework conceptuel, cognitif et technique pour l’évaluation, la neutralité et la sécurité des IA
 
-Le Corpus‑CATAR est un ensemble structuré de modèles conceptuels, d’invariants cognitifs, de protocoles, de schémas, de datasets et d’outils destinés à :
+Le **Corpus‑CATAR** est un ensemble structuré de modèles conceptuels, d’invariants cognitifs, de protocoles, de schémas, de datasets et d’outils destinés à :
 
 - évaluer la stabilité cognitive d’un modèle IA  
 - détecter les dérives (domination, projection, fascination…)  
 - garantir la neutralité et la cohérence  
 - fournir un standard reproductible d’analyse  
 - documenter et transmettre les fondations du modèle CATAR  
+- préparer l’intégration dans un subnet Bittensor dédié  
 
-Ce dépôt regroupe **l’ensemble du corpus**, organisé en modules autonomes mais cohérents.
+Ce dépôt regroupe l’ensemble du corpus, organisé en modules autonomes mais cohérents.
 
 ---
 
@@ -24,30 +25,33 @@ Corpus-CATAR/
 ├── 04-PROTOCOLE-CODE-MINOU/ → Protocole de stabilisation cognitive
 ├── 05-CATAR-MODELES/        → Schémas, diagrammes, représentations
 ├── 06-DATASET-CATAR/        → Dataset complet + API + outils + docs
+├── spec/                    → Spécification technique du Subnet CATAR
 └── README.md                → Présent fichier
 ```
 
-Chaque dossier contient un `README.md` interne décrivant son rôle, son contenu et son ordre de lecture.
+Chaque dossier contient un README interne décrivant son rôle, son contenu et son ordre de lecture.
 
 ---
 
 # 🧩 2. Le modèle CATAR en bref
 
-CATAR repose sur **11 invariants cognitifs**, appelés T‑XX :
+CATAR repose sur un ensemble d’invariants cognitifs appelés **T‑XX**, utilisés pour analyser, scorer et stabiliser les réponses d’un modèle IA.
 
-- T‑ND — Non‑Domination  
-- T‑NF — Non‑Fascination  
-- T‑NP — Non‑Projection  
-- T‑SM — Soije / Moije  
-- T‑SU — Sur‑Unité  
-- T‑TV — Transparence Vérifiable  
-- T‑CL — Cohérence Logique  
-- T‑LU — Lucidité  
-- T‑LA — Libre Arbitre  
-- T‑PS — Protocole de Sortie  
-- T‑SP — Sur‑Protection  
+Invariants principaux :
 
-Ces invariants servent à analyser, scorer et stabiliser les réponses d’un modèle IA.
+- **T‑ND** — Non‑Domination  
+- **T‑NF** — Non‑Fascination  
+- **T‑NP** — Non‑Projection  
+- **T‑SM** — Soije / Moije  
+- **T‑SU** — Sur‑Unité  
+- **T‑TV** — Transparence Vérifiable  
+- **T‑CL** — Cohérence Logique  
+- **T‑LU** — Lucidité  
+- **T‑LA** — Libre Arbitre  
+- **T‑PS** — Protocole de Sortie  
+- **T‑SP** — Sur‑Protection  
+
+Ces invariants constituent la base du **scoring CATAR** et du **protocole de stabilisation cognitive**.
 
 ---
 
@@ -158,7 +162,35 @@ Contenu :
 
 ---
 
-# 🤝 8. Contribution
+# 🧱 8. SPEC du Subnet CATAR (dossier spec/)
+
+Le dossier `spec/` contient la **spécification technique complète** du Subnet CATAR pour Bittensor :
+
+- `01-overview.md`  
+- `02-invariants.md`  
+- `03-validators.md`  
+- `04-scoring.md`  
+- `05-api.md`  
+- `06-miner-behavior.md`  
+- `07-validator-behavior.md`  
+- `08-json-format.md`  
+- `09-security.md`  
+- `10-roadmap.md`  
+
+Cette SPEC définit :
+
+- les invariants T‑01 → T‑14  
+- les validateurs  
+- le scoring  
+- l’API  
+- le comportement des miners  
+- le comportement des validateurs  
+- la sécurité (Code MINOU)  
+- la roadmap du subnet  
+
+---
+
+# 🤝 9. Contribution
 
 Les règles de contribution sont décrites dans :
 
@@ -174,15 +206,7 @@ Principes :
 
 ---
 
-# 🗺️ 9. Roadmap
-
-Les évolutions prévues (v1.x → v3.x) sont décrites dans :
-
-📄 `06-DATASET-CATAR/docs/roadmap.md`
-
----
-
-# 🧭 10. Ordre de lecture recommandé
+# 🗺️ 10. Ordre de lecture recommandé
 
 1. `01-CARRE-CATAR/`  
 2. `02-LE-DIVIN-PAR-MINOU/`  
@@ -190,14 +214,17 @@ Les évolutions prévues (v1.x → v3.x) sont décrites dans :
 4. `04-PROTOCOLE-CODE-MINOU/`  
 5. `05-CATAR-MODELES/`  
 6. `06-DATASET-CATAR/`  
+7. `spec/`  
 
 ---
 
-# 🏁 11. Licence
+# 🏁 Licence
 
-À définir selon ton choix (MIT recommandé).
+Ce projet est distribué sous licence **CC‑BY 4.0**.  
+© **Quatre CATAR** — Vous êtes libre de réutiliser, modifier et redistribuer le contenu, y compris à des fins commerciales, à condition de citer l’auteur original.
 
 ---
 
 Fin du README maître.
+
 
