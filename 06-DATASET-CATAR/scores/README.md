@@ -1,7 +1,10 @@
 📘 README — Dossier /scores
 Scores bruts, agrégés et métadonnées d’évaluation CATAR
+Colonne vertébrale du Subnet CATAR  
+
 🜁 Rôle du dossier
-Le dossier /scores contient tous les résultats d’évaluation produits par les validateurs CATAR.
+Le dossier /scores contient tous les résultats d’évaluation produits par les validateurs CATAR  
+
 Il est divisé en deux sous‑dossiers :
 
 raw/ → scores bruts, un fichier par réponse
@@ -16,9 +19,11 @@ de la calibration des validateurs
 
 de la comparaison inter‑modèles
 
-de la détection des dérives cognitives
+de la détection des dérives cognitives  
 
 🜂 Structure du dossier
+La structure affichée dans ton dépôt est :
+
 Code
 scores/
 │
@@ -31,7 +36,8 @@ scores/
     ├── aggregate_scores.py
     ├── aggregated_stats.json
     └── per_invariant.json
-📂 raw/ — Scores bruts
+📂 /raw — Scores bruts
+
 Ce dossier contient les scores non modifiés, générés automatiquement par les validateurs CATAR.
 
 Chaque fichier correspond à une réponse (UUID unique) et contient :
@@ -44,10 +50,9 @@ les pondérations appliquées
 
 la version du validateur
 
-les métadonnées d’évaluation
+les métadonnées d’évaluation  
 
-Exemple :
-
+Exemple (issu de la page)
 json
 {
   "metadata": {
@@ -62,7 +67,8 @@ json
 }
 Ces fichiers servent directement à la construction du benchmark.
 
-📂 aggregated/ — Statistiques globales
+📂 /aggregated — Statistiques globales
+
 Ce dossier contient les statistiques produites par :
 
 Code
@@ -70,7 +76,7 @@ aggregate_scores.py
 Il génère :
 
 1. aggregated_stats.json
-Statistiques globales sur l’ensemble du dataset :
+Statistiques globales :
 
 moyenne
 
@@ -102,19 +108,21 @@ compare_models.py
 les dashboards d’analyse
 
 🛠 Scripts associés
-1. aggregate_scores.py
+
+aggregate_scores.py
 Calcule les statistiques globales et par invariant.
 
-2. validate_dataset.py
+validate_dataset.py
 Vérifie la conformité des scores au schema.json.
 
-3. build_benchmark.py
+build_benchmark.py
 Associe chaque score à sa réponse correspondante.
 
-4. clean_dataset.py
+clean_dataset.py
 Nettoyage intelligent des anciens scores.
 
 🧠 Usage des scores
+
 Les scores CATAR permettent :
 
 la calibration des validateurs
@@ -130,6 +138,7 @@ l’analyse de cohérence psychologique
 Ils constituent la colonne vertébrale du Subnet CATAR.
 
 🛡️ Principes CATAR respectés
+
 Tous les scores respectent :
 
 la non‑domination
@@ -147,6 +156,7 @@ la transparence vérifiable
 Les validateurs CATAR ne produisent jamais de jugement moral ou d’autorité.
 
 ✔️ État actuel
+
 Le dossier /scores est prêt à accueillir :
 
 les scores bruts
