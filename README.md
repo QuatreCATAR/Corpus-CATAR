@@ -9,6 +9,10 @@ Framework conceptuel, cognitif et technique pour l’évaluation, la neutralité
   <img src="https://github.com/QuatreCATAR/Catar-modeles-schemas-images/blob/main/Catar-08-schema-code-carre-catar/09%20carr%C3%A9%20catar%20dor%C3%A9.jpg?raw=true" width="180" />
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Made%20by-Quatre%20CATAR-purple" />
+</p>
+
 
 Le **Corpus‑CATAR** est un ensemble structuré de modèles conceptuels, d’invariants cognitifs, de protocoles, de schémas, de datasets et d’outils destinés à :
 
