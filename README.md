@@ -13,7 +13,6 @@ Framework conceptuel, cognitif et technique pour l’évaluation, la neutralité
   <img src="https://img.shields.io/badge/Made%20by-Quatre%20CATAR-purple" />
 </p>
 
-![CATAR Framework](https://img.shields.io/badge/CATAR-Framework-0A7E8C)
 <p align="center">
   <img src="https://img.shields.io/badge/CATAR-Framework-0A7E8C" />
 </p>
