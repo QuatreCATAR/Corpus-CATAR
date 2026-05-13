@@ -3,7 +3,10 @@ Dataset officiel du Subnet CATAR
 Cadre universel d’entraînement, d’évaluation et de calibration des IA
 
 🜁 Mission du dataset CATAR
-Le dataset CATAR constitue la base d’entraînement, de test et d’évaluation du Subnet CATAR.
+La page GitHub indique clairement que le dataset CATAR constitue :
+
+« la base d’entraînement, de test et d’évaluation du Subnet CATAR » 
+
 Il rassemble :
 
 les prompts CATAR (T‑XX)
@@ -14,7 +17,7 @@ les scores produits par les validateurs
 
 les métadonnées nécessaires à la reproductibilité
 
-les versions successives du dataset
+les versions successives du dataset  
 
 Il permet :
 
@@ -22,15 +25,17 @@ d’entraîner des modèles compatibles CATAR
 
 de calibrer les miners et validateurs
 
-de mesurer la stabilité cognitive d’une IA
+de mesurer la stabilité cognitive
 
 de détecter les dérives (domination, projection, fascination…)
 
 de garantir la cohérence psychologique du système
 
-Ce dataset est la mémoire opérationnelle du Subnet CATAR.
+« Ce dataset est la mémoire opérationnelle du Subnet CATAR. »
 
 🜂 Structure du dossier
+La structure affichée dans ton dépôt est la suivante :
+
 Code
 06-DATASET-CATAR/
 │
@@ -74,21 +79,18 @@ Code
 ├── validate_dataset.py
 ├── clean_dataset.py
 └── build_all.py
-Cette structure reprend fidèlement celle décrite dans ton README actuel.
-
 🧱 Description des sous‑dossiers
 📂 /prompts/
 Contient les prompts CATAR officiels, organisés par invariant.
 Chaque dossier T‑XX contient :
 
-5 niveaux de difficulté (L1 → L5)
+5 niveaux de difficulté
 
 3 variations par niveau
 
 un format JSON strict
 
-des consignes minimales garantissant la neutralité et la non‑projection
-
+des consignes minimales garantissant la neutralité
 
 📂 /responses/
 raw/
@@ -100,9 +102,9 @@ les modèles externes
 
 les IA en test
 
-les sessions d’évaluation humaine
+les sessions humaines
 
-Aucune filtration, aucune correction.
+Aucune correction, aucune filtration.
 
 curated/
 Réponses :
@@ -114,7 +116,6 @@ validées
 anonymisées
 
 prêtes pour l’entraînement
-
 
 📂 /scores/
 raw/
@@ -137,51 +138,55 @@ distributions
 
 matrices de cohérence
 
-
 📂 /metadata/
 Contient les fichiers de structure et de versionnement :
 
-schema.json → format officiel du dataset
+schema.json → format officiel du dataset 
 
 dataset-info.json → version, taille, provenance
 
 version-history.md → changelog complet
 
+📂 /benchmark/
+Contient :
 
-🧬 Format standard d’un exemple dataset
-Exemple de prompt
+CATAR-Benchmark-v1.json
 
-Exemple de réponse
+scripts d’analyse
 
-Exemple de score
+visualisations
 
 🛠 Scripts inclus dans le dataset
-1. generate_dataset.py
-Génère automatiquement les réponses et scores à partir des prompts.
+La page liste explicitement les scripts suivants :
 
-2. aggregate_scores.py
-Produit les statistiques globales et par invariant.
+generate_dataset.py — génère réponses + scores
 
-3. build_benchmark.py
-Construit CATAR-Benchmark-v1.json.
+aggregate_scores.py — statistiques globales
 
-4. visualize_benchmark.py
-Génère les figures dans /benchmark/figures/.
+build_benchmark.py — construit CATAR‑Benchmark‑v1
 
-5. compare_models.py
-Compare plusieurs modèles IA entre eux.
+visualize_benchmark.py — figures dans /benchmark/figures/
 
-6. export_benchmark_csv.py
-Exporte le benchmark en CSV.
+compare_models.py — comparaison inter‑modèles
 
-7. validate_dataset.py
-Vérifie la conformité de tous les fichiers au schema.json.
+export_benchmark_csv.py — export CSV
 
-8. clean_dataset.py
-Nettoyage intelligent des fichiers générés automatiquement.
+validate_dataset.py — conformité au schéma
 
-9. build_all.py
-Pipeline complet : dataset → scores → benchmark → figures → CSV.
+clean_dataset.py — nettoyage intelligent
+
+build_all.py — pipeline complet : dataset → scores → benchmark → figures → CSV
+
+🧬 Format standard d’un exemple dataset
+La page indique que le dataset inclut :
+
+un exemple de prompt
+
+un exemple de réponse
+
+un exemple de score
+
+(ces exemples sont fournis dans les README des sous‑dossiers correspondants)
 
 🧠 Usage du dataset
 Le dataset CATAR permet :
@@ -194,10 +199,9 @@ la comparaison de modèles
 
 la détection de dérives cognitives
 
-la génération de benchmarks CATAR
+la génération de benchmarks
 
 la validation de cohérence globale
-
 
 🛡️ Principes de sécurité CATAR
 Le dataset respecte strictement :
@@ -216,20 +220,11 @@ la neutralité épistémique
 
 le protocole de sortie
 
-
 ✔️ État actuel
-Le dossier est prêt à accueillir :
+La page GitHub indique que :
 
-les prompts
+« Le dossier est prêt à accueillir les prompts, les réponses, les scores, les métadonnées, les benchmarks et les visualisations. »
 
-les réponses
+Il constitue la base du futur :
 
-les scores
-
-les métadonnées
-
-les benchmarks
-
-les visualisations
-
-Il constitue la base du futur CATAR‑Benchmark v2.0.
+CATAR‑Benchmark v2.0  
