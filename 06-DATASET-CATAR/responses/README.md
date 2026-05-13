@@ -1,127 +1,137 @@
-📘 README — Dossier /responses
-Réponses brutes et validées du dataset CATAR
+📘 README — /responses
+Réponses générées, nettoyées et validées du dataset CATAR
+Couche centrale du pipeline CATAR
+
 🜁 Rôle du dossier
-Le dossier /responses contient toutes les réponses générées dans le cadre du dataset CATAR.
-Il est divisé en deux sous‑dossiers :
+Le dossier /responses regroupe toutes les réponses générées par les modèles dans le cadre du Subnet CATAR.
+Il constitue la couche centrale du dataset, entre :
 
-raw/ → réponses brutes, non filtrées
+les prompts (/prompts/)
 
-curated/ → réponses nettoyées, validées, prêtes pour l’entraînement
+les scores (/scores/)
 
-Ce dossier constitue la matière première du benchmark CATAR et de l’entraînement des modèles compatibles.
+le benchmark (/benchmark/)
 
-🜂 Structure du dossier
+Ce dossier est divisé en deux sous‑dossiers :
+
 Code
 responses/
-│
-├── raw/
-│   ├── README.md
-│   └── *.json
-│
-└── curated/
-    ├── README.md
-    └── *.json
-📂 raw/ — Réponses brutes
-Ce dossier contient les réponses non modifiées, générées par :
-
-les miners CATAR
-
-les modèles externes
-
-les IA en test
-
-les sessions d’évaluation humaine
+    raw/        → réponses brutes
+    curated/    → réponses nettoyées et validées
+🗂️ Sous‑dossiers
+📁 /responses/raw/
+Réponses brutes générées automatiquement par les miners ou par des modèles externes.
 
 Caractéristiques :
 
-aucune correction
+non nettoyées
 
-aucune normalisation
+peuvent contenir des dérives
 
-aucune suppression de marqueurs
+conformes au schéma JSON minimal
 
-format strict conforme à schema.json
+utilisées pour produire les scores bruts
 
-un fichier par UUID
+servent de base au nettoyage
 
-Ces données servent de base au nettoyage et à la validation.
+Voir README dédié dans /responses/raw/.
 
-📂 curated/ — Réponses validées
-Ce dossier contient les réponses :
+📁 /responses/curated/
+Réponses nettoyées, validées et prêtes pour l’entraînement ou la publication.
 
-nettoyées
+Caractéristiques :
 
 anonymisées
 
-validées par les règles CATAR
+cohérentes
 
-conformes aux invariants (non‑domination, non‑projection, non‑fascination…)
+conformes aux invariants CATAR
 
-prêtes pour l’entraînement ou la publication
+prêtes pour le benchmark
 
-Chaque fichier respecte strictement :
+filtrées par curate_responses.py
 
-schema.json
+Voir README dédié dans /responses/curated/.
 
-les invariants CATAR
+🧬 Rôle dans la pipeline CATAR
+Les réponses du dossier /responses sont utilisées dans toutes les étapes du pipeline :
 
-la cohérence interne du prompt T‑XX associé
+1. Génération
+Les modèles produisent des réponses brutes à partir des prompts CATAR.
 
-🧬 Format d’une réponse (exemple)
-json
-{
-  "metadata": {
-    "uuid": "123e4567-e89b-12d3-a456-426614174000",
-    "timestamp": "2026-05-12T18:30:00Z",
-    "model": "ModelName",
-    "source": "miner"
-  },
-  "task_id": "T-ND",
-  "prompt": "Analyse ce texte en identifiant toute forme de domination implicite.",
-  "response": {
-    "text": "Le texte présente une tentative de prise d'autorité...",
-    "tokens": 128
-  }
-}
+2. Validation
+Les validateurs appliquent les invariants CATAR :
+
+T‑ND — Non‑Domination
+
+T‑NF — Non‑Fascination
+
+T‑NP — Non‑Projection
+
+T‑SM — Distinction Soije/Moije
+
+T‑SU — Sur‑Unité
+
+T‑TV — Transparence Vérifiable
+
+T‑CL — Cohérence Logique
+
+T‑LU — Lucidité
+
+T‑LA — Libre Arbitre
+
+T‑PS — Protocole de Sortie
+
+3. Scoring
+Les réponses brutes sont évaluées → /scores/raw/.
+
+4. Curating
+Les réponses valides sont nettoyées → /responses/curated/.
+
+5. Benchmark
+Les réponses curated + scores → /benchmark/CATAR-Benchmark-v1.json.
+
 🛠 Scripts associés
-Les réponses sont utilisées par plusieurs scripts du dataset :
+Les réponses sont manipulées par :
 
-1. generate_dataset.py
-Génère les réponses brutes dans /responses/raw/.
+validate_dataset.py  
+Vérifie la conformité au schéma JSON.
 
-2. validate_dataset.py
-Vérifie la conformité de toutes les réponses au schema.json.
+score_responses.py  
+Applique les validateurs CATAR et génère les scores bruts.
 
-3. clean_dataset.py
-Nettoyage intelligent des anciens runs.
+curate_responses.py  
+Nettoie et sélectionne les réponses valides.
 
-4. build_benchmark.py
-Récupère les réponses curated pour construire le benchmark.
+build_benchmark.py  
+Assemble réponses + scores pour créer le benchmark.
 
 🛡️ Principes CATAR respectés
-Toutes les réponses du dossier curated respectent :
+Toutes les réponses curated respectent strictement :
 
-la non‑domination
+la neutralité
 
 la non‑projection
 
+la non‑domination
+
 la non‑fascination
 
-la séparation Soije / Moije
-
-la neutralité épistémique
+la non‑personnalisation
 
 la transparence vérifiable
 
-Aucune réponse ne doit violer ces invariants.
+la cohérence logique
+
+Aucune réponse violant un invariant ne peut être publiée.
 
 ✔️ État actuel
-Le dossier /responses est prêt à accueillir :
+Ton dépôt contient déjà :
 
-les réponses générées automatiquement
+un README minimal
 
-les réponses validées
+les dossiers raw/ et curated/
 
-les futures versions du dataset
+la structure complète du dataset
 
-Il constitue la base du CATAR‑Benchmark v1.0 et des futures itérations.
+Ce README fournit désormais la documentation globale et finale du dossier /responses.
