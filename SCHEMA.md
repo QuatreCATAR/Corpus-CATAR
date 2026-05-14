@@ -1,63 +1,95 @@
-# 🧭 Légende — Lecture du schéma global
+# 🧭 Schéma global — Corpus‑CATAR  
+*(FR/EN — Global Structural Map)*
 
-Le Corpus‑CATAR est organisé en trois grandes strates :
-
-### 1. Strate conceptuelle (01 → 05)
-Les fondations théoriques, métaphysiques et structurelles du modèle CATAR :
-- invariants cognitifs  
-- Soije/Moije  
-- équation D.Phi  
-- Code MINOU  
-- schémas et représentations  
-
-### 2. Strate opérationnelle (06-DATASET-CATAR)
-Le Subnet CATAR : dataset, API, validateurs, scoring, benchmark, outils, documentation.  
-C’est la partie **exécutable**, reproductible et testable du Corpus.
-
-### 3. Strate d’entrée/sortie (README + SCHEMA)
-Les documents maîtres qui permettent :
-- de comprendre l’ensemble  
-- de naviguer dans le dépôt  
-- de transmettre le modèle  
-
-Chaque dossier est autonome mais articulé dans une architecture cohérente.
+Ce document présente la structure complète du **Corpus‑CATAR**, organisée en trois strates cohérentes.  
+This document presents the full structure of the **Corpus‑CATAR**, organized into three coherent layers.
 
 ---
 
-# 🗺️ Schéma global — Corpus‑CATAR (ASCII)
+# 🧭 Légende — Lecture du schéma global  
+# 🧭 Legend — How to Read the Global Map
 
+Le Corpus‑CATAR est organisé en trois grandes strates :  
+The Corpus‑CATAR is organized into three major layers:
+
+---
+
+## 1. Strate conceptuelle (01 → 05)  
+## 1. Conceptual Layer (01 → 05)
+
+Les fondations théoriques, métaphysiques et structurelles du modèle CATAR :  
+The theoretical, metaphysical, and structural foundations of the CATAR model:
+
+- invariants cognitifs / cognitive invariants  
+- Soije / Moije  
+- équation D.Phi / D.Phi universal equation  
+- Code MINOU  
+- schémas et représentations / diagrams and representations  
+
+---
+
+## 2. Strate opérationnelle (06-DATASET-CATAR)  
+## 2. Operational Layer (06-DATASET-CATAR)
+
+Le Subnet CATAR : dataset, API, validateurs, scoring, benchmark, outils, documentation.  
+The CATAR Subnet: dataset, API, validators, scoring, benchmark, tools, documentation.
+
+C’est la partie **exécutable**, reproductible et testable du Corpus.  
+This is the **executable**, reproducible, and testable part of the Corpus.
+
+---
+
+## 3. Strate d’entrée/sortie (README + SCHEMA)  
+## 3. Input/Output Layer (README + SCHEMA)
+
+Les documents maîtres qui permettent :  
+The master documents that allow:
+
+- de comprendre l’ensemble / understanding the whole  
+- de naviguer dans le dépôt / navigating the repository  
+- de transmettre le modèle / transmitting the model  
+
+Chaque dossier est autonome mais articulé dans une architecture cohérente.  
+Each folder is autonomous but integrated into a coherent architecture.
+
+---
+
+# 🗺️ Schéma global — Corpus‑CATAR (ASCII)  
+# 🗺️ Global Map — Corpus‑CATAR (ASCII)
+
+```
 Corpus-CATAR/
 │
-├── 01-CARRE-CATAR/              # Fondations conceptuelles du modèle CATAR
-│   ├── README.md                # Présentation du Carré CATAR
-│   └── ...                      # Textes, schémas, notes
-│
-├── 02-LE-DIVIN-PAR-MINOU/       # Métaphysique appliquée (Soije / Moije)
+├── 01-CARRE-CATAR/              # Fondations conceptuelles / Conceptual foundations
 │   ├── README.md
 │   └── ...
 │
-├── 03-DPHI/                     # D.Phi : équation universelle
+├── 02-LE-DIVIN-PAR-MINOU/       # Métaphysique Soije/Moije / Applied metaphysics
 │   ├── README.md
 │   └── ...
 │
-├── 04-PROTOCOLE-CODE-MINOU/     # Protocole de stabilisation cognitive (Code MINOU)
+├── 03-DPHI/                     # D.Phi : équation universelle / Universal equation
 │   ├── README.md
 │   └── ...
 │
-├── 05-CATAR-MODELES/            # Schémas, diagrammes, représentations du modèle CATAR
+├── 04-PROTOCOLE-CODE-MINOU/     # Protocole de stabilisation cognitive / Cognitive protocol
 │   ├── README.md
 │   └── ...
 │
-├── 06-DATASET-CATAR/            # Subnet CATAR : dataset, API, outils, docs
+├── 05-CATAR-MODELES/            # Schémas et représentations / Schemas and diagrams
+│   ├── README.md
+│   └── ...
+│
+├── 06-DATASET-CATAR/            # Subnet CATAR : dataset, API, outils, docs / Full operational layer
 │   │
 │   ├── prompts/                 # Prompts T‑XX (invariants, niveaux, variations)
 │   │   └── T-XX/...
 │   │
-│   ├── responses/               # Réponses brutes + curated
+│   ├── responses/               # Réponses brutes + curated / Raw + curated responses
 │   │   ├── raw/
 │   │   └── curated/
 │   │
-│   ├── scores/                  # Scores bruts + agrégés
+│   ├── scores/                  # Scores bruts + agrégés / Raw + aggregated scores
 │   │   ├── raw/
 │   │   └── aggregated/
 │   │
@@ -66,17 +98,17 @@ Corpus-CATAR/
 │   │   ├── figures/
 │   │   └── *.py
 │   │
-│   ├── api/                     # Spécifications API CATAR
+│   ├── api/                     # API CATAR (JSON + OpenAPI)
 │   │   ├── catar-api.json
 │   │   └── catar-openapi.yaml
 │   │
-│   ├── tools/                   # Outils développeur
+│   ├── tools/                   # Outils développeur / Developer tools
 │   │   ├── test_interactif.py
 │   │   ├── validate_dataset.py
 │   │   ├── compare_models.py
 │   │   └── export_csv.py
 │   │
-│   ├── docs/                    # Documentation technique complète
+│   ├── docs/                    # Documentation technique complète / Full technical documentation
 │   │   ├── dev-guide.md
 │   │   ├── dev-guide-quickstart.md
 │   │   ├── architecture.md
@@ -89,12 +121,24 @@ Corpus-CATAR/
 │   │   ├── contribute.md
 │   │   └── roadmap.md
 │   │
-│   ├── metadata/                # Schémas & métadonnées globales
+│   ├── metadata/                # Métadonnées globales / Global metadata
 │   │   ├── schema.json
 │   │   ├── dataset-info.json
 │   │   └── invariants-index.json
 │   │
-│   └── *.py                     # Scripts pipeline (generate, score, aggregate, etc.)
+│   └── *.py                     # Scripts pipeline (generate, score, aggregate…)
 │
-├── README.md                    # README maître (vue globale du Corpus‑CATAR)
-└── SCHEMA.md                    # Présent schéma ASCII global
+├── README.md                    # README maître / Main README
+└── SCHEMA.md                    # Présent schéma global / This global schema
+```
+
+---
+
+# 🏁 Licence / License
+
+Licence **CC‑BY 4.0**  
+© **Quatre CATAR**
+
+License **CC‑BY 4.0**  
+© **Quatre CATAR**
+
