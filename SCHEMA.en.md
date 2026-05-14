@@ -1,47 +1,62 @@
-🧭 Legend — How to read the global schema
+# 🧭 Global Schema — Corpus‑CATAR  
+*(EN — Structural Map)*
+
+This document presents the full structure of the **Corpus‑CATAR**, organized into three coherent layers.
+
+---
+
+# 🧭 Legend — How to Read the Global Map
+
 The Corpus‑CATAR is organized into three major layers:
 
-1. Conceptual Layer (01 → 05)
+---
+
+## 1. Conceptual Layer (01 → 05)
+
 The theoretical, metaphysical, and structural foundations of the CATAR model:
 
-cognitive invariants
+- cognitive invariants  
+- Soije / Moije  
+- D.Phi universal equation  
+- Code MINOU  
+- diagrams and representations  
 
-Soije/Moije
+---
 
-D.Phi universal equation
+## 2. Operational Layer (06-DATASET-CATAR)
 
-Code MINOU
-
-diagrams and conceptual models
-
-2. Operational Layer (06‑DATASET‑CATAR)
 The CATAR Subnet: dataset, API, validators, scoring, benchmark, tools, documentation.
-This is the executable, reproducible, testable part of the Corpus.
 
-3. Entry/Output Layer (README + SCHEMA)
+This is the **executable**, reproducible, and testable part of the Corpus.
+
+---
+
+## 3. Input/Output Layer (README + SCHEMA)
+
 The master documents that allow:
 
-understanding the whole system
+- understanding the whole  
+- navigating the repository  
+- transmitting the model  
 
-navigating the repository
+Each folder is autonomous but integrated into a coherent architecture.
 
-transmitting the model
+---
 
-Each folder is autonomous but articulated within a coherent architecture.
+# 🗺️ Global Map — Corpus‑CATAR (ASCII)
 
-🗺️ Global Schema — Corpus‑CATAR (ASCII)
-
+```
 Corpus-CATAR/
 │
 ├── 01-CARRE-CATAR/              # Conceptual foundations of the CATAR model
-│   ├── README.md                # Presentation of the CATAR Square
-│   └── ...                      # Texts, diagrams, notes
+│   ├── README.md
+│   └── ...
 │
 ├── 02-LE-DIVIN-PAR-MINOU/       # Applied metaphysics (Soije / Moije)
 │   ├── README.md
 │   └── ...
 │
-├── 03-DPHI/                     # D.Phi: the universal equation
+├── 03-DPHI/                     # D.Phi: universal equation
 │   ├── README.md
 │   └── ...
 │
@@ -49,7 +64,7 @@ Corpus-CATAR/
 │   ├── README.md
 │   └── ...
 │
-├── 05-CATAR-MODELES/            # Diagrams, models, visual representations
+├── 05-CATAR-MODELES/            # Schemas, diagrams, representations
 │   ├── README.md
 │   └── ...
 │
@@ -71,7 +86,7 @@ Corpus-CATAR/
 │   │   ├── figures/
 │   │   └── *.py
 │   │
-│   ├── api/                     # CATAR API specifications
+│   ├── api/                     # CATAR API (JSON + OpenAPI)
 │   │   ├── catar-api.json
 │   │   └── catar-openapi.yaml
 │   │
@@ -94,12 +109,20 @@ Corpus-CATAR/
 │   │   ├── contribute.md
 │   │   └── roadmap.md
 │   │
-│   ├── metadata/                # Global schemas & metadata
+│   ├── metadata/                # Global metadata
 │   │   ├── schema.json
 │   │   ├── dataset-info.json
 │   │   └── invariants-index.json
 │   │
-│   └── *.py                     # Pipeline scripts (generate, score, aggregate, etc.)
+│   └── *.py                     # Pipeline scripts (generate, score, aggregate…)
 │
-├── README.md                    # Master README (global overview of Corpus‑CATAR)
-└── SCHEMA.md                    # Global ASCII schema (this document)
+├── README.md                    # Main README
+└── SCHEMA.en.md                 # This global schema (English version)
+```
+
+---
+
+# 🏁 License
+
+This corpus is distributed under the **CC‑BY 4.0** license.  
+© **Quatre CATAR**
