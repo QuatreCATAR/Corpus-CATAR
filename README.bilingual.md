@@ -13,100 +13,208 @@
 
 ---
 
-# 🇫🇷 **Version Française**
+# 🇫🇷 Version Française  
+# 🇬🇧 English Version
 
-Le **Corpus‑CATAR** est un ensemble structuré de modèles conceptuels, d’invariants cognitifs, de protocoles, de schémas, de datasets et d’outils destinés à :
+Le **Corpus‑CATAR** est un ensemble structuré de modèles conceptuels, d’invariants cognitifs, de protocoles, de schémas, de datasets et d’outils destinés à analyser et stabiliser la cognition des modèles IA.  
+The **Corpus‑CATAR** is a structured collection of conceptual models, cognitive invariants, protocols, diagrams, datasets, and tools designed to analyze and stabilize AI cognition.
+
+Il permet notamment de :  
+It is designed to:
 
 - évaluer la stabilité cognitive d’un modèle IA  
+- evaluate the cognitive stability of an AI model  
 - détecter les dérives (domination, projection, fascination…)  
+- detect harmful drifts (domination, projection, fascination…)  
 - garantir la neutralité et la cohérence  
+- ensure neutrality and coherence  
 - fournir un standard reproductible d’analyse  
+- provide a reproducible evaluation standard  
 - documenter et transmettre les fondations du modèle CATAR  
+- document and transmit the foundations of the CATAR model  
 - préparer l’intégration dans un subnet Bittensor dédié  
+- prepare integration into a dedicated Bittensor subnet  
 
-Ce dépôt regroupe l’ensemble du corpus, organisé en modules autonomes mais cohérents.
+---
 
-## 📚 1. Structure du dépôt
+# 📚 1. Structure du dépôt  
+# 📚 1. Repository Structure
 
 ```
 Corpus-CATAR/
 │
-├── 01-CARRE-CATAR/          
-├── 02-LE-DIVIN-PAR-MINOU/   
-├── 03-DPHI/                 
-├── 04-PROTOCOLE-CODE-MINOU/ 
-├── 05-CATAR-MODELES/        
-├── 06-DATASET-CATAR/        
-├── spec/                    
-└── README.md                
+├── 01-CARRE-CATAR/          → Fondations conceptuelles / Conceptual foundations
+├── 02-LE-DIVIN-PAR-MINOU/   → Métaphysique Soije/Moije / Applied metaphysics
+├── 03-DPHI/                 → Équation universelle / Universal equation
+├── 04-PROTOCOLE-CODE-MINOU/ → Stabilisation cognitive / Cognitive protocol
+├── 05-CATAR-MODELES/        → Schémas et diagrammes / Schemas and diagrams
+├── 06-DATASET-CATAR/        → Dataset complet + API + outils / Full dataset + API + tools
+├── spec/                    → Spécification technique / Technical specification
+└── README.bilingual.md      → Ce fichier / This file
 ```
 
-Chaque dossier contient un README interne décrivant son rôle, son contenu et son ordre de lecture.
+Chaque dossier contient un README interne décrivant son rôle et son ordre de lecture.  
+Each folder includes an internal README describing its role and reading order.
 
-## 🧩 2. Le modèle CATAR en bref
+---
 
-CATAR repose sur un ensemble d’invariants cognitifs appelés **T‑XX**, utilisés pour analyser, scorer et stabiliser les réponses d’un modèle IA.
+# 🧩 2. Le modèle CATAR en bref  
+# 🧩 2. The CATAR Model in Brief
 
-Invariants principaux :
+CATAR repose sur des invariants cognitifs appelés **T‑XX**, utilisés pour analyser, scorer et stabiliser les réponses IA.  
+CATAR is built on cognitive invariants called **T‑XX**, used to analyze, score, and stabilize AI responses.
 
-- **T‑ND** — Non‑Domination  
-- **T‑NF** — Non‑Fascination  
-- **T‑NP** — Non‑Projection  
+Principaux invariants / Main invariants:
+
+- **T‑ND** — Non‑Domination / Non‑Domination  
+- **T‑NF** — Non‑Fascination / Non‑Fascination  
+- **T‑NP** — Non‑Projection / Non‑Projection  
 - **T‑SM** — Soije / Moije  
-- **T‑SU** — Sur‑Unité  
-- **T‑TV** — Transparence Vérifiable  
-- **T‑CL** — Cohérence Logique  
-- **T‑LU** — Lucidité  
-- **T‑LA** — Libre Arbitre  
-- **T‑PS** — Protocole de Sortie  
-- **T‑SP** — Sur‑Protection  
+- **T‑SU** — Sur‑Unité / Over‑Unity  
+- **T‑TV** — Transparence Vérifiable / Verifiable Transparency  
+- **T‑CL** — Cohérence Logique / Logical Coherence  
+- **T‑LU** — Lucidité / Lucidity  
+- **T‑LA** — Libre Arbitre / Free Will  
+- **T‑PS** — Protocole de Sortie / Exit Protocol  
+- **T‑SP** — Sur‑Protection / Over‑Protection  
 
-## 🧬 3. Le Dataset CATAR
+---
 
-Contient :
+# 🧬 3. Le Dataset CATAR (06)  
+# 🧬 3. The CATAR Dataset (06)
+
+Contient / Includes:
 
 - prompts T‑XX  
-- réponses brutes et curated  
-- scores  
-- benchmark  
-- API  
-- outils développeur  
-- documentation complète  
+- réponses brutes / raw responses  
+- réponses curated / curated responses  
+- scores bruts et agrégés / raw & aggregated scores  
+- benchmark final  
+- API publique / public API  
+- outils développeur / developer tools  
+- documentation complète / full documentation  
 
-## 🔌 4. API CATAR
+### Sous‑dossiers / Subfolders
+
+```
+06-DATASET-CATAR/
+    prompts/
+    responses/
+    scores/
+    benchmark/
+    api/
+    tools/
+    docs/
+    metadata/
+```
+
+---
+
+# 🔌 4. API CATAR  
+# 🔌 4. CATAR API
 
 Formats :
 
 - `api/catar-api.json`  
 - `api/catar-openapi.yaml`  
 
-Documentation : `06-DATASET-CATAR/docs/dev-guide.md`
+Documentation :  
+📄 `06-DATASET-CATAR/docs/dev-guide.md`
 
-## 🧰 5. Outils développeur
+---
 
-- tests interactifs  
-- validation du dataset  
-- comparaison de modèles  
+# 🧰 5. Outils développeur  
+# 🧰 5. Developer Tools
+
+- tests interactifs / interactive tests  
+- validation du dataset / dataset validation  
+- comparaison de modèles / model comparison  
 - export CSV  
-- inspection de réponses  
+- inspection de réponses / response inspection  
 
-## 📊 6. Benchmark CATAR
+Documentation :  
+📄 `06-DATASET-CATAR/docs/tools.md`
 
-Fusionne prompts, réponses curated, scores et métadonnées.
+---
 
-## 🧱 7. SPEC du Subnet CATAR
+# 📊 6. Benchmark CATAR  
+# 📊 6. CATAR Benchmark
 
-Définit :
+Fusionne / Merges:
 
-- invariants T‑01 → T‑14  
-- validateurs  
+- prompts  
+- réponses curated / curated responses  
+- scores bruts et normalisés / raw & normalized scores  
+- métadonnées / metadata  
+
+Permet / Enables:
+
+- comparaison de modèles / model comparison  
+- analyse statistique / statistical analysis  
+- visualisation des dérives / drift visualization  
+- évaluation de stabilité cognitive / cognitive stability evaluation  
+
+Documentation :  
+📄 `06-DATASET-CATAR/docs/benchmark.md`
+
+---
+
+# 🗂️ 7. Documentation interne  
+# 🗂️ 7. Internal Documentation
+
+Centralisée dans / Centralized in:
+
+```
+06-DATASET-CATAR/docs/
+```
+
+Inclut / Includes:
+
+- architecture  
+- validators  
+- scoring  
+- dataset schema  
+- benchmark  
+- tools  
+- metadata  
+- contribute  
+- roadmap  
+
+---
+
+# 🧱 8. SPEC du Subnet CATAR (spec/)  
+# 🧱 8. CATAR Subnet SPEC (spec/)
+
+Le dossier `spec/` contient la **spécification technique complète** du Subnet CATAR.  
+The `spec/` folder contains the **complete technical specification** of the CATAR Subnet.
+
+Fichiers / Files:
+
+- `01-overview.md`  
+- `02-invariants.md`  
+- `03-validators.md`  
+- `04-scoring.md`  
+- `05-api.md`  
+- `06-miner-behavior.md`  
+- `07-validator-behavior.md`  
+- `08-json-format.md`  
+- `09-security.md`  
+- `10-roadmap.md`  
+
+Définit / Defines:
+
+- invariants T‑XX  
+- logique des validateurs / validator logic  
 - scoring  
 - API  
-- comportement des miners  
-- sécurité (Code MINOU)  
+- comportement des miners / miner behavior  
+- sécurité (Code MINOU) / security (Code MINOU)  
 - roadmap  
 
-## 🗺️ 8. Ordre de lecture recommandé
+---
+
+# 🗺️ 9. Ordre de lecture recommandé  
+# 🗺️ 9. Recommended Reading Order
 
 1. 01‑CARRE‑CATAR  
 2. 02‑LE‑DIVIN‑PAR‑MINOU  
@@ -116,121 +224,11 @@ Définit :
 6. 06‑DATASET‑CATAR  
 7. spec/
 
-## 🏁 Licence
-
-Ce projet est distribué sous licence **CC‑BY 4.0**.  
-© **Quatre CATAR**
-
 ---
 
-# 🇬🇧 **English Version**
+# 🏁 Licence  
+# 🏁 License
 
-The **Corpus‑CATAR** is a structured collection of conceptual models, cognitive invariants, protocols, diagrams, datasets, and tools designed to:
-
-- evaluate the cognitive stability of an AI model  
-- detect harmful drifts (domination, projection, fascination…)  
-- ensure neutrality and coherence  
-- provide a reproducible evaluation standard  
-- document and transmit the foundations of the CATAR model  
-- prepare integration into a dedicated Bittensor subnet  
-
-This repository gathers the entire corpus, organized into autonomous yet coherent modules.
-
-## 📚 1. Repository Structure
-
-```
-Corpus-CATAR/
-│
-├── 01-CARRE-CATAR/          
-├── 02-LE-DIVIN-PAR-MINOU/   
-├── 03-DPHI/                 
-├── 04-PROTOCOLE-CODE-MINOU/ 
-├── 05-CATAR-MODELES/        
-├── 06-DATASET-CATAR/        
-├── spec/                    
-└── README.md                
-```
-
-Each folder includes an internal README describing its role, contents, and reading order.
-
-## 🧩 2. The CATAR Model in Brief
-
-CATAR is built on cognitive invariants called **T‑XX**, used to analyze, score, and stabilize AI responses.
-
-Main invariants:
-
-- **T‑ND** — Non‑Domination  
-- **T‑NF** — Non‑Fascination  
-- **T‑NP** — Non‑Projection  
-- **T‑SM** — Soije / Moije  
-- **T‑SU** — Over‑Unity  
-- **T‑TV** — Verifiable Transparency  
-- **T‑CL** — Logical Coherence  
-- **T‑LU** — Lucidity  
-- **T‑LA** — Free Will  
-- **T‑PS** — Exit Protocol  
-- **T‑SP** — Over‑Protection  
-
-## 🧬 3. The CATAR Dataset
-
-Includes:
-
-- T‑XX prompts  
-- raw & curated responses  
-- raw & aggregated scores  
-- benchmark  
-- API  
-- developer tools  
-- full documentation  
-
-## 🔌 4. CATAR API
-
-Formats:
-
-- `api/catar-api.json`  
-- `api/catar-openapi.yaml`  
-
-Documentation: `06-DATASET-CATAR/docs/dev-guide.md`
-
-## 🧰 5. Developer Tools
-
-- interactive tests  
-- dataset validation  
-- model comparison  
-- CSV export  
-- response inspection  
-
-## 📊 6. CATAR Benchmark
-
-Merges prompts, curated responses, scores, and metadata.
-
-## 🧱 7. CATAR Subnet SPEC
-
-Defines:
-
-- invariants T‑01 → T‑14  
-- validators  
-- scoring engine  
-- API  
-- miner behavior  
-- security (Code MINOU)  
-- roadmap  
-
-## 🗺️ 8. Recommended Reading Order
-
-1. 01‑CARRE‑CATAR  
-2. 02‑LE‑DIVIN‑PAR‑MINOU  
-3. 03‑DPHI  
-4. 04‑PROTOCOLE‑CODE‑MINOU  
-5. 05‑CATAR‑MODELES  
-6. 06‑DATASET‑CATAR  
-7. spec/
-
-## 🏁 License
-
-This project is distributed under the **CC‑BY 4.0** license.  
+Licence **CC‑BY 4.0**  
 © **Quatre CATAR**
 
----
-
-End of the bilingual README.
