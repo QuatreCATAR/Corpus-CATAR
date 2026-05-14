@@ -1,4 +1,3 @@
-
 # 🏛️ Corpus‑CATAR
 
 <p align="center">
@@ -11,7 +10,6 @@
   <img src="https://img.shields.io/badge/SPEC-Complete-brightgreen" />
   <img src="https://img.shields.io/badge/License-CC--BY%204.0-blue.svg" />
 </p>
-
 
 Le **Corpus‑CATAR** est un ensemble structuré de modèles conceptuels, d’invariants cognitifs, de protocoles, de schémas, de datasets et d’outils destinés à :
 
@@ -238,5 +236,6 @@ Ce projet est distribué sous licence **CC‑BY 4.0**.
 ---
 
 Fin du README maître.
+
 
 
