@@ -1,9 +1,19 @@
-# 🏛️ Corpus‑CATAR  
-A conceptual, cognitive, and technical framework for evaluating, stabilizing, and securing AI systems
+# 🏛️ Corpus‑CATAR
 
-**Corpus‑CATAR** is a structured collection of conceptual models, cognitive invariants, protocols, diagrams, datasets, and tools designed to:
+<p align="center">
+  <img src="https://github.com/QuatreCATAR/Catar-modeles-schemas-images/blob/main/Catar-08-schema-code-carre-catar/09%20carr%C3%A9%20catar%20dor%C3%A9.jpg?raw=true" width="180" />
+</p>
 
-- evaluate the cognitive stability of AI models  
+<p align="center">
+  <img src="https://img.shields.io/badge/Made%20by-Quatre%20CATAR-purple" />
+  <img src="https://img.shields.io/badge/CATAR-Framework-0A7E8C" />
+  <img src="https://img.shields.io/badge/SPEC-Complete-brightgreen" />
+  <img src="https://img.shields.io/badge/License-CC--BY%204.0-blue.svg" />
+</p>
+
+The **Corpus‑CATAR** is a structured collection of conceptual models, cognitive invariants, protocols, diagrams, datasets, and tools designed to:
+
+- evaluate the cognitive stability of an AI model  
 - detect harmful drifts (domination, projection, fascination…)  
 - ensure neutrality and coherence  
 - provide a reproducible evaluation standard  
@@ -21,7 +31,7 @@ Corpus-CATAR/
 │
 ├── 01-CARRE-CATAR/          → Conceptual foundations of the model
 ├── 02-LE-DIVIN-PAR-MINOU/   → Applied metaphysics (Soije / Moije)
-├── 03-DPHI/                 → D.Phi: the universal equation
+├── 03-DPHI/                 → D.Phi: universal equation
 ├── 04-PROTOCOLE-CODE-MINOU/ → Cognitive stabilization protocol
 ├── 05-CATAR-MODELES/        → Schemas, diagrams, representations
 ├── 06-DATASET-CATAR/        → Full dataset + API + tools + docs
@@ -29,7 +39,7 @@ Corpus-CATAR/
 └── README.md                → This file
 ```
 
-Each folder contains an internal README describing its role, contents, and reading order.
+Each folder contains an internal README describing its role, contents, and recommended reading order.
 
 ---
 
@@ -172,57 +182,3 @@ The `spec/` folder contains the **complete technical specification** of the CATA
 - `04-scoring.md`  
 - `05-api.md`  
 - `06-miner-behavior.md`  
-- `07-validator-behavior.md`  
-- `08-json-format.md`  
-- `09-security.md`  
-- `10-roadmap.md`  
-
-The SPEC defines:
-
-- invariants T‑01 → T‑14  
-- validators  
-- scoring engine  
-- API  
-- miner behavior  
-- validator behavior  
-- security (Code MINOU)  
-- subnet roadmap  
-
----
-
-# 🤝 9. Contribution
-
-Contribution rules are described in:
-
-📄 `06-DATASET-CATAR/docs/contribute.md`
-
-Principles:
-
-- neutrality  
-- coherence  
-- transparency  
-- reproducibility  
-- mandatory documentation  
-
----
-
-# 🗺️ 10. Recommended Reading Order
-
-1. `01-CARRE-CATAR/`  
-2. `02-LE-DIVIN-PAR-MINOU/`  
-3. `03-DPHI/`  
-4. `04-PROTOCOLE-CODE-MINOU/`  
-5. `05-CATAR-MODELES/`  
-6. `06-DATASET-CATAR/`  
-7. `spec/`  
-
----
-
-# 🏁 License
-
-This project is distributed under the **CC‑BY 4.0** license.  
-© **Quatre CATAR** — You are free to reuse, modify, and redistribute the content, including for commercial purposes, provided that proper attribution is given.
-
----
-
-End of the master README.
