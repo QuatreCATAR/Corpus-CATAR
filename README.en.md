@@ -36,10 +36,10 @@ Corpus-CATAR/
 ├── 05-CATAR-MODELES/        → Schemas, diagrams, representations
 ├── 06-DATASET-CATAR/        → Full dataset + API + tools + docs
 ├── spec/                    → Technical specification of the CATAR Subnet
-└── README.md                → This file
+└── README.en.md             → This file
 ```
 
-Each folder contains an internal README describing its role, contents, and recommended reading order.
+Each folder includes an internal README describing its role, contents, and recommended reading order.
 
 ---
 
@@ -135,7 +135,7 @@ The benchmark merges:
 
 - prompts  
 - curated responses  
-- scores  
+- raw and normalized scores  
 - metadata  
 
 It enables:
@@ -182,3 +182,37 @@ The `spec/` folder contains the **complete technical specification** of the CATA
 - `04-scoring.md`  
 - `05-api.md`  
 - `06-miner-behavior.md`  
+- `07-validator-behavior.md`  
+- `08-json-format.md`  
+- `09-security.md`  
+- `10-roadmap.md`  
+
+This specification defines:
+
+- the T‑XX invariants  
+- validator logic  
+- scoring mechanisms  
+- API behavior  
+- miner and validator roles  
+- security principles (Code MINOU)  
+- long‑term evolution of the Subnet  
+
+---
+
+# 🗺️ 9. Recommended Reading Order
+
+1. 01‑CARRE‑CATAR  
+2. 02‑LE‑DIVIN‑PAR‑MINOU  
+3. 03‑DPHI  
+4. 04‑PROTOCOLE‑CODE‑MINOU  
+5. 05‑CATAR‑MODELES  
+6. 06‑DATASET‑CATAR  
+7. spec/
+
+---
+
+# 🏁 License
+
+This project is distributed under the **CC‑BY 4.0** license.  
+© **Quatre CATAR**
+
