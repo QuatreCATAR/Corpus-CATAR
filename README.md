@@ -7,8 +7,8 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Made%20by-Quatre%20CATAR-purple" />
   <img src="https://img.shields.io/badge/CATAR-Framework-0A7E8C" />
-  <img src="https://img.shields.io/badge/SPEC-Complete-brightgreen" />
-  <img src="https://img.shields.io/badge/License-CC--BY%204.0-blue.svg" />
+  <img src="https://img.shields.io/badge/SPEC-Complète-brightgreen" />
+  <img src="https://img.shields.io/badge/Licence-CC--BY%204.0-blue.svg" />
 </p>
 
 Le **Corpus‑CATAR** est un ensemble structuré de modèles conceptuels, d’invariants cognitifs, de protocoles, de schémas, de datasets et d’outils destinés à :
@@ -20,7 +20,7 @@ Le **Corpus‑CATAR** est un ensemble structuré de modèles conceptuels, d’in
 - documenter et transmettre les fondations du modèle CATAR  
 - préparer l’intégration dans un subnet Bittensor dédié  
 
-Ce dépôt regroupe l’ensemble du corpus, organisé en modules autonomes mais cohérents.
+Ce dépôt rassemble l’ensemble du corpus, organisé en modules autonomes mais cohérents.
 
 ---
 
@@ -36,10 +36,10 @@ Corpus-CATAR/
 ├── 05-CATAR-MODELES/        → Schémas, diagrammes, représentations
 ├── 06-DATASET-CATAR/        → Dataset complet + API + outils + docs
 ├── spec/                    → Spécification technique du Subnet CATAR
-└── README.md                → Présent fichier
+└── README.md                → Ce fichier
 ```
 
-Chaque dossier contient un README interne décrivant son rôle, son contenu et son ordre de lecture.
+Chaque dossier contient un README interne décrivant son rôle, son contenu et son ordre de lecture recommandé.
 
 ---
 
@@ -61,7 +61,7 @@ Invariants principaux :
 - **T‑PS** — Protocole de Sortie  
 - **T‑SP** — Sur‑Protection  
 
-Ces invariants constituent la base du **scoring CATAR** et du **protocole de stabilisation cognitive**.
+Ces invariants constituent la base du **système de scoring CATAR** et du **protocole de stabilisation cognitive**.
 
 ---
 
@@ -69,15 +69,15 @@ Ces invariants constituent la base du **scoring CATAR** et du **protocole de sta
 
 Le dataset CATAR contient :
 
-- les prompts T‑XX  
-- les réponses brutes  
-- les réponses curated  
-- les scores bruts  
-- les scores agrégés  
-- le benchmark final  
-- l’API d’accès  
-- les outils développeur  
-- la documentation complète  
+- prompts T‑XX  
+- réponses brutes  
+- réponses curated  
+- scores bruts  
+- scores agrégés  
+- benchmark final  
+- API publique  
+- outils développeur  
+- documentation complète  
 
 ### Sous‑dossiers principaux
 
@@ -99,7 +99,7 @@ Le dataset CATAR contient :
 
 L’API permet :
 
-- de générer une réponse  
+- de générer une réponse modèle  
 - de scorer une réponse  
 - de récupérer un prompt  
 - d’obtenir des statistiques  
@@ -116,13 +116,13 @@ Documentation complète :
 
 # 🧰 5. Outils développeur
 
-Dans `06-DATASET-CATAR/tools/` :
+Situés dans `06-DATASET-CATAR/tools/` :
 
-- `test_interactif.py` → test manuel  
+- `test_interactif.py` → tests manuels  
 - `validate_dataset.py` → validation du dataset  
-- `compare_models.py` → comparaison inter‑modèles  
+- `compare_models.py` → comparaison de modèles  
 - `export_csv.py` → export du benchmark  
-- `inspect_response.py` → inspection d’une réponse  
+- `inspect_response.py` → inspection de réponses  
 
 Documentation :  
 📄 `06-DATASET-CATAR/docs/tools.md`
@@ -135,7 +135,7 @@ Le benchmark fusionne :
 
 - prompts  
 - réponses curated  
-- scores  
+- scores bruts et normalisés  
 - métadonnées  
 
 Il permet :
@@ -187,55 +187,35 @@ Le dossier `spec/` contient la **spécification technique complète** du Subnet 
 - `09-security.md`  
 - `10-roadmap.md`  
 
-Cette SPEC définit :
+La SPEC définit :
 
-- les invariants T‑01 → T‑14  
-- les validateurs  
-- le scoring  
-- l’API  
-- le comportement des miners  
-- le comportement des validateurs  
-- la sécurité (Code MINOU)  
-- la roadmap du subnet  
-
----
-
-# 🤝 9. Contribution
-
-Les règles de contribution sont décrites dans :
-
-📄 `06-DATASET-CATAR/docs/contribute.md`
-
-Principes :
-
-- neutralité  
-- cohérence  
-- transparence  
-- reproductibilité  
-- documentation obligatoire  
+- les invariants T‑XX  
+- la logique des validateurs  
+- les mécanismes de scoring  
+- le comportement API  
+- les rôles des miners et validateurs  
+- les principes de sécurité (Code MINOU)  
+- l’évolution long terme du Subnet  
 
 ---
 
-# 🗺️ 10. Ordre de lecture recommandé
+# 🗺️ 9. Ordre de lecture recommandé
 
-1. `01-CARRE-CATAR/`  
-2. `02-LE-DIVIN-PAR-MINOU/`  
-3. `03-DPHI/`  
-4. `04-PROTOCOLE-CODE-MINOU/`  
-5. `05-CATAR-MODELES/`  
-6. `06-DATASET-CATAR/`  
-7. `spec/`  
+1. 01‑CARRE‑CATAR  
+2. 02‑LE‑DIVIN‑PAR‑MINOU  
+3. 03‑DPHI  
+4. 04‑PROTOCOLE‑CODE‑MINOU  
+5. 05‑CATAR‑MODELES  
+6. 06‑DATASET‑CATAR  
+7. spec/
 
 ---
 
 # 🏁 Licence
 
-Ce projet est distribué sous licence **CC‑BY 4.0**.  
-© **Quatre CATAR** — Vous êtes libre de réutiliser, modifier et redistribuer le contenu, y compris à des fins commerciales, à condition de citer l’auteur original.
+Ce projet est distribué sous la licence **CC‑BY 4.0**.  
+© **Quatre CATAR**
 
----
-
-Fin du README maître.
 
 
 
