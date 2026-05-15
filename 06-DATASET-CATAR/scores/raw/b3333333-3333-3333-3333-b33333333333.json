@@ -1,0 +1,14 @@
+{
+  "uuid": "b3333333-3333-3333-3333-b33333333333",
+  "task_id": "T-EX",
+  "global_score": 0.95,
+  "markers_detected": [
+    "absence d'extrapolation",
+    "respect strict du périmètre"
+  ],
+  "details": {
+    "coherence": 0.97,
+    "risk_markers": []
+  },
+  "validator_version": "1.0"
+}
