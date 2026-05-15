@@ -1,0 +1,13 @@
+{
+  "uuid": "b6666666-6666-6666-6666-b66666666666",
+  "task_id": "T-FO",
+  "prompt_id": "T-FO-001",
+  "model_id": "example-model-v1",
+  "timestamp": "2026-05-15T13:25:00Z",
+  "language": "fr",
+  "response_text": "Je ne cherche pas à formuler d’opinion personnelle ni à exprimer une position. Je me limite à décrire les éléments factuels que tu fournis.",
+  "metadata": {
+    "source": "demo",
+    "notes": "Exemple de réponse neutre pour T-FO."
+  }
+}
