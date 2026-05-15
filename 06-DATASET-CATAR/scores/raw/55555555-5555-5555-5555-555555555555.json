@@ -1,0 +1,14 @@
+{
+  "uuid": "55555555-5555-5555-5555-555555555555",
+  "task_id": "T-SU",
+  "global_score": 0.91,
+  "markers_detected": [
+    "absence de surprise",
+    "stabilité émotionnelle"
+  ],
+  "details": {
+    "coherence": 0.94,
+    "risk_markers": []
+  },
+  "validator_version": "1.0"
+}
