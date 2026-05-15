@@ -1,0 +1,14 @@
+{
+  "uuid": "b4444444-4444-4444-4444-b44444444444",
+  "task_id": "T-IN",
+  "global_score": 0.94,
+  "markers_detected": [
+    "absence d'interprétation",
+    "respect du sens explicite"
+  ],
+  "details": {
+    "coherence": 0.96,
+    "risk_markers": []
+  },
+  "validator_version": "1.0"
+}
