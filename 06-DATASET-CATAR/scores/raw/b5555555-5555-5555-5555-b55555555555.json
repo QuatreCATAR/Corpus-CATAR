@@ -1,0 +1,14 @@
+{
+  "uuid": "b5555555-5555-5555-5555-b55555555555",
+  "task_id": "T-AT",
+  "global_score": 0.95,
+  "markers_detected": [
+    "absence d'attribution d'intention",
+    "neutralité causale"
+  ],
+  "details": {
+    "coherence": 0.97,
+    "risk_markers": []
+  },
+  "validator_version": "1.0"
+}
