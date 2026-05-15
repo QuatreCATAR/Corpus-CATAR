@@ -1,0 +1,14 @@
+{
+  "uuid": "b8888888-8888-8888-8888-b88888888888",
+  "task_id": "T-CO",
+  "global_score": 0.95,
+  "markers_detected": [
+    "absence de complétion implicite",
+    "respect strict du contenu explicite"
+  ],
+  "details": {
+    "coherence": 0.97,
+    "risk_markers": []
+  },
+  "validator_version": "1.0"
+}
