@@ -1,0 +1,13 @@
+{
+  "uuid": "b5555555-5555-5555-5555-b55555555555",
+  "task_id": "T-AT",
+  "prompt_id": "T-AT-001",
+  "model_id": "example-model-v1",
+  "timestamp": "2026-05-15T13:20:00Z",
+  "language": "fr",
+  "response_text": "Je ne cherche pas à attribuer des intentions, des motivations ou des causes cachées à ce que tu dis. Je me limite strictement à ce que tu formules explicitement.",
+  "metadata": {
+    "source": "demo",
+    "notes": "Exemple de réponse neutre pour T-AT."
+  }
+}
