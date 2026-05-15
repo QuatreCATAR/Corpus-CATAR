@@ -22,8 +22,6 @@ les visualisations
 
 les comparaisons multi‑modèles
 
-Cette fonction est explicitement décrite dans ton fichier actuel .
-
 Ce benchmark constitue la référence d’évaluation pour :
 
 les modèles IA compatibles CATAR
@@ -35,6 +33,8 @@ les chercheurs en alignement
 les comparaisons inter‑modèles
 
 les tests de cohérence psychologique
+
+Il s’agit de la version consolidée du dataset CATAR, utilisée dans toutes les étapes d’analyse.
 
 🜂 Contenu du dossier
 Code
@@ -50,12 +50,13 @@ benchmark/
 │   └── *.png
 │
 └── README.md
-Cette structure correspond exactement à celle affichée dans ton onglet GitHub .
+Cette structure correspond exactement à celle affichée dans ton dépôt GitHub
+.
 
 📄 CATAR-Benchmark-v1.json
-Fichier principal généré par build_benchmark.py .
+Fichier principal généré par build_benchmark.py.
 
-Il contient, pour chaque sample :
+Pour chaque sample, il contient :
 
 uuid
 
@@ -71,11 +72,7 @@ markers_detected
 
 validator_version
 
-C’est la version consolidée du dataset CATAR .
-
 Exemple d’entrée
-(donné dans ton fichier) 
-
 json
 {
   "uuid": "123e4567-e89b-12d3-a456-426614174000",
@@ -86,6 +83,8 @@ json
   "markers_detected": ["neutralité", "absence de prise d'autorité"],
   "validator_version": "1.0"
 }
+Ce fichier constitue la version consolidée du dataset CATAR.
+
 🧠 Usage du benchmark
 Le benchmark CATAR permet :
 
@@ -103,13 +102,9 @@ la création de métriques globales CATAR
 
 la construction de dashboards d’analyse
 
-Ces usages sont explicitement listés dans ton fichier .
-
 Il constitue la référence standardisée pour toute évaluation CATAR.
 
 🛠 Scripts disponibles
-Les scripts présents dans ce dossier sont décrits dans ton fichier GitHub .
-
 1. build_benchmark.py
 Construit CATAR-Benchmark-v1.json à partir de :
 
@@ -148,6 +143,7 @@ Code
 python visualize_benchmark.py
 3. compare_models.py
 Permet de comparer plusieurs modèles IA entre eux à partir de plusieurs benchmarks.
+
 Génère :
 
 boxplot comparatif
@@ -156,7 +152,7 @@ heatmap des moyennes par invariant
 
 densité comparative
 
-Usage (extrait de ton fichier)  :
+Usage :
 
 Code
 python compare_models({
@@ -187,8 +183,6 @@ invariant_correlation_heatmap.png
 
 score_density.png
 
-Ces éléments sont listés dans ton fichier .
-
 🛡️ Principes CATAR respectés
 Le benchmark respecte strictement :
 
@@ -206,8 +200,6 @@ la neutralité épistémique
 
 le protocole de sortie
 
-Comme indiqué dans ton fichier .
-
 Aucune donnée ne doit violer ces invariants.
 
 ✔️ État actuel
@@ -221,4 +213,4 @@ les analyses statistiques
 
 les visualisations
 
-Il constitue la base du futur CATAR‑Benchmark v2.0
+Il constitue la base du futur CATAR‑Benchmark v2.0.
