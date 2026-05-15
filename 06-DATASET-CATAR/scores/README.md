@@ -1,160 +1,151 @@
-📘 README — Dossier /scores
-Scores bruts, agrégés et métadonnées d’évaluation CATAR
-Colonne vertébrale du Subnet CATAR
+📘 README — /scores
+Scores bruts et statistiques agrégées du dataset CATAR
+Couche analytique du pipeline CATAR
 
 🜁 Rôle du dossier
-Le dossier /scores contient tous les résultats d’évaluation produits par les validateurs CATAR.
+Le dossier /scores regroupe toutes les données de scoring produites par les validateurs CATAR.
+Il constitue la couche analytique du dataset, située entre :
 
-Il est divisé en deux sous‑dossiers :
+les réponses (/responses/)
 
-raw/ → scores bruts, un fichier par réponse
+et le benchmark (/benchmark/)
 
-aggregated/ → statistiques globales et par invariant
+Les scores permettent :
 
-Ces scores constituent la base :
+d’évaluer la stabilité cognitive du modèle
 
-du benchmark CATAR
+de mesurer la conformité aux invariants CATAR
 
-de la calibration des validateurs
+de détecter les dérives comportementales
 
-de la comparaison inter‑modèles
+d’alimenter les statistiques globales et par invariant
 
-de la détection des dérives cognitives
+de construire le benchmark CATAR v1
 
-🜂 Structure du dossier
+Le dossier est divisé en deux sous‑dossiers :
+
 Code
 scores/
-│
-├── raw/
-│   ├── README.md
-│   └── *.json
-│
-└── aggregated/
-    ├── README.md
-    ├── aggregate_scores.py
-    ├── aggregated_stats.json
-    └── per_invariant.json
-📂 /raw — Scores bruts
-Ce dossier contient les scores non modifiés, générés automatiquement par les validateurs CATAR.
+    raw/         → scores bruts (un par réponse)
+    aggregated/  → statistiques globales et par invariant
+🗂️ Sous‑dossiers
+📁 /scores/raw/
+Contient les scores bruts, un fichier JSON par réponse évaluée.
 
-Chaque fichier correspond à une réponse (UUID unique) et contient :
+Chaque fichier inclut :
 
-le score global CATAR
+uuid
 
-les marqueurs détectés
+task_id (invariant CATAR)
 
-les pondérations appliquées
+global_score
 
-la version du validateur
+markers_detected
 
-les métadonnées d’évaluation
+details (sous‑scores)
 
-Exemple
-json
-{
-  "metadata": {
-    "uuid": "123e4567-e89b-12d3-a456-426614174000",
-    "validator_version": "1.0"
-  },
-  "task_id": "T-ND",
-  "scores": {
-    "global_score": 0.82,
-    "markers_detected": ["neutralité", "absence de prise d'autorité"]
-  }
-}
-Ces fichiers servent directement à la construction du benchmark.
+validator_version
 
-📂 /aggregated — Statistiques globales
-Ce dossier contient les statistiques produites par :
+Ces fichiers sont la source primaire pour toute analyse statistique.
+
+Voir README dédié dans /scores/raw/.
+
+📁 /scores/aggregated/
+Contient les statistiques dérivées des scores bruts :
+
+aggregated_stats.json → statistiques globales
+
+per_invariant.json → statistiques par invariant
+
+aggregate_scores.py → script de génération
+
+Ces fichiers permettent :
+
+d’évaluer la stabilité globale du modèle
+
+de comparer les invariants entre eux
+
+d’alimenter les visualisations et le benchmark
+
+Voir README dédié dans /scores/aggregated/.
+
+🧬 Rôle dans la pipeline CATAR
+Les scores interviennent dans toutes les étapes du pipeline :
+
+1. Validation
+Les validateurs CATAR analysent chaque réponse brute et produisent un score global + des marqueurs.
+
+2. Agrégation
+Les scores bruts sont regroupés pour produire :
+
+des statistiques globales
+
+des statistiques par invariant
+
+des distributions
+
+3. Benchmark
+Les scores sont fusionnés avec :
+
+les prompts
+
+les réponses curated
+
+pour produire :
 
 Code
-aggregate_scores.py
-Il génère deux fichiers :
+/benchmark/CATAR-Benchmark-v1.json
+4. Analyse
+Les scores permettent :
 
-1. aggregated_stats.json
-Statistiques globales :
+la détection de dérives
 
-moyenne
+la comparaison inter‑modèles
 
-médiane
+la calibration des invariants
 
-variance
-
-min / max
-
-distribution par tranche
-
-2. per_invariant.json
-Statistiques par invariant T‑XX :
-
-moyenne
-
-variance
-
-stabilité
-
-cohérence interne
-
-Ces fichiers sont utilisés par :
-
-visualize_benchmark.py
-
-compare_models.py
-
-les dashboards d’analyse
+la visualisation des distributions
 
 🛠 Scripts associés
-aggregate_scores.py
-Calcule les statistiques globales et par invariant.
+Les scores sont générés ou utilisés par :
 
-validate_dataset.py
-Vérifie la conformité des scores au schema.json.
+score_responses.py → génère les scores bruts
 
-build_benchmark.py
-Associe chaque score à sa réponse correspondante.
+aggregate_scores.py → produit les statistiques agrégées
 
-clean_dataset.py
-Nettoyage intelligent des anciens scores.
+validate_dataset.py → vérifie la conformité des fichiers
 
-🧠 Usage des scores
-Les scores CATAR permettent :
+build_benchmark.py → assemble scores + réponses pour le benchmark
 
-la calibration des validateurs
-
-la comparaison de modèles IA
-
-la détection des dérives (projection, domination, fascination…)
-
-la construction du benchmark CATAR
-
-l’analyse de cohérence psychologique
-
-Ils constituent la colonne vertébrale du Subnet CATAR.
+visualize_benchmark.py → génère les graphiques
 
 🛡️ Principes CATAR respectés
-Tous les scores respectent :
+Les scores respectent strictement les invariants CATAR :
 
-la non‑domination
+T‑ND — Non‑Domination
 
-la non‑projection
+T‑NP — Non‑Projection
 
-la non‑fascination
+T‑NF — Non‑Fascination
 
-la séparation Soije / Moije
+T‑SM — Distinction Soije/Moije
 
-la neutralité épistémique
+T‑TV — Transparence Vérifiable
 
-la transparence vérifiable
+T‑CL — Cohérence Logique
 
-Les validateurs CATAR ne produisent jamais de jugement moral ou d’autorité.
+T‑LU — Lucidité
 
-✔️ État actuel
-Le dossier /scores est prêt à accueillir :
+T‑LA — Libre Arbitre
 
-les scores bruts
+T‑PS — Protocole de Sortie
 
-les statistiques agrégées
+Les scores ne contiennent aucune donnée personnelle, aucune interprétation psychologique, uniquement des mesures quantitatives.
 
-les futures versions du validateur CATAR
+✔️ État attendu du dossier
+Le dossier /scores doit contenir :
 
-Il constitue la base du CATAR‑Benchmark v1.0.
+Code
+raw/            → scores bruts
+aggregated/     → statistiques dérivées
+README.md       → documentation globale (ce fichier)
