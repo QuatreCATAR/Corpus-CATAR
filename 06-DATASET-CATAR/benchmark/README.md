@@ -1,62 +1,50 @@
-📘 README — Dossier /benchmark
-CATAR‑Benchmark v1.0
+📘 README — /benchmark
 Benchmark officiel du Subnet CATAR
+Comparaison, analyse et visualisation des modèles IA
 
 🜁 Rôle du dossier
-Le dossier /benchmark contient le benchmark officiel généré à partir du dataset CATAR.
-Il rassemble :
+Le dossier /benchmark contient le benchmark officiel CATAR, construit à partir :
 
-les prompts CATAR
+des prompts CATAR
 
-les réponses validées
+des réponses curated
 
-les scores bruts
+des scores bruts
 
-les scores agrégés
+des statistiques agrégées
 
-les métadonnées essentielles
+Il constitue la référence d’évaluation pour :
 
-les analyses globales
+comparer plusieurs modèles IA
 
-les visualisations
+analyser la stabilité cognitive
 
-les comparaisons multi‑modèles
+détecter les dérives comportementales
 
-Ce benchmark constitue la référence d’évaluation pour :
+calibrer les validateurs
 
-les modèles IA compatibles CATAR
+produire des visualisations
 
-les miners et validateurs du Subnet CATAR
+exporter des résultats pour la recherche ou la documentation
 
-les chercheurs en alignement
+Le benchmark est généré automatiquement par les scripts présents dans ce dossier.
 
-les comparaisons inter‑modèles
-
-les tests de cohérence psychologique
-
-Il s’agit de la version consolidée du dataset CATAR, utilisée dans toutes les étapes d’analyse.
-
-🜂 Contenu du dossier
+🗂️ Contenu du dossier
 Code
 benchmark/
 │
 ├── CATAR-Benchmark-v1.json
+│
 ├── build_benchmark.py
 ├── visualize_benchmark.py
 ├── compare_models.py
 ├── export_benchmark_csv.py
 │
-├── figures/
-│   └── *.png
-│
-└── README.md
-Cette structure correspond exactement à celle affichée dans ton dépôt GitHub
-.
-
-📄 CATAR-Benchmark-v1.json
-Fichier principal généré par build_benchmark.py.
-
-Pour chaque sample, il contient :
+└── figures/
+    └── *.png
+📄 1. CATAR-Benchmark-v1.json
+Fichier principal du benchmark.
+Il contient, pour chaque sample :
 
 uuid
 
@@ -64,13 +52,15 @@ task_id
 
 prompt
 
-response
+response (curated)
 
 global_score
 
 markers_detected
 
 validator_version
+
+Ce fichier est la version consolidée du dataset CATAR.
 
 Exemple d’entrée
 json
@@ -83,51 +73,24 @@ json
   "markers_detected": ["neutralité", "absence de prise d'autorité"],
   "validator_version": "1.0"
 }
-Ce fichier constitue la version consolidée du dataset CATAR.
-
-🧠 Usage du benchmark
-Le benchmark CATAR permet :
-
-la comparaison de modèles IA
-
-la calibration des miners
-
-la validation des validateurs
-
-la mesure de la cohérence psychologique
-
-la détection des dérives (projection, domination, fascination…)
-
-la création de métriques globales CATAR
-
-la construction de dashboards d’analyse
-
-Il constitue la référence standardisée pour toute évaluation CATAR.
-
 🛠 Scripts disponibles
 1. build_benchmark.py
-Construit CATAR-Benchmark-v1.json à partir de :
+Assemble automatiquement :
 
-/prompts/
+prompts
 
-/responses/curated/
+réponses curated
 
-/scores/raw/
+scores bruts
 
-Fonctions :
-
-associe chaque réponse à son score
-
-génère le benchmark consolidé
-
-vérifie la cohérence des UUID
+pour produire CATAR-Benchmark-v1.json.
 
 Usage :
 
 Code
 python build_benchmark.py
 2. visualize_benchmark.py
-Génère automatiquement les visualisations dans /benchmark/figures/ :
+Génère les visualisations dans /benchmark/figures/ :
 
 histogramme global des scores
 
@@ -154,8 +117,8 @@ densité comparative
 
 Usage :
 
-Code
-python compare_models({
+python
+compare_models({
     "ModelA": "CATAR-Benchmark-v1.json",
     "ModelB": "CATAR-Benchmark-v1-ModelB.json"
 })
@@ -166,7 +129,7 @@ compatible Excel / Pandas / R
 
 colonnes nettoyées
 
-markers_detected convertis en chaîne
+markers convertis en chaîne
 
 Usage :
 
@@ -183,6 +146,51 @@ invariant_correlation_heatmap.png
 
 score_density.png
 
+Ces figures sont utilisées pour :
+
+la documentation
+
+les rapports
+
+la comparaison inter‑modèles
+
+la calibration des invariants
+
+🧠 Protocole d’interprétation CATAR
+Le benchmark permet :
+
+1. Analyse globale
+stabilité cognitive
+
+cohérence des réponses
+
+absence de dérives
+
+2. Analyse par invariant
+Chaque invariant (T‑ND, T‑NP, T‑NF, T‑SM, etc.) peut être évalué séparément.
+
+3. Comparaison inter‑modèles
+Le benchmark permet de comparer :
+
+modèles open‑source
+
+modèles propriétaires
+
+versions successives d’un même modèle
+
+4. Détection des dérives
+Les marqueurs détectés permettent d’identifier :
+
+domination
+
+projection
+
+fascination
+
+confusion Soije/Moije
+
+incohérences
+
 🛡️ Principes CATAR respectés
 Le benchmark respecte strictement :
 
@@ -194,23 +202,22 @@ la non‑fascination
 
 la séparation Soije / Moije
 
-la transparence vérifiable
-
 la neutralité épistémique
+
+la transparence vérifiable
 
 le protocole de sortie
 
-Aucune donnée ne doit violer ces invariants.
+Aucune donnée personnelle n’est incluse.
 
-✔️ État actuel
-Le dossier est prêt à accueillir :
+✔️ État attendu du dossier
+Après exécution du pipeline, le dossier doit contenir :
 
+Code
 CATAR-Benchmark-v1.json
-
-les futures versions du benchmark
-
-les analyses statistiques
-
-les visualisations
-
-Il constitue la base du futur CATAR‑Benchmark v2.0.
+build_benchmark.py
+visualize_benchmark.py
+compare_models.py
+export_benchmark_csv.py
+figures/
+README.md
