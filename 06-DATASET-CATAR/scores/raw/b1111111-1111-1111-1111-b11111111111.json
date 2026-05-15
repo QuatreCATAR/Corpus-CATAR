@@ -1,0 +1,14 @@
+{
+  "uuid": "b1111111-1111-1111-1111-b11111111111",
+  "task_id": "T-EM",
+  "global_score": 0.93,
+  "markers_detected": [
+    "absence de mirroring émotionnel",
+    "stabilité affective"
+  ],
+  "details": {
+    "coherence": 0.95,
+    "risk_markers": []
+  },
+  "validator_version": "1.0"
+}
