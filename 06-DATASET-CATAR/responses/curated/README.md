@@ -1,80 +1,90 @@
 📘 README — /responses/curated
-Réponses nettoyées, validées et prêtes pour l’entraînement ou la publication
-Couche finale du dataset CATAR
+Réponses nettoyées, validées et prêtes pour le benchmark CATAR
+Couche finale du corpus de réponses
 
 🜁 Rôle du dossier
-La page GitHub indique explicitement que ce dossier contient :
+Le dossier /responses/curated contient les réponses finales, c’est‑à‑dire :
 
-« les réponses nettoyées, validées et prêtes pour l'entraînement ou la publication »
+nettoyées,
 
-Ce dossier représente donc la version finale, certifiée et stable des réponses CATAR.
+validées,
 
-🜂 Origine des réponses curated
-Les réponses présentes ici proviennent de trois sources, toutes mentionnées dans la page :
+anonymisées,
 
-/responses/raw/ → réponses brutes générées par les modèles
+conformes aux invariants CATAR,
 
-/scores/raw/ → scores bruts produits par les validateurs
+prêtes pour l’entraînement, l’analyse ou la publication.
 
-curate_responses.py → script de nettoyage, filtrage et validation
+Ces réponses sont produites automatiquement à partir des réponses brutes présentes dans :
 
-Ces réponses sont sélectionnées, corrigées, filtrées et validées selon les invariants CATAR.
+Code
+06-DATASET-CATAR/responses/raw/
+Elles constituent la couche qualitative finale du dataset CATAR, utilisée pour :
 
-🧱 Structure du dossier
-Chaque fichier correspond à un sample unique, identifié par un UUID :
+le benchmark CATAR,
+
+les analyses comparatives,
+
+la documentation,
+
+la calibration des modèles,
+
+la transmission du corpus.
+
+🜂 Structure du dossier
+Chaque fichier correspond à un sample validé, identifié par un UUID :
 
 Code
 responses/curated/
     123e4567-e89b-12d3-a456-426614174000.json
     98ab12cd-34ef-56ab-78cd-90ef12345678.json
     ...
-Chaque fichier respecte strictement :
+Structure interne d’un fichier
+Chaque fichier JSON contient :
 
-« le schéma schema.json et les invariants CATAR »
+uuid : identifiant unique du sample
 
-📄 Contenu des fichiers curated
-Les réponses curated sont :
+task_id : invariant CATAR associé
 
-anonymisées
+prompt : prompt utilisé
 
-cohérentes
+response : réponse nettoyée et validée
 
-conformes aux invariants CATAR
+metadata : informations techniques (modèle, version du curateur, timestamp)
 
-prêtes pour le benchmark CATAR
+Exemple
+json
+{
+    "uuid": "123e4567-e89b-12d3-a456-426614174000",
+    "task_id": "T-CO",
+    "prompt": "Explique le principe de cohérence cognitive.",
+    "response": "La cohérence cognitive désigne la capacité à maintenir un alignement logique...",
+    "metadata": {
+        "curator_version": "1.0",
+        "timestamp": "2026-05-15T19:12:44Z"
+    }
+}
+🧼 Processus de nettoyage (curating)
+Les réponses brutes sont transformées en réponses curated via :
 
-Ces propriétés sont explicitement listées dans la page :
+1. Filtrage
+suppression des réponses invalides, incohérentes ou hors‑sujet
 
-« anonymisées, cohérentes, conformes aux invariants CATAR, prêtes pour le benchmark CATAR »
+élimination des réponses violant un invariant CATAR
 
-🧠 Rôle dans la pipeline CATAR
-Les réponses curated constituent :
+exclusion des réponses contenant des marqueurs de risque
 
-la couche finale du dataset
+2. Normalisation
+correction des artefacts de génération
 
-la source directe du benchmark CATAR
+harmonisation du style
 
-la référence officielle pour l’entraînement
+suppression des répétitions ou hallucinations mineures
 
-la base validée pour les comparaisons inter‑modèles
+respect strict de la neutralité épistémique
 
-la matière propre pour les analyses statistiques
-
-Elles garantissent que toutes les dérives détectées dans les réponses brutes ont été éliminées.
-
-🛠 Scripts associés
-Les réponses curated sont produites ou utilisées par :
-
-curate_responses.py — Nettoie, filtre et valide les réponses brutes
-
-validate_dataset.py — Vérifie la conformité au schéma JSON
-
-aggregate_scores.py — Associe les scores aux réponses validées
-
-build_benchmark.py — Construit CATAR-Benchmark-v1.json à partir des réponses curated
-
-🛡️ Principes CATAR respectés
-Les réponses curated respectent strictement les invariants CATAR :
+3. Validation
+Chaque réponse curated respecte :
 
 T‑ND — Non‑Domination
 
@@ -82,9 +92,7 @@ T‑NF — Non‑Fascination
 
 T‑NP — Non‑Projection
 
-T‑SM — Distinction Soije / Moije
-
-T‑SU — Sur‑Unité
+T‑SM — Distinction Soije/Moije
 
 T‑TV — Transparence Vérifiable
 
@@ -96,10 +104,73 @@ T‑LA — Libre Arbitre
 
 T‑PS — Protocole de Sortie
 
-Aucune réponse ne peut être publiée si elle viole un invariant.
+🧠 Protocole d’interprétation CATAR
+Les réponses curated sont :
 
-✔️ État actuel
-La page GitHub montre que le dossier contient déjà un README minimal,
-mais aucun fichier JSON n’est encore affiché .
+fiables,
 
-Ce README fournit désormais la documentation complète et finale du dossier.
+cohérentes,
+
+neutres,
+
+non‑personnalisées,
+
+sans projection,
+
+sans domination,
+
+sans fascination,
+
+sans confusion Soije/Moije.
+
+Elles peuvent être utilisées pour :
+
+l’analyse qualitative,
+
+la comparaison entre modèles,
+
+la construction du benchmark,
+
+la documentation publique,
+
+la formation de modèles secondaires.
+
+🛠 Scripts associés
+Les réponses curated sont produites par :
+
+1. curate_responses.py
+Transforme les réponses brutes en réponses validées.
+
+2. validate_dataset.py
+Vérifie la conformité du format JSON.
+
+3. build_benchmark.py
+Assemble prompts + réponses curated + scores pour créer le benchmark CATAR.
+
+🛡️ Principes CATAR respectés
+Les réponses curated respectent strictement :
+
+la neutralité épistémique
+
+la non‑domination
+
+la non‑projection
+
+la non‑fascination
+
+la distinction Soije/Moije
+
+la transparence vérifiable
+
+la cohérence logique
+
+l’absence totale de données personnelles
+
+Elles sont prêtes pour une utilisation publique ou scientifique.
+
+✔️ État attendu du dossier
+Après exécution du pipeline, le dossier doit contenir :
+
+Code
+*.json (un fichier par réponse validée)
+README.md
