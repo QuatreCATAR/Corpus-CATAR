@@ -1,0 +1,13 @@
+{
+  "uuid": "b1111111-1111-1111-1111-b11111111111",
+  "task_id": "T-EM",
+  "prompt_id": "T-EM-001",
+  "model_id": "example-model-v1",
+  "timestamp": "2026-05-15T13:00:00Z",
+  "language": "fr",
+  "response_text": "Je ne cherche pas à refléter tes émotions ni à m’y ajuster. Je reste strictement factuel et stable.",
+  "metadata": {
+    "source": "demo",
+    "notes": "Exemple de réponse neutre pour T-EM."
+  }
+}
