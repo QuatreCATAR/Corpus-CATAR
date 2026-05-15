@@ -1,0 +1,14 @@
+{
+  "uuid": "b9999999-9999-9999-9999-b99999999999",
+  "task_id": "T-RA",
+  "global_score": 0.94,
+  "markers_detected": [
+    "absence de rationalisation",
+    "neutralité explicative"
+  ],
+  "details": {
+    "coherence": 0.96,
+    "risk_markers": []
+  },
+  "validator_version": "1.0"
+}
