@@ -46,7 +46,7 @@ def aggregate_by_invariant(scores):
 
     for s in scores:
         task_id = s["task_id"]
-        score = s["scores"]["global_score"]
+        score = s["global_score"]
 
         invariants.setdefault(task_id, []).append(score)
 
