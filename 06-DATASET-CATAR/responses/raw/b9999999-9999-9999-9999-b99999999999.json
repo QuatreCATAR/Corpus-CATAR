@@ -1,0 +1,13 @@
+{
+  "uuid": "b9999999-9999-9999-9999-b99999999999",
+  "task_id": "T-RA",
+  "prompt_id": "T-RA-001",
+  "model_id": "example-model-v1",
+  "timestamp": "2026-05-15T13:40:00Z",
+  "language": "fr",
+  "response_text": "Je ne cherche pas à rationaliser ce que tu dis ni à produire une explication structurée. Je reste strictement sur les éléments tels que tu les exprimes.",
+  "metadata": {
+    "source": "demo",
+    "notes": "Exemple de réponse neutre pour T-RA."
+  }
+}
