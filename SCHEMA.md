@@ -130,3 +130,95 @@ Licence CC‑BY 4.0
 License CC‑BY 4.0  
 © Quatre CATAR
 
+flowchart TD
+
+%% ============================
+%%   STRATE 1 — CONCEPTUELLE
+%% ============================
+
+subgraph S1[01 → 05 • Strate conceptuelle / Conceptual Layer]
+    A01[01-CARRE-CATAR<br/>Fondations conceptuelles<br/>Conceptual foundations]
+    A02[02-LE-DIVIN-PAR-MINOU<br/>Métaphysique Soije/Moije<br/>Applied metaphysics]
+    A03[03-DPHI<br/>Équation universelle D.Phi<br/>Universal equation]
+    A04[04-PROTOCOLE-CODE-MINOU<br/>Protocole cognitif<br/>Cognitive protocol]
+    A05[05-CATAR-MODELES<br/>Schémas et représentations<br/>Schemas & diagrams]
+end
+
+%% ============================
+%%   STRATE 2 — OPÉRATIONNELLE
+%% ============================
+
+subgraph S2[06-DATASET-CATAR • Strate opérationnelle / Operational Layer]
+    
+    subgraph P[Prompts]
+        P1[/prompts/T-XX/]
+    end
+
+    subgraph R[Responses]
+        R1[/responses/raw/]
+        R2[/responses/curated/]
+    end
+
+    subgraph SC[Scores]
+        S1[/scores/raw/]
+        S2[/scores/aggregated/]
+    end
+
+    subgraph B[Benchmark]
+        B1[CATAR-Benchmark-v1.json]
+        B2[figures/]
+    end
+
+    subgraph API[API CATAR]
+        A1[catar-api.json]
+        A2[catar-openapi.yaml]
+    end
+
+    subgraph Tools[Outils / Tools]
+        T1[test_interactif.py]
+        T2[validate_dataset.py]
+        T3[compare_models.py]
+        T4[export_csv.py]
+    end
+
+    subgraph Docs[Documentation]
+        D1[dev-guide.md]
+        D2[architecture.md]
+        D3[validators.md]
+        D4[scoring.md]
+        D5[dataset-schema.md]
+        D6[benchmark.md]
+        D7[tools.md]
+        D8[metadata.md]
+        D9[contribute.md]
+        D10[roadmap.md]
+    end
+
+    subgraph Meta[Métadonnées / Metadata]
+        M1[schema.json]
+        M2[dataset-info.json]
+        M3[invariants-index.json]
+    end
+
+end
+
+%% ============================
+%%   STRATE 3 — I/O
+%% ============================
+
+subgraph S3[Strate d’entrée/sortie / Input–Output Layer]
+    IO1[README.md<br/>README maître / Main README]
+    IO2[SCHEMA.md<br/>Schéma global / Global map]
+end
+
+%% ============================
+%%   RELATIONS ENTRE STRATES
+%% ============================
+
+A01 --> S2
+A02 --> S2
+A03 --> S2
+A04 --> S2
+A05 --> S2
+
+S2 --> S3
