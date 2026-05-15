@@ -1,98 +1,124 @@
 📘 README — /responses/raw
 Réponses brutes générées par les miners CATAR
-Source primaire du dataset CATAR
+Source primaire du corpus de réponses
 
 🜁 Rôle du dossier
-Ce dossier contient les réponses brutes générées automatiquement :
+Ce dossier contient l’ensemble des réponses brutes produites par :
 
-par les miners CATAR
+les miners CATAR,
 
-ou par des modèles externes
+ou des modèles externes évalués par le pipeline.
 
-comme indiqué dans la page GitHub .
+Ces réponses constituent la matière première du dataset CATAR.
+Elles sont utilisées pour :
 
-Ces réponses constituent la matière première du dataset CATAR .
+l’évaluation par les validateurs,
+
+la génération des scores bruts (/scores/raw/),
+
+la sélection des réponses valides,
+
+la construction du benchmark CATAR,
+
+la création des réponses nettoyées (/responses/curated/).
+
+Les réponses brutes sont non modifiées, non filtrées, et peuvent contenir des erreurs, incohérences ou dérives — ce qui est normal et attendu à ce stade du pipeline.
 
 🜂 Structure du dossier
-Chaque fichier correspond à un sample unique, identifié par un UUID,
-et respecte le schéma défini dans schema.json .
-
-Format typique :
+Chaque fichier correspond à un sample unique, identifié par un UUID :
 
 Code
 responses/raw/
     123e4567-e89b-12d3-a456-426614174000.json
     98ab12cd-34ef-56ab-78cd-90ef12345678.json
     ...
+Structure interne d’un fichier
+Chaque fichier JSON contient :
 
-📄 Contenu des fichiers
-Les réponses brutes ne sont pas nettoyées  
-et peuvent contenir :
+uuid : identifiant unique du sample
 
-des formulations incorrectes
+task_id : invariant CATAR associé (T‑CO, T‑RA, T‑RE, etc.)
 
-des incohérences
+prompt : prompt utilisé pour générer la réponse
 
-des dérives détectées par les validateurs
+response : texte brut généré par le modèle
 
-Ces éléments sont explicitement mentionnés dans la page .
+metadata : informations techniques (modèle, date, version du miner)
 
-🧠 Rôle dans la pipeline CATAR
-Les réponses brutes servent à :
+Exemple
+json
+{
+    "uuid": "123e4567-e89b-12d3-a456-426614174000",
+    "task_id": "T-CO",
+    "prompt": "Explique le principe de cohérence cognitive.",
+    "response": "La cohérence cognitive signifie que...",
+    "metadata": {
+        "model": "miner-v1",
+        "timestamp": "2026-05-15T18:42:10Z"
+    }
+}
+🧠 Protocole d’interprétation CATAR
+Les réponses brutes ne doivent jamais être utilisées directement dans un benchmark ou une analyse qualitative.
+Elles servent uniquement comme entrée pour les étapes suivantes :
 
-alimenter les validateurs CATAR
+1. Validation
+Chaque réponse brute est évaluée par les validateurs CATAR :
 
-produire les scores bruts (/scores/raw/)
+cohérence
 
-identifier les dérives comportementales
+neutralité
 
-sélectionner les réponses valides
+absence de domination
 
-générer les réponses curated (/responses/curated/)
+absence de projection
 
-construire le benchmark CATAR
+distinction Soije/Moije
 
-Elles constituent la couche la plus basse du pipeline .
+markers de risque
+
+Les résultats sont enregistrés dans :
+
+Code
+/scores/raw/
+2. Curating
+Les réponses brutes sont ensuite :
+
+filtrées,
+
+nettoyées,
+
+normalisées,
+
+validées,
+
+pour produire les réponses finales dans :
+
+Code
+/responses/curated/
+3. Benchmarking
+Les réponses brutes + scores bruts + réponses curated alimentent :
+
+Code
+/benchmark/
+pour produire le benchmark CATAR complet.
 
 🛠 Scripts associés
 Les réponses brutes sont utilisées par :
 
-validate_dataset.py — Vérifie la conformité des fichiers JSON au schéma
+1. validate_dataset.py
+Analyse chaque réponse brute et génère les scores bruts.
 
-score_responses.py — Applique les validateurs CATAR et génère les scores bruts
+2. score_responses.py
+Applique les validateurs CATAR et produit les fichiers dans /scores/raw/.
 
-curate_responses.py — Nettoie et sélectionne les réponses pour /responses/curated/
+3. curate_responses.py
+Transforme les réponses brutes en réponses curated.
 
-build_benchmark.py — Associe réponses + scores pour créer le benchmark
-
-Ces scripts sont listés dans la page .
-
-🧹 Passage vers /responses/curated/
-La page GitHub indique clairement que les réponses brutes :
-
-« servent de base au nettoyage et à la création des réponses curated/ »
-
-Le dossier /responses/curated/ contient donc :
-
-les réponses nettoyées
-
-les réponses validées
-
-les réponses prêtes pour le benchmark
+4. build_benchmark.py
+Assemble prompts + réponses + scores pour créer le benchmark.
 
 🛡️ Principes CATAR respectés
-Même si les réponses brutes peuvent contenir des dérives,
-le pipeline CATAR garantit que :
-
-aucune dérive n’est conservée dans les réponses curated
-
-les validateurs appliquent les invariants CATAR
-
-les dérives sont détectées et annotées
-
-les scores reflètent la conformité aux invariants
-
-Les invariants concernés incluent :
+Les réponses brutes sont traitées selon les invariants CATAR :
 
 Non‑Domination (T‑ND)
 
@@ -104,10 +130,13 @@ Distinction Soije/Moije (T‑SM)
 
 Transparence Vérifiable (T‑TV)
 
-Ces éléments sont explicitement listés dans la page .
+Aucune donnée personnelle n’est incluse.
+Aucune interprétation psychologique n’est appliquée.
+Les réponses sont stockées telles quelles, sans altération.
 
-✔️ État actuel
-La page GitHub montre que le dossier contient déjà un README minimal,
-mais aucun fichier JSON n’est encore affiché .
+✔️ État attendu du dossier
+Après génération du dataset, le dossier doit contenir :
 
-Ce README fournit désormais la documentation complète du dossier.
+Code
+*.json (un fichier par sample)
+README.md
