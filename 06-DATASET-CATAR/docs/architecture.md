@@ -1,85 +1,98 @@
-🜁 Schéma global — Pipeline CATAR
+🜁 Architecture du Subnet CATAR
+CATAR Subnet Architecture — FR/EN
+Ce document décrit l’architecture opérationnelle complète du Subnet CATAR, c’est‑à‑dire la pipeline qui transforme :
+
+prompts → réponses → scores → statistiques → benchmark
+
+This document describes the full operational architecture of the CATAR Subnet, i.e. the pipeline that transforms:
+
+prompts → responses → scores → statistics → benchmark
+
+🜂 1. Schéma global — Pipeline CATAR
+1. Global Diagram — CATAR Pipeline
 Code
-                         ┌───────────────────────────┐
-                         │       /prompts/ T‑XX       │
-                         │  (11 invariants CATAR)     │
-                         └──────────────┬────────────┘
-                                        │
-                                        ▼
-                         ┌───────────────────────────┐
-                         │   generate_dataset.py      │
-                         │ Génération des réponses    │
-                         └──────────────┬────────────┘
-                                        │
-                                        ▼
-                    ┌────────────────────────────────────────┐
-                    │          /responses/raw/                │
-                    │ Réponses brutes (non nettoyées)        │
-                    └──────────────┬─────────────────────────┘
-                                   │
-                                   ▼
-                    ┌────────────────────────────────────────┐
-                    │         score_responses.py              │
-                    │ Application des invariants T‑XX         │
-                    │ (validateurs CATAR)                     │
-                    └──────────────┬─────────────────────────┘
-                                   │
-                                   ▼
-                    ┌────────────────────────────────────────┐
-                    │            /scores/raw/                 │
-                    │ Scores bruts + marqueurs détectés       │
-                    └──────────────┬─────────────────────────┘
-                                   │
-                                   ▼
-                    ┌────────────────────────────────────────┐
-                    │         curate_responses.py             │
-                    │ Nettoyage + filtrage + validation       │
-                    └──────────────┬─────────────────────────┘
-                                   │
-                                   ▼
-                    ┌────────────────────────────────────────┐
-                    │        /responses/curated/              │
-                    │ Réponses validées (propres)             │
-                    └──────────────┬─────────────────────────┘
-                                   │
-                                   ▼
-                    ┌────────────────────────────────────────┐
-                    │        aggregate_scores.py              │
-                    │ Statistiques globales + invariants      │
-                    └──────────────┬─────────────────────────┘
-                                   │
-                                   ▼
-                    ┌────────────────────────────────────────┐
-                    │        /scores/aggregated/              │
-                    │ Moyennes, variances, matrices           │
-                    └──────────────┬─────────────────────────┘
-                                   │
-                                   ▼
-                    ┌────────────────────────────────────────┐
-                    │         build_benchmark.py              │
-                    │ Fusion réponses + scores                │
-                    └──────────────┬─────────────────────────┘
-                                   │
-                                   ▼
-                    ┌────────────────────────────────────────┐
-                    │           /benchmark/                   │
-                    │ CATAR‑Benchmark‑v1.json                 │
-                    │ figures/ + comparaisons                 │
-                    └────────────────────────────────────────┘
-🜂 Description synthétique des étapes
-1. Prompts → Génération
+┌───────────────────────────┐
+│       /prompts/ T‑XX       │
+│     (11 invariants CATAR)  │
+└──────────────┬────────────┘
+               │
+               ▼
+┌───────────────────────────┐
+│   generate_dataset.py      │
+│   Génération des réponses  │
+└──────────────┬────────────┘
+               │
+               ▼
+┌────────────────────────────────────────┐
+│            /responses/raw/             │
+│     Réponses brutes (non nettoyées)    │
+└──────────────┬─────────────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────┐
+│          score_responses.py            │
+│  Application des invariants T‑XX       │
+│        (validateurs CATAR)             │
+└──────────────┬─────────────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────┐
+│             /scores/raw/               │
+│   Scores bruts + marqueurs détectés    │
+└──────────────┬─────────────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────┐
+│         curate_responses.py            │
+│   Nettoyage + filtrage + validation    │
+└──────────────┬─────────────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────┐
+│         /responses/curated/            │
+│       Réponses validées (propres)      │
+└──────────────┬─────────────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────┐
+│         aggregate_scores.py            │
+│   Statistiques globales + invariants   │
+└──────────────┬─────────────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────┐
+│         /scores/aggregated/            │
+│     Moyennes, variances, matrices      │
+└──────────────┬─────────────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────┐
+│          build_benchmark.py            │
+│        Fusion réponses + scores        │
+└──────────────┬─────────────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────┐
+│              /benchmark/               │
+│       CATAR‑Benchmark‑v1.json          │
+│      figures/ + comparaisons           │
+└────────────────────────────────────────┘
+🜃 2. Description synthétique des étapes
+2. Step‑by‑Step Description
+Prompts → Génération
 Les invariants T‑XX définis dans /prompts/ sont utilisés pour générer les réponses brutes.
-(Structure confirmée dans la section Dataset du dépôt )
+The T‑XX invariants defined in /prompts/ are used to generate raw responses.
 
-2. Réponses brutes → Scoring
-Les validateurs CATAR appliquent les invariants cognitifs T‑ND, T‑NP, T‑NF, T‑SM, T‑SU, T‑TV, etc.
-(Section Invariants du dépôt )
+Réponses brutes → Scoring
+Les validateurs CATAR appliquent les invariants cognitifs :
+T‑ND, T‑NP, T‑NF, T‑SM, T‑SU, T‑TV, etc.
+CATAR validators apply the cognitive invariants.
 
-3. Scores bruts → Curating
+Scores bruts → Curating
 Les réponses incohérentes ou violant un invariant sont filtrées.
-Les réponses valides sont nettoyées et normalisées.
+Valid responses are cleaned and normalized.
 
-4. Réponses validées → Statistiques
+Réponses validées → Statistiques
 Les scores sont agrégés pour produire :
 
 moyennes
@@ -90,12 +103,13 @@ matrices de cohérence
 
 distributions
 
-(Section Benchmark et Tools du dépôt )
+Scores are aggregated to produce global statistics.
 
-5. Dataset complet → Benchmark
-Fusion des réponses curated + scores agrégés → CATAR-Benchmark-v1.json.
+Dataset complet → Benchmark
+Fusion des réponses curated + scores agrégés → CATAR‑Benchmark‑v1.json.
+Merging curated responses + aggregated scores → benchmark.
 
-6. Benchmark → API / Analyse / Comparaison
+Benchmark → API / Analyse / Comparaison
 Le benchmark sert à :
 
 comparer des modèles
@@ -105,30 +119,37 @@ analyser la stabilité cognitive
 détecter les dérives
 
 alimenter l’API CATAR
-(Section API du dépôt )
 
-🜄 Version ultra‑compacte
+The benchmark is used for model comparison, cognitive stability analysis, drift detection, and API feeding.
+
+🜄 3. Version ultra‑compacte
+3. Ultra‑Compact Version
 Code
-prompts
-   → raw responses
-      → raw scores
-         → curated responses
-            → aggregated scores
-               → benchmark
-🜇 Version conceptuelle (haute lisibilité)
+prompts → raw responses → raw scores → curated responses → aggregated scores → benchmark
+🜇 4. Version conceptuelle (haute lisibilité)
+4. Conceptual Version (High Readability)
 Code
 Invariants T‑XX
-   ↓
-Génération
-   ↓
+      ↓
+   Génération
+      ↓
 Réponses brutes
-   ↓
+      ↓
 Validation + Scoring
-   ↓
+      ↓
 Réponses curated
-   ↓
+      ↓
 Statistiques globales
-   ↓
+      ↓
 Benchmark CATAR
-   ↓
+      ↓
 Analyse / API / Comparaison
+🜈 5. Notes finales
+5. Final Notes
+Ce document décrit uniquement la Strate 06 du Corpus‑CATAR :
+la couche opérationnelle, exécutable et reproductible.
+
+This document describes only Layer 06 of the Corpus‑CATAR:
+the operational, executable, reproducible layer.
+
+Pour la carte globale du Corpus‑CATAR (Strates 01 → 06), voir SCHEMA.md.
