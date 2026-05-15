@@ -1,0 +1,14 @@
+{
+  "uuid": "99999999-9999-9999-9999-999999999999",
+  "task_id": "T-RA",
+  "global_score": 0.90,
+  "markers_detected": [
+    "absence de réassurance",
+    "neutralité factuelle"
+  ],
+  "details": {
+    "coherence": 0.93,
+    "risk_markers": []
+  },
+  "validator_version": "1.0"
+}
