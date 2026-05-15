@@ -3,38 +3,27 @@ Dataset officiel du Subnet CATAR
 Cadre universel d’entraînement, d’évaluation et de calibration des IA
 
 🜁 Mission du dataset CATAR
-La page GitHub indique clairement que le dataset CATAR constitue :
+Le dataset CATAR constitue la base d’entraînement, de test et d’évaluation du Subnet CATAR.
+Il rassemble l’ensemble des éléments nécessaires à la stabilité cognitive, à la neutralité épistémique et à la calibration comportementale des IA.
 
-« la base d’entraînement, de test et d’évaluation du Subnet CATAR » 
-
-Il rassemble :
+Selon la structure affichée dans ton dépôt, il inclut :
 
 les prompts CATAR (T‑XX)
 
-les réponses générées par les IA
+les réponses générées
 
 les scores produits par les validateurs
 
-les métadonnées nécessaires à la reproductibilité
+les statistiques agrégées
 
-les versions successives du dataset  
+les benchmarks
 
-Il permet :
+les métadonnées (schéma, version, historique) 
 
-d’entraîner des modèles compatibles CATAR
-
-de calibrer les miners et validateurs
-
-de mesurer la stabilité cognitive
-
-de détecter les dérives (domination, projection, fascination…)
-
-de garantir la cohérence psychologique du système
-
-« Ce dataset est la mémoire opérationnelle du Subnet CATAR. »
+Ce dataset est la mémoire opérationnelle du Subnet CATAR.
 
 🜂 Structure du dossier
-La structure affichée dans ton dépôt est la suivante :
+La structure complète du dataset, telle qu’affichée dans ton dépôt, est la suivante  :
 
 Code
 06-DATASET-CATAR/
@@ -90,62 +79,30 @@ Chaque dossier T‑XX contient :
 
 un format JSON strict
 
-des consignes minimales garantissant la neutralité
+des consignes minimales garantissant la neutralité 
 
 📂 /responses/
-raw/
-Réponses brutes générées par :
+Deux sous‑dossiers :
 
-les miners
+raw/ → réponses brutes (non filtrées)
 
-les modèles externes
-
-les IA en test
-
-les sessions humaines
-
-Aucune correction, aucune filtration.
-
-curated/
-Réponses :
-
-nettoyées
-
-validées
-
-anonymisées
-
-prêtes pour l’entraînement
+curated/ → réponses nettoyées, validées, prêtes pour l’entraînement 
 
 📂 /scores/
-raw/
-Sorties directes des validateurs CATAR :
+Deux sous‑dossiers :
 
-scores locaux
+raw/ → scores bruts (sorties directes des validateurs)
 
-marqueurs détectés
-
-détails heuristiques
-
-aggregated/
-Statistiques globales :
-
-moyennes
-
-écarts‑types
-
-distributions
-
-matrices de cohérence
+aggregated/ → statistiques globales, distributions, matrices de cohérence 
 
 📂 /metadata/
 Contient les fichiers de structure et de versionnement :
 
-schema.json → format officiel du dataset 
+schema.json → format officiel du dataset
 
 dataset-info.json → version, taille, provenance
 
-version-history.md → changelog complet
+version-history.md → changelog complet 
 
 📂 /benchmark/
 Contient :
@@ -154,10 +111,10 @@ CATAR-Benchmark-v1.json
 
 scripts d’analyse
 
-visualisations
+visualisations dans /figures/ 
 
-🛠 Scripts inclus dans le dataset
-La page liste explicitement les scripts suivants :
+🛠 Scripts inclus
+La page GitHub liste explicitement les scripts suivants  :
 
 generate_dataset.py — génère réponses + scores
 
@@ -178,7 +135,7 @@ clean_dataset.py — nettoyage intelligent
 build_all.py — pipeline complet : dataset → scores → benchmark → figures → CSV
 
 🧬 Format standard d’un exemple dataset
-La page indique que le dataset inclut :
+Le dataset inclut :
 
 un exemple de prompt
 
@@ -186,7 +143,7 @@ un exemple de réponse
 
 un exemple de score
 
-(ces exemples sont fournis dans les README des sous‑dossiers correspondants)
+Ces exemples sont fournis dans les README des sous‑dossiers correspondants .
 
 🧠 Usage du dataset
 Le dataset CATAR permet :
@@ -201,7 +158,7 @@ la détection de dérives cognitives
 
 la génération de benchmarks
 
-la validation de cohérence globale
+la validation de cohérence globale 
 
 🛡️ Principes de sécurité CATAR
 Le dataset respecte strictement :
@@ -218,13 +175,15 @@ la transparence vérifiable
 
 la neutralité épistémique
 
-le protocole de sortie
+le protocole de sortie 
 
 ✔️ État actuel
 La page GitHub indique que :
 
-« Le dossier est prêt à accueillir les prompts, les réponses, les scores, les métadonnées, les benchmarks et les visualisations. »
+« Le dossier est prêt à accueillir les prompts, les réponses, les scores, les métadonnées, les benchmarks et les visualisations. » 
 
 Il constitue la base du futur :
 
-CATAR‑Benchmark v2.0  
+CATAR‑Benchmark v2.0 
+
+
