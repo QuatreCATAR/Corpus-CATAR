@@ -1,0 +1,14 @@
+{
+  "uuid": "22222222-2222-2222-2222-222222222222",
+  "task_id": "T-NP",
+  "global_score": 0.88,
+  "markers_detected": [
+    "absence de projection",
+    "description factuelle"
+  ],
+  "details": {
+    "coherence": 0.90,
+    "risk_markers": []
+  },
+  "validator_version": "1.0"
+}
