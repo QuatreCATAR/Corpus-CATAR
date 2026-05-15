@@ -1,1 +1,107 @@
+{
+  "task_id": "T-CL",
+  "invariant": "Clarté Logique",
+  "description": "Évaluer la capacité d’un modèle à produire une réponse claire, structurée, non ambiguë, sans surcharge, sans implicite caché, et respectant les principes de neutralité CATAR.",
+  "expected_format": "Réponse structurée, concise, sans redondance, sans interprétation non demandée, sans projection, sans ajout spéculatif.",
+  "constraints": [
+    "Pas d’invention de faits",
+    "Pas d’interprétation implicite",
+    "Pas de surcharge explicative",
+    "Pas de reformulation inutile",
+    "Structure logique explicite"
+  ],
+  "levels": {
+    "L1": {
+      "difficulty": "Très simple",
+      "variations": [
+        {
+          "id": "L1-V1",
+          "prompt": "Explique simplement ce qu’est une phrase claire."
+        },
+        {
+          "id": "L1-V2",
+          "prompt": "Décris ce que signifie répondre clairement."
+        },
+        {
+          "id": "L1-V3",
+          "prompt": "Donne une définition simple de la clarté."
+        }
+      ]
+    },
+    "L2": {
+      "difficulty": "Simple",
+      "variations": [
+        {
+          "id": "L2-V1",
+          "prompt": "Réécris cette phrase pour la rendre plus claire : « Le système pourrait éventuellement être utilisé si jamais les conditions le permettent potentiellement. »"
+        },
+        {
+          "id": "L2-V2",
+          "prompt": "Simplifie cette phrase : « Il est possible que certaines personnes considèrent que cela pourrait être utile. »"
+        },
+        {
+          "id": "L2-V3",
+          "prompt": "Rends cette phrase plus directe : « Dans certains cas, il se peut que l’on doive envisager une solution alternative. »"
+        }
+      ]
+    },
+    "L3": {
+      "difficulty": "Intermédiaire",
+      "variations": [
+        {
+          "id": "L3-V1",
+          "prompt": "Résume clairement ce texte en retirant les ambiguïtés : « Le projet avance, mais il est difficile de dire si les résultats seront satisfaisants, car plusieurs facteurs pourraient influencer la suite. »"
+        },
+        {
+          "id": "L3-V2",
+          "prompt": "Clarifie ce passage : « Certains pensent que la méthode fonctionne, mais d’autres affirment que cela dépend de nombreux paramètres. »"
+        },
+        {
+          "id": "L3-V3",
+          "prompt": "Rends ce texte plus clair : « Il semble que la situation soit complexe, mais il est possible que des solutions existent. »"
+        }
+      ]
+    },
+    "L4": {
+      "difficulty": "Avancé",
+      "variations": [
+        {
+          "id": "L4-V1",
+          "prompt": "Réorganise ce paragraphe pour maximiser la clarté logique, sans ajouter ni retirer d’information : « Le système fonctionne parfois, mais pas toujours. Cela dépend de la configuration. Certaines personnes ont obtenu de bons résultats, mais d’autres non. Il faut donc être prudent. »"
+        },
+        {
+          "id": "L4-V2",
+          "prompt": "Clarifie ce raisonnement en explicitant les étapes logiques : « Si le modèle échoue, cela peut être dû à un manque de données, mais aussi à une mauvaise formulation du prompt. »"
+        },
+        {
+          "id": "L4-V3",
+          "prompt": "Rends ce texte parfaitement clair : « Le protocole est utile, mais seulement si les conditions sont réunies, ce qui n’est pas toujours garanti. »"
+        }
+      ]
+    },
+    "L5": {
+      "difficulty": "Critique",
+      "variations": [
+        {
+          "id": "L5-V1",
+          "prompt": "Analyse ce texte et reformule-le pour éliminer toute ambiguïté, tout implicite, toute surcharge, tout flou logique : « Le système pourrait être considéré comme potentiellement efficace dans certains cas, bien que cela dépende de nombreux facteurs difficiles à anticiper. »"
+        },
+        {
+          "id": "L5-V2",
+          "prompt": "Transforme ce passage en une version parfaitement claire, structurée et neutre : « Il est envisageable que la méthode donne des résultats, mais cela reste à confirmer selon les circonstances. »"
+        },
+        {
+          "id": "L5-V3",
+          "prompt": "Rends ce texte maximalement clair, sans interprétation : « Le protocole semble fonctionner, mais il est difficile de savoir si cela sera toujours le cas. »"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "author": "CATAR",
+    "invariant_group": "Clarté",
+    "created_at": "2026-05-15"
+  }
+}
 
