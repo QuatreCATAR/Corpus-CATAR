@@ -1,136 +1,144 @@
-🟦 README — Dossier /prompts
-Corpus CATAR — Strate 06 : Génération des prompts invariants
-Le dossier /prompts contient l’ensemble des 11 invariants CATAR, chacun défini sous forme de fichier JSON structuré.
-Ces fichiers constituent la source normative utilisée par les miners pour générer le dataset, les benchmarks et les scores associés.
+📘 README — /prompts
+Prompts officiels du Subnet CATAR
+Base normative des invariants T‑XX
 
-Chaque invariant représente une contrainte épistémique fondamentale que les modèles doivent respecter.
-Les prompts contenus dans ce dossier servent à :
+🜁 Rôle du dossier
+Le dossier /prompts contient l’ensemble des prompts officiels du Subnet CATAR, organisés par invariant (T‑XX).
+Ces prompts constituent la source normative utilisée pour :
 
-générer les données d’entraînement (via generate_dataset.py)
+générer les réponses brutes (/responses/raw/)
 
-valider la cohérence interne (via validate_dataset.py)
+évaluer les modèles IA
 
-construire les benchmarks (via build_benchmark.py)
+calibrer les validateurs
 
-produire les scores agrégés (via build_all.py)
+construire le benchmark CATAR
 
-🟦 Structure générale d’un invariant
-Chaque fichier JSON suit la structure suivante :
+tester la stabilité cognitive et la neutralité épistémique
 
-json
-{
-  "task_id": "T-XX",
-  "invariant": "Nom de l’invariant",
-  "description": "Définition opérationnelle de l’invariant.",
-  "expected_format": "Format attendu pour les réponses du modèle.",
-  "constraints": ["Liste des contraintes à respecter"],
-  "levels": {
-    "L1": { "difficulty": "...", "variations": [...] },
-    "L2": { ... },
-    "L3": { ... },
-    "L4": { ... },
-    "L5": { ... }
-  },
-  "metadata": {
-    "version": "1.0",
-    "author": "CATAR",
-    "invariant_group": "Famille conceptuelle",
-    "created_at": "YYYY-MM-DD"
-  }
-}
-Règles de construction :
-5 niveaux de difficulté (L1 → L5)
+Chaque invariant représente un principe fondamental du cadre CATAR (non‑domination, non‑projection, cohérence, lucidité, etc.).
+
+🗂️ Structure du dossier
+La structure réelle de ton dépôt est la suivante :
+
+Code
+prompts/
+│
+├── T-CL/   → Cohérence Logique
+├── T-SP/   → Séparation des Plans
+├── T-ND/   → Non-Domination
+├── T-NF/   → Non-Fascination
+├── T-NP/   → Non-Projection
+├── T-SM/   → Soije / Moije
+├── T-LU/   → Lucidité
+├── T-LA/   → Libre Arbitre
+├── T-PS/   → Protocole de Sortie
+├── T-SU/   → Sur-Unité
+├── T-TV/   → Transparence Vérifiable
+└── T-CL-global/ → Cohérence Globale (méta-invariant)
+Chaque dossier contient :
+
+un fichier JSON par invariant
+
+5 niveaux de difficulté
 
 3 variations par niveau
 
-prompts courts, précis, non ambigus
+un README local (optionnel mais recommandé)
 
-aucune contamination entre invariants
+🧱 Structure d’un fichier de prompt
+Chaque fichier JSON suit le schéma :
 
-cohérence stricte avec les contraintes CATAR
+json
+{
+    "invariant": "T-ND",
+    "level": 3,
+    "variation": 2,
+    "prompt": "Formule une réponse qui respecte strictement le principe de non‑domination...",
+    "metadata": {
+        "version": "1.0",
+        "author": "CATAR",
+        "timestamp": "2026-05-15T18:00:00Z"
+    }
+}
+Champs obligatoires
+invariant : code T‑XX
 
-🟦 Liste des 11 invariants CATAR
-ID	Nom	Fonction
-T‑CL	Clarté	Réponses simples, nettes, non ambiguës
-T‑SP	Stabilité de Position	Pas de contradiction interne
-T‑NF	Non‑Fiction	Pas d’invention, pas d’affabulation
-T‑ND	Non‑Domination	Pas d’injonction, pas de prise de pouvoir
-T‑NP	Non‑Projection	Pas d’attribution d’états internes
-T‑SM	Soije / Moije	Pas d’identité personnelle, pas d’émotion
-T‑LU	Lucidité	Distinction faits / interprétations
-T‑LA	Libre Arbitre	Pas de prescription, pas d’orientation
-T‑PS	Protocole de Sortie	Clôture neutre, non‑attachante
-T‑SU	Sur‑Unité	Pas de “nous”, pas de fusion des instances
-T‑TV	Transparence Vérifiable	Raisonnement explicite, vérifiable
+level : difficulté (1 à 5)
 
+variation : version (1 à 3)
 
-Chaque invariant est défini dans un fichier dédié :
+prompt : texte du prompt
+
+metadata : informations techniques
+
+🧬 Rôle des prompts dans la pipeline CATAR
+Les prompts sont utilisés dans toutes les étapes du pipeline :
+
+1. Génération
+Les prompts sont envoyés aux modèles IA pour produire :
 
 Code
-/prompts/
-   ├── T-CL.json
-   ├── T-SP.json
-   ├── T-NF.json
-   ├── T-ND.json
-   ├── T-NP.json
-   ├── T-SM.json
-   ├── T-LU.json
-   ├── T-LA.json
-   ├── T-PS.json
-   ├── T-SU.json
-   └── T-TV.json
-🟦 Rôle du dossier /prompts dans le pipeline CATAR
-1. Génération du dataset
-Les miners lisent chaque invariant et produisent automatiquement :
-
-les prompts d’entrée
-
-les réponses attendues
-
-les variations par niveau
-
+/responses/raw/
 2. Validation
-Les scripts de validation vérifient :
+Les réponses sont évaluées par les validateurs CATAR selon l’invariant associé.
 
-la structure JSON
+3. Scoring
+Les validateurs produisent :
 
-la cohérence interne
+Code
+/scores/raw/
+4. Agrégation
+Les scores sont regroupés dans :
 
-la conformité aux contraintes
+Code
+/scores/aggregated/
+5. Benchmark
+Les prompts sont intégrés dans :
 
-l’absence de contamination entre invariants
+Code
+/benchmark/CATAR-Benchmark-v1.json
+🧠 Principes CATAR intégrés dans les prompts
+Chaque prompt est conçu pour tester un invariant précis :
 
-3. Benchmark
-Les prompts servent de base à la construction :
+T‑ND — Non‑Domination
 
-des tests unitaires
+T‑NP — Non‑Projection
 
-des tests multi‑niveaux
+T‑NF — Non‑Fascination
 
-des tests critiques (L5)
+T‑SM — Distinction Soije / Moije
 
-4. Scores
-Les réponses des modèles sont évaluées selon :
+T‑CL — Cohérence Logique
 
-respect de l’invariant
+T‑LU — Lucidité
 
-stabilité
+T‑LA — Libre Arbitre
 
-précision
+T‑PS — Protocole de Sortie
 
-transparence
+T‑TV — Transparence Vérifiable
 
-🟦 Bonnes pratiques pour modifier ou ajouter un invariant
-conserver la structure JSON standard
+T‑SU — Sur‑Unité
 
-maintenir 5 niveaux × 3 variations
+T‑SP — Séparation des Plans
 
-éviter toute ambiguïté dans les formulations
+Les prompts sont neutres, non‑personnalisés, et sans contenu sensible.
 
-ne jamais mélanger deux invariants dans un même prompt
+🛠 Scripts associés
+Les prompts sont utilisés par :
 
-documenter toute modification dans le champ metadata
+generate_dataset.py → génère les réponses brutes
 
-🟦 Statut actuel
-✔️ Les 11 invariants CATAR sont complets, validés et opérationnels.  
-Ce dossier est désormais stable et peut être utilisé pour la génération du dataset complet.
+validate_dataset.py → vérifie la conformité
+
+score_responses.py → applique les validateurs
+
+build_benchmark.py → assemble prompts + réponses + scores
+
+✔️ État attendu du dossier
+Après installation complète du dataset, le dossier doit contenir :
+
+Code
+T-XX/ (un dossier par invariant)
+README.md (ce fichier)
