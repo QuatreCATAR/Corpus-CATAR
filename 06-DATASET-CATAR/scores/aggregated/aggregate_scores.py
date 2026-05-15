@@ -21,7 +21,7 @@ def load_scores():
 
 def aggregate_global_scores(scores):
     """Calcule les statistiques globales sur tous les scores."""
-    global_scores = [s["scores"]["global_score"] for s in scores]
+    global_scores = [s["global_score"] for s in scores]
 
     return {
         "count": len(global_scores),
