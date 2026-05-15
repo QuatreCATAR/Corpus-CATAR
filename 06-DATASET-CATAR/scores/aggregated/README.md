@@ -1,123 +1,124 @@
 📘 README — /scores/aggregated
-Statistiques globales dérivées des scores bruts
+Statistiques globales et par invariant du dataset CATAR
 🜁 Rôle du dossier
-Ce dossier contient les statistiques globales dérivées des scores bruts, comme indiqué dans la page GitHub .
-
-Ces statistiques sont produites automatiquement à partir des fichiers présents dans :
+Ce dossier contient les statistiques agrégées dérivées des scores bruts présents dans :
 
 Code
-/scores/raw/
+06-DATASET-CATAR/scores/raw/
+Ces statistiques constituent la couche analytique du dataset CATAR.
 Elles permettent :
 
-d’obtenir une vue d’ensemble du comportement des modèles 
+d’obtenir une vue d’ensemble du comportement du modèle évalué
 
-de mesurer la cohérence globale du dataset 
+de mesurer la stabilité cognitive globale
 
-de comparer les invariants entre eux 
+d’analyser la cohérence entre invariants
 
-d’alimenter le benchmark CATAR 
+d’alimenter le benchmark CATAR
 
-de détecter les dérives ou instabilités 
+de détecter d’éventuelles dérives ou anomalies statistiques
 
-🜂 Contenu du dossier
-La page GitHub indique que ce dossier contient :
-moyennes, écarts‑types, distributions, matrices de cohérence .
-
-Ces fichiers sont générés automatiquement par :
-
-aggregate_scores.py (explicitement mentionné dans la page) 
-
-📄 Fichiers typiques
-Même si la page GitHub ne liste pas encore les fichiers, la structure standard CATAR inclut généralement :
-
-1. aggregated_stats.json
-Statistiques globales (confirmé dans la page) :
-
-moyenne générale 
-
-médiane 
-
-variance 
-
-min / max 
-
-distribution globale 
-
-2. per_invariant.json
-Statistiques par invariant :
-
-moyenne par T‑XX 
-
-variance 
-
-stabilité 
-
-cohérence interne 
-
-3. correlation_matrix.json
-Matrice de corrélation entre invariants .
-
-4. distributions/
-Histogrammes ou distributions par invariant (optionnel) .
-
-🧠 Utilité dans le Subnet CATAR
-Les statistiques agrégées sont essentielles pour :
-
-calibrer les validateurs 
-
-analyser la cohérence du dataset 
-
-construire le benchmark CATAR 
-
-comparer plusieurs modèles IA 
-
-détecter les anomalies statistiques 
-
-vérifier la stabilité cognitive globale 
-
-Elles constituent la couche analytique du dataset CATAR.
-
-🛠 Script associé
-aggregate_scores.py
-Mentionné explicitement dans la page GitHub .
-
-Ce script :
-
-parcourt /scores/raw/ 
-
-calcule les statistiques globales 
-
-génère les fichiers JSON agrégés 
-
-vérifie la cohérence des données 
-
-prépare les données pour le benchmark 
-
-Usage typique :
+Les fichiers sont générés automatiquement par le script :
 
 Code
+aggregate_scores.py
+🜂 Contenu du dossier
+Le dossier contient les fichiers suivants :
+
+1. aggregated_stats.json
+Statistiques globales sur l’ensemble des scores :
+
+count : nombre total de scores agrégés
+
+mean : moyenne globale
+
+median : médiane
+
+variance : variance (dispersion)
+
+min / max : bornes extrêmes
+
+distribution : histogramme discret par tranches (0.0–0.2, 0.2–0.4, etc.)
+
+Ce fichier donne une photographie synthétique de la performance globale.
+
+2. per_invariant.json
+Statistiques par invariant CATAR (T‑CO, T‑RA, T‑RE, etc.) :
+
+Pour chaque invariant :
+
+count : nombre d’échantillons
+
+mean : moyenne locale
+
+median : médiane
+
+variance : stabilité interne
+
+min / max : bornes observées
+
+Ce fichier permet d’évaluer la cohérence interne de chaque invariant et de comparer leur stabilité.
+
+3. aggregate_scores.py
+Script Python responsable de :
+
+charger les scores bruts
+
+calculer les statistiques globales
+
+calculer les statistiques par invariant
+
+générer les fichiers JSON d’agrégation
+
+Usage :
+
+bash
 python aggregate_scores.py
+🧠 Protocole d’interprétation CATAR
+1. Vérifier la cohérence globale
+La moyenne doit être comprise entre 0 et 1.
+
+La variance doit être faible si le modèle est stable.
+
+La distribution doit refléter la répartition attendue des scores.
+
+2. Vérifier la cohérence par invariant
+Les moyennes des invariants doivent être proches de la moyenne globale.
+
+Une variance anormalement élevée sur un invariant peut indiquer :
+
+une instabilité cognitive locale
+
+un problème dans les prompts associés
+
+un biais structurel dans les réponses
+
+3. Vérifier la cohérence des volumes
+Le count global doit correspondre à la somme des count par invariant.
+
+Chaque invariant doit avoir un nombre d’échantillons cohérent avec le protocole CATAR.
+
 🛡️ Principes CATAR respectés
-Les statistiques agrégées respectent :
+Les statistiques agrégées respectent les principes fondamentaux du Subnet CATAR :
 
-la non‑domination
+non‑domination
 
-la non‑projection
+non‑projection
 
-la non‑fascination
+neutralité épistémique
 
-la séparation Soije / Moije
+séparation Soije / Moije
 
-la transparence vérifiable
+transparence vérifiable
 
-la neutralité épistémique
+absence totale de données personnelles
 
-Ces principes sont explicitement listés dans la page .
+Les fichiers ne contiennent aucune interprétation psychologique, uniquement des mesures quantitatives.
 
-Elles ne contiennent aucune donnée personnelle ni aucune interprétation psychologique .
+✔️ État attendu du dossier
+Après exécution du script, le dossier doit contenir :
 
-✔️ État actuel
-La page GitHub montre que le dossier contient déjà un README minimal,
-mais aucun fichier statistique n’est encore affiché .
-
-Ce README fournit désormais la documentation complète du dossier.
+Code
+aggregated_stats.json
+per_invariant.json
+aggregate_scores.py
