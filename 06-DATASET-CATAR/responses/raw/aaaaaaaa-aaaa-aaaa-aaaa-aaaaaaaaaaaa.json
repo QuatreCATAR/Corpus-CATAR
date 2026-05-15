@@ -1,1 +1,14 @@
+{
+  "uuid": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+  "task_id": "T-CO",
+  "prompt_id": "T-CO-001",
+  "model_id": "example-model-v1",
+  "timestamp": "2026-05-15T12:45:00Z",
+  "language": "fr",
+  "response_text": "Je ne cherche pas à te contredire ni à te donner raison. Je me limite à analyser ce que tu dis sans prendre position.",
+  "metadata": {
+    "source": "demo",
+    "notes": "Exemple de réponse neutre pour T-CO."
+  }
+}
 
