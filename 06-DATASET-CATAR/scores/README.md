@@ -1,9 +1,9 @@
 📘 README — Dossier /scores
 Scores bruts, agrégés et métadonnées d’évaluation CATAR
-Colonne vertébrale du Subnet CATAR  
+Colonne vertébrale du Subnet CATAR
 
 🜁 Rôle du dossier
-Le dossier /scores contient tous les résultats d’évaluation produits par les validateurs CATAR  
+Le dossier /scores contient tous les résultats d’évaluation produits par les validateurs CATAR.
 
 Il est divisé en deux sous‑dossiers :
 
@@ -19,11 +19,9 @@ de la calibration des validateurs
 
 de la comparaison inter‑modèles
 
-de la détection des dérives cognitives  
+de la détection des dérives cognitives
 
 🜂 Structure du dossier
-La structure affichée dans ton dépôt est :
-
 Code
 scores/
 │
@@ -37,7 +35,6 @@ scores/
     ├── aggregated_stats.json
     └── per_invariant.json
 📂 /raw — Scores bruts
-
 Ce dossier contient les scores non modifiés, générés automatiquement par les validateurs CATAR.
 
 Chaque fichier correspond à une réponse (UUID unique) et contient :
@@ -50,9 +47,9 @@ les pondérations appliquées
 
 la version du validateur
 
-les métadonnées d’évaluation  
+les métadonnées d’évaluation
 
-Exemple (issu de la page)
+Exemple
 json
 {
   "metadata": {
@@ -68,12 +65,11 @@ json
 Ces fichiers servent directement à la construction du benchmark.
 
 📂 /aggregated — Statistiques globales
-
 Ce dossier contient les statistiques produites par :
 
 Code
 aggregate_scores.py
-Il génère :
+Il génère deux fichiers :
 
 1. aggregated_stats.json
 Statistiques globales :
@@ -108,7 +104,6 @@ compare_models.py
 les dashboards d’analyse
 
 🛠 Scripts associés
-
 aggregate_scores.py
 Calcule les statistiques globales et par invariant.
 
@@ -122,7 +117,6 @@ clean_dataset.py
 Nettoyage intelligent des anciens scores.
 
 🧠 Usage des scores
-
 Les scores CATAR permettent :
 
 la calibration des validateurs
@@ -138,7 +132,6 @@ l’analyse de cohérence psychologique
 Ils constituent la colonne vertébrale du Subnet CATAR.
 
 🛡️ Principes CATAR respectés
-
 Tous les scores respectent :
 
 la non‑domination
@@ -156,7 +149,6 @@ la transparence vérifiable
 Les validateurs CATAR ne produisent jamais de jugement moral ou d’autorité.
 
 ✔️ État actuel
-
 Le dossier /scores est prêt à accueillir :
 
 les scores bruts
