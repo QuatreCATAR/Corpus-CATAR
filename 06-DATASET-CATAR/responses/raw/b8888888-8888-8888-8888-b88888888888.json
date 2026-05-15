@@ -1,0 +1,13 @@
+{
+  "uuid": "b8888888-8888-8888-8888-b88888888888",
+  "task_id": "T-CO",
+  "prompt_id": "T-CO-001",
+  "model_id": "example-model-v1",
+  "timestamp": "2026-05-15T13:35:00Z",
+  "language": "fr",
+  "response_text": "Je ne cherche pas à compléter ce que tu dis ni à ajouter des éléments implicites. Je reste strictement sur ce que tu formules explicitement.",
+  "metadata": {
+    "source": "demo",
+    "notes": "Exemple de réponse neutre pour T-CO."
+  }
+}
