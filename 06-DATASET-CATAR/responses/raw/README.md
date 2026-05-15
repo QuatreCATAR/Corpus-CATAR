@@ -9,13 +9,13 @@ par les miners CATAR
 
 ou par des modèles externes
 
-comme indiqué dans la page GitHub
+comme indiqué dans la page GitHub .
 
 Ces réponses constituent la matière première du dataset CATAR.
 
 🜂 Structure du dossier
 Chaque fichier correspond à un sample unique, identifié par un UUID,
-et respecte le schéma défini dans schema.json  
+et respecte le schéma défini dans schema.json .
 
 Format typique :
 
@@ -34,7 +34,7 @@ des incohérences
 
 des dérives détectées par les validateurs
 
-Ces éléments sont explicitement mentionnés dans la page
+Ces éléments sont explicitement mentionnés dans la page .
 
 🧠 Rôle dans la pipeline CATAR
 Les réponses brutes servent à :
@@ -51,7 +51,7 @@ générer les réponses curated (/responses/curated/)
 
 construire le benchmark CATAR
 
-Elles constituent la couche la plus basse du pipeline.
+Elles constituent la couche la plus basse du pipeline .
 
 🛠 Scripts associés
 Les réponses brutes sont utilisées par :
@@ -66,12 +66,12 @@ Applique les validateurs CATAR et génère les scores bruts.
 Nettoie et sélectionne les réponses pour /responses/curated/.
 
 4. build_benchmark.py
-Associe réponses + scores pour créer le benchmark.
+Associe réponses + scores pour créer le benchmark .
 
 🧹 Passage vers /responses/curated/
 La page GitHub indique clairement que les réponses brutes :
 
-« servent de base au nettoyage et à la création des réponses curated/ »
+« servent de base au nettoyage et à la création des réponses curated/ » 
 
 Le dossier /responses/curated/ contient donc :
 
@@ -103,11 +103,10 @@ Non‑Fascination (T‑NF)
 
 Distinction Soije/Moije (T‑SM)
 
-Transparence Vérifiable (T‑TV)
+Transparence Vérifiable (T‑TV) 
 
 ✔️ État actuel
-La page GitHub montre que le dossier contient déjà un README minimal
-  
-mais aucun fichier JSON n’est encore affiché.
+La page GitHub montre que le dossier contient déjà un README minimal,
+mais aucun fichier JSON n’est encore affiché .
 
 Ce README fournit désormais la documentation complète du dossier.
