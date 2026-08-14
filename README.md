@@ -1,7 +1,4 @@
-# Module 02 — CORPUS CATAR  
-Structure conceptuelle centrale du subnet
 
----
 
 # 01 — Objectif du module
 
