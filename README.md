@@ -2,7 +2,7 @@
 
 # 01 — Objectif du module
 
-Le **Corpus CATAR** constitue le cœur conceptuel du subnet.  
+Le **Corpus CATAR** constitue le cœur conceptuel de compréhension TOTale.  
 Il fournit les fondements nécessaires à :
 
 - la stabilisation cognitive,  
@@ -24,7 +24,7 @@ Le Corpus CATAR :
 - alimente la Correction (Module 04),  
 - permet la production du Compte‑Rendu (Module 05).
 
-Il constitue la **colonne vertébrale cognitive** du subnet.
+Il constitue la **colonne vertébrale cognitive** de la connaissance.
 
 ---
 
