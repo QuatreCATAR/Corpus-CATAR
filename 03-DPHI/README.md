@@ -1,6 +1,8 @@
 📘 README — 03‑DPHI
 Les quatre D.Phi : formalisation opérative et stabilisation conceptuelle
+
 (Les quatre D.Phi sont présentés en totalité sur cette page avec des sous dossiers correspondants aux détails des sessions)
+
 🜁 Rôle du dossier
 Ce dossier contient les quatre D.Phi, qui constituent la couche opérative du Corpus CATAR.
 
