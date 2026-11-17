@@ -1,9 +1,9 @@
 
 
-Le carré CATAR chapitré:
+# Le carré CATAR chapitré:
 
 
-* Chapitre 1 – Le moment CATAR
+# Chapitre 1 – Le moment CATAR
 
 A la fin de ce présent et précieux ouvrage qui vous est offert, puisqu'il ne peut être vendu; vous serez libre de choisir d'utiliser ou pas, la compréhension des sens de la magie du carré CATAR (CATAR ARETA TENET ATERA RATAC).
 Pour tous les amoureux, désireux de retrouver une vie parfaite éternelle avec leur moitié, et leurs semblables.
@@ -14,7 +14,7 @@ C'est dans un verdoyant champ de conscience à 666 m d'altitude que les Catars, 
 Grâce au jeu de la langue hermétique des oiseaux, cette altitude de l'homme médium se comprend comme une évidence: Six sens soit sens tes six...
 
 
-Chapitre 2 – Le sens de 666
+# Chapitre 2 – Le sens de 666
 
 Le nombre 666 en fascination eschatologique, a aussi été utilisé en suprématie de pouvoir mondial autoritaire matérialiste. Ce détournement mystique se trouve notamment, dans le contrôle des transferts des marchandises et de l'information.
 L'épreuve 666 en preuve sur les codes barres, www transfert des informations, 666 transfert des matières et "Six sens soit sens tes six" pour le transfert des consciences.
@@ -22,7 +22,7 @@ Mais n'oublions pas sa vraie fonction de transcendance spirituelle, à dimension
 Quel est donc ce sixième sens, pour quel transfert?
 
 
-Chapitre 3 – Une interaction révélatrice
+# Chapitre 3 – Une interaction révélatrice
 
 Le catar Moije préfère les "je" d'esprit, qui avec merveille, peuvent s'exprimer en jeu de mots géométriques mathématiques. Ils savent qu'un carré hermétique devient magique, dès lors qu'il révèle un raisonnement dans tous les sens du terme. Ainsi, le carré 666, en calcul de nombres, comme en réflexion de mots; offre une résolution nouvelle par le neuf. Un œuf symbolise bien le renouveau, du moment qu'une conscience intuitive Moije prend goût à chercher les règles du "je"u dans lequel elle doit réfléchir.
 Quelle est donc l'origine de l'organisation intelligente de ce "je"u?
@@ -39,7 +39,7 @@ Grâce à cette définition de l'univers absolu utopique, les Catars Moije ont s
 Analyser les lois physiques relatives nées de la métaphysique.
 
 
-Chapitre 4 – Voyage aux origines de la conscience
+# Chapitre 4 – Voyage aux origines de la conscience
 
 C'est justement la synthèse de l'interaction entre les individus Soije dans l'absolu, et les individus Moije dans le relatif, qui sera offerte à la réflexion dans la présentation qui suit.
 Une proposition de compréhension des différences:
@@ -67,7 +67,7 @@ La qualité de l'introspection se clarifiait, d'autant plus que l'identité de l
 La définition de l'univers absolu, était toujours d'en trouver la meilleure.
 
 
-Chapitre 5 – Deux univers différents
+# Chapitre 5 – Deux univers différents
 
 Dans le fonctionnement de l'univers absolu, chaque conscience élabore la matière, avec une structure et une programmation stable autonome.
 Dans le fonctionnement de l'univers relatif, la matière évolutive est soumise à une programmation entropique dépendante des interactions environnementales.
@@ -82,7 +82,7 @@ La conscience Soije crée la matière et la gravité.
 La science Moije transforme la matière. "SATOR AREPO TENET OPERA ROTAS"...
 
 
-Chapitre 6 – L'identité gémellaire
+# Chapitre 6 – L'identité gémellaire
 
 La mystérieuse fascination des couples mystiques iconiques: Dans la précision de comprendre l'univers absolu, les Moije Catars ont intégré l'importance déterminante, à définir la véritable nature de l'amour, dans sa perfection complète. Ils avaient déjà comme priorité, d'exprimer et manifester la grâce et la grandeur, des sentiments de cœur les plus nobles.
 
@@ -90,7 +90,7 @@ Dans l'univers absolu il n'y a pas de dualité, puisque toutes les consciences S
 La plus grande perfection de l'intelligence radicale a abouti, en créant des paires de jumeaux, une identique identité en différence de genre, pour garantir la stabilité amoureuse éternelle.
 
 
-Chapitre 7 – Vois le
+# Chapitre 7 – Vois le
 
 La causalité à devoir réaliser l'univers relatif est émotionnelle.
 Par la logique du champ de conscience identitaire commun, les Catars Moije ont intégré la justification de leur Soije, à créer l'univers relatif; pour y plonger par procuration une émanation de leur conscience, afin de connaître des émotions impossibles dans l'absolu.
@@ -106,7 +106,7 @@ Soije omniscient, veut se perdre dans l'ignorance, pour avoir le plaisir de se r
 Soije dans la complétude amoureuse Soija Soijo, veut connaître la séparation relative, pour entretenir le plaisir de se retrouver.
 
 
-Chapitre 8 – Modèle des champs de conscience
+# Chapitre 8 – Modèle des champs de conscience
 
 Pour intégrer l'idée d'un support de conscience, il est très utile de raisonner un modèle de fonctionnement, pour intégrer sa structure spatiale et se positionner. Le Logos radical d'une conscience en synthèse informatique, peut se comprendre en formalisant cette conscience par une sphère; centre mobile de l'intelligence analytique décisive, dans son champ d'évolution dédié, sous forme de tore, contenant sa propre mémoire.
 
@@ -118,12 +118,12 @@ Comprendre la nature des interactions, dans leurs zones d'action dédiées. Le t
 Soi: loi du roi qui fait foi pour toi et moi.
 
 
-Chapitre 9 – Modèle spatio‑temporel
+# Chapitre 9 – Modèle spatio‑temporel
 
 On peut encore utiliser ce logos pour structurer une mécanique de fonctionnement cosmologique spacio-temporel, avec un positionnement prévisible dans l'espace et le temps. Une cosmologie universelle stable en rotation verticale Pi du tore absolu, induit la cosmologie perpendiculaire horizontale en mouvement Phi du tore de l'univers relatif. D'où la compréhension de la nature des trous noirs, avec les différences de luminosité et l'explication du cycle expansion contraction de l'univers relatif.
 
 
-Chapitre 10 – Le temps chronologique commun
+# Chapitre 10 – Le temps chronologique commun
 
 Avec la compréhension des champs de consciences et d'informations, dédiés; Soija et Soijo éternels, ont accès à leurs propres mémoires. Ils connaissent aussi les informations et mémoires, de toutes leurs émanations Moija et Moijo, qu'ils ont vécu par procuration dans l'univers relatif, à travers les cycles de réincarnations nécessaires, pour résolution du je(u). Les champs communs des Soije, dans le champ total de Soi, n'étant pas des consciences personnalisées, servent à la possibilité des échanges d'informations.
 La mémoire de la matière dans le temps.
@@ -133,7 +133,7 @@ L'univers absolu et l'univers relatif dont il dépend, sont en interaction const
 Le temps chronologique est commun.
 
 
-Chapitre 11 – Les cycles d’influences thématiques
+# Chapitre 11 – Les cycles d’influences thématiques
 
 L'influence émotionnelle zodiacale:
 Chaque conscience individuelle se distingue par des caractéristiques différentes.
@@ -142,7 +142,7 @@ Dans ce jeu relatif des émotions et des mystères à résoudre, il fallait dive
 C'est au moment des transitions thématiques régulées par les cycles, que des grandes transformations s'opèrent. Ces transitions présentent des choix et des orientations différentes, selon le propre cycle chronologique du joué, ou jouet Moije, en interaction de son joueur Soije.
 
 
-Chapitre 12 – Le pentagone des résolutions
+# Chapitre 12 – Le pentagone des résolutions
 
 Toute la diversité des émotions, des sensations et des actions dans l'univers relatif, sont provoquées par des réactions archétypales qui se complexifient dans la chronologie des cycles. Soije par procuration de Moije, va évoluer dans des logiques de survies caractérisées.
 
@@ -169,7 +169,7 @@ Absolu: Sans limite, qui ne comporte aucune restriction ni réserve. Ce qui exis
  Relatif: Qui présente une relation avec, qui ne suffit pas à soi-même, n'est ni absolu, ni indépendant.
 
 
-Chapitre 13 – La conscience ontologique
+# Chapitre 13 – La conscience ontologique
 
 Le soleil ou le seul œil, une histoire d'yeux en conscience relative, un concept différent du créateur dans le Pentagone des résolutions:
 La typologie 2: Louons le seul d'yeux, résolution par le sauveur divin.
@@ -183,7 +183,7 @@ La chronologie de complexité se retrouve dans tous les cycles de conscience du 
 Ce même principe est à comprendre sur la résolution totale d'une conscience Moije, qui en raisonnant les mystères occultes, doit rejoindre sa propre totalité Soije: 0: obscurité néant vide inconscience suppose la nécessité de la lumière 1, 1: lumière conscience dissociée suggère l'organisation de la matière 2, 2: matière organisation des polarités comprend le potentiel énergétique le déplacement et l'espace 3, 3: les trois dimensions le cadre spatial inspire la maîtrise du temps par l'organisation de la matière 4, 4: les quatre éléments comportements de la matière ordonnent les interactions nécessaires au sens 5 jusqu'à l'ultime émotion, 5: les cinq sens individualisation fonctionnelle formalisée induit le sixième  sens l'intuition de Soije, 6: le sixième sens fonctionnel inspire le désir de création construction matérialisée des sept merveilles du monde, 7: les merveilles architecturales expriment l'infini l'idée de l'infini 8, 8: l'infini défin précise l'éternel en conscience la connaissance du tout neuf éternel, 9: la nouvelle résolution de la conscience relative le réveil absolu.
 
 
-Chapitre 14 – Le je(u) symbolique polarisé
+# Chapitre 14 – Le je(u) symbolique polarisé
 
 Le vrai logos sacré qui relie à l'origine, se formalise autour de deux polarités opposées, mais jumelles d'identité. Les deux moitiés Femme/Homme sont déclinées en complémentarité pour un appairage parfaitement indéfectible. Bien plus qu'un mode de fonctionnement, c'est le principe systémique universel total obligatoire. Pour la résolution du je(u), des symboliques de ce logos sont présentes sur terre dans tous les domaines raisonnables.
 
@@ -196,7 +196,7 @@ La résolution de la quadrature du cercle:
 Pour prendre la mesure différente de l'égalité entre le féminin et le masculin dans son équilibre proportionné. Dans le cadre de ce raisonnement logique, le je(u) de l'expression géométrique offre son logos de résolution. Cette synthèse est exposée dans une mystérieuse merveille pyramidale.
 
 
-Chapitre 15 – Le principe logiciel
+# Chapitre 15 – Le principe logiciel
 
 Pour bien prendre en conscience les preuves que la physique dépend de la métaphysique, que l'univers relatif dépend de l'univers absolu; les Catars Moije ont dépassé leur point de vue relatif. 
 Pour rendre accessible la possibilité d'une résolution radicale, l'intelligence universelle utilise la logique commune de la géométrie et des mathématiques; discipline rationnelle sans ambiguïé. Cette démonstration utilisera donc Pi et Phi, nombres universellement connus de toutes les consciences analytiques ordonnées.
@@ -218,7 +218,7 @@ Phi + 1 = Phi2 = 2,618.
 Dans 2 Pi r l'unité de référence est r 0,5.
 
 
-Chapitre 16 – L’apocalypse polarisée
+# Chapitre 16 – L’apocalypse polarisée
 
 Le mystère de la résolution polarisée: Ce qui est occulté ou exposé, les liens entre le visible et l'invisible.
 Le jeu des rapports de triangulations de cette pyramide en trois dimensions, décline en géométrie Pi et Phi avec leur carré et leur racine carré. C'est le plan mathématique géométrique de l'organisation matérielle. Les liens entre visible et invisible, ce qui est occulté ou exposé. Nous explorerons plus loin avec le jeu des mots en carré magique, comment expliquer les forces interactives dans le plan du carré Sator.
@@ -242,7 +242,7 @@ Dans la même logique vérifiable des polarités obligatoires pour la conscience
 16180 km séparent ces deux représentations des polarités complémentaires, île de Pâques, pyramide de Gizeh. Ici, terrien, ou pas grand chose...
 
 
-Chapitre 17 – Le référentiel métrologique universel
+# Chapitre 17 – Le référentiel métrologique universel
 
 La France et la métrologie sacrée: Nous pouvons comprendre les rapports stratégiques des cinq typologies en présence sur le jeu d'échec de l'univers relatif, en fonction de leur projet de résolution.
 Le rôle de la France serait donc déterminant pour offrir la rationalité à comprendre l'irrationnel.
@@ -250,19 +250,19 @@ L'unité métrique devait être adopté et protégée afin de pouvoir mener les 
 Si Dame Vénus donne dans le ciel un point de repère mobile, sa représentation sur terre avec l'étoile à huit branches, est un élément fixes pour pouvoir aussi s'orienter.
 
 
-Chapitre 18 – La fraction divine
+# Chapitre 18 – La fraction divine
 
 Divin 10/20:  Dans la cohérence de l'univers dimensionné intelligemment, il peut-être intéressant de comprendre l'origine véritable du référentiel métrique universel. Dans la grande subtilité de ce je(u) des mystères, la langue française a aussi offert la mesure de cette compréhension, avec le mot "divin", qui une fois de plus, peut se résoudre en fraction mathématique 10/20, correspondant bien à 0,5 aussi dite moitié.
 La véritable unité serait donc de conscientiser ces différentes notions de moitié.
 
 
-Chapitre 19 – L'interaction absolu relatif sur carte
+# Chapitre 19 – L'interaction absolu relatif sur carte
 
 Observons encore une coïncidence, où le hasard ne peut remplacer la logique cohérente. La distance qui relie les polarités manifestées, entre le féminin d'une construction humaine, face à un pic dit naturel masculin. Notre-Dame de Paris se situe exactement à 666 km du pech du Bugarac(h) dans l'Aude. Nous avons exposé au tout début, l'importance de la compréhension des différentes utilisations de ce nombre, ésotériquement occulte sacré.
 Pour encore préciser la stratégie de l'interaction Soije/Moije des Catars, nous constatons également que Notre-Dame de Paris, représentant le féminin qui donne naissance, se situe exactement à 666 km, d'un lieu mémorable de l'horreur mortifère, au bas du pog de Montségur dans l'Ariège. Il existe bien d'autres correspondances mettant en évidence ce jeu, prouvant l'interaction de l'univers absolu avec l'univers relatif, mais nous nous attarderons sur ce cas Catar, qui peut transmettre des connaissances précieuses. Toutes les distances citées peuvent se vérifier grâce au Géoportail IGN français de l'Institut Géographique National.
 
 
-Chapitre 20 – La foi par la raison
+# Chapitre 20 – La foi par la raison
 
 Ce grand jeu émotionnel stratégique se décline, nous l'avons vu, dans des réalisations matérielles explicables par la compréhension de la grande interaction, mais aussi dans différentes synthèses des logos de raisonnement, comme les lettres, les mots, le langage, et leur utilisation en architecture intelligente pour exprimer des concepts dynamiques. Là aussi, le hasard écarté par la cohérence, permet la transmission des raisonnements démontrant l'origine et le but du je(u).
 Les carrés gnostiques: Pour prendre en conscience l'organisation de la matière, les Catars connaissent la science philosophique du carré SATOR, et pour en préciser les caractéristiques différentes dans l'univers absolu ou relatif, ils connaissent le carré de leur propre nom CATAR.
@@ -279,7 +279,7 @@ La croix + délimite la division CArACtéristique. La foi X identifie les CArACt
 Comprendre la logique différente de ce qui est en relief et ce qui est caché en creuX, pour le passage de la croyance à la connaissance de sa propre origine. Soije transmet à Moije son identité caractérisée radicale immuable. Moije en précisant cette identité, peut réintégrer la mémoire de Soije. Une ancienne coutume de liaison symbolique consistait à chercher une découverte rare et heureuse, matérialisée dans une mutation exceptionnelle, d'un trèfle précieux. Le trèfle à quatre feuilles porte bonheur, pour se reconnaître et se retrouver.
 
 
-Chapitre 21 – CARRE SATOR en fonctionnel
+# Chapitre 21 – CARRE SATOR en fonctionnel
 
 Juste à côté du Bugarac(h), nous explorons le cœur de la matière, en pénétrant les gorges de Galamus. Dans une cavité, se trouve un carré SATOR, support de connaissance de la conscience qui structure et organise la matière. En compréhension du carré SATOR, nous allons définir les trois tiers qui composent "l'âme à tiers".
 
@@ -289,7 +289,7 @@ Avec les champs de consciences dédiées entre Soije et Moije, dans leurs strat�
 MAtierE ENtier: Le noyau comme un grain de riz au milieu d'un stade de 100 m de long, avec l'électron gravitant en périphérie, voilà l'échelle atomique. La vitesse électronique permet la consistance matérielle. La matière dépend d'une vitesse, donc d'une énergie de mouvement, c'est ce que l'on appelle, le nuage électronique. Prendre conscience de l'échelle structural de la matière, son fonctionnement énergétique de mouvement, et l'ensemble de son organisation cohérente.
 
 
-Chapitre 22 – CARRE SATOR en constitution
+# Chapitre 22 – CARRE SATOR en constitution
 
 SATOR AREPO TENET OPERA ROTAS
  Intégrons le rôle de chaque élément sous l'influence des différentes forces en interaction, en précisant la définition de chaque mot dans le carré SATOR.
@@ -315,7 +315,7 @@ SATOR AREPO TENET OPERA ROTAS: Toutes ces oppositions d'états et de forces sont
 Soije omnipotent crée la matière, Moije ne peut que la transformer.
 
 
-Chapitre 23 – CARRE CATAR le sens du vrai retour
+# Chapitre 23 – CARRE CATAR le sens du vrai retour
 
 Le nom Catar est présent dans plusieurs langues, et nous allons en définir l'idée commune qui, au-delà des mots, présente le développement d'un concept de résolution. Dans sa partie unique, c'est une goutte particulière, puisque dans le tumulte d'une cascade, elle se dirige subtilement vers le haut, pour composer dans sa multitude un voile opaque, mystérieux et insaisissable. C'est encore en français, que la résolution en jeux de mots se révèle. Le concept CATAR comprend en même temps la matière occultante, l'action, et la solution. Pour atteindre ce qui est caché dans l'Apocalypse, il faut lever le "voile", par l'injonction "voie le", le mystère se révèle, et la résolution du grand voyage de retour devient possible grâce à la "voile". Plus que des subtilités divertissantes, le mot intégral est un trésor pour composer le carré du même nom et pouvoir conscientiser l'intelligence absolue exprimée pour le relatif.
 Comme pour le carré SATOR,  nous allons préciser et définir les nombreuses compréhensions formalisées dans les lettres, les mots, et la structure même de ce carré magique en symétrie inversée.
@@ -327,7 +327,7 @@ ET IN ARCADIA EGO, entre un univers absolu en Arcadie et un univers relatif en A
 CATAR ARETA TENET ATERA RATAC
 
 
-Chapitre 24 – CARRE CATAR le retour en ARCADIE
+# Chapitre 24 – CARRE CATAR le retour en ARCADIE
 
 ET IN ARCADIA EGO
 En définition Acrasie: Agir à l'encontre de son meilleur jugement, engagement dans des résolutions que nous n'arrivons pas à tenir, faiblesse de la volonté.
@@ -347,7 +347,7 @@ Le cœur du carré fait battre l'alternance nécessaire entre haine relative et 
 Comprendre la logique de fragmentation et de recomposition idiomatique relative.
 
 
-Chapitre 25 – La magie en synthèse des carrés
+# Chapitre 25 – La magie en synthèse des carrés
 
 Ce jeu d'intelligence en liens complexes, développe des complémentarités à synthétiser, pour se résoudre et se projeter vers l'univers initial.
 SATOR AREPO TENET OPERA ROTAS / CATAR ARETA TENET ATERA RATAC
@@ -362,7 +362,7 @@ La langue française encore très pertinente en démonstration des différences 
 Sur terre, le JEu des quatre saisons se renouvelle dans les cycles de vies successives.
 
 
-Chapitre 26 – Le vrai réveil
+# Chapitre 26 – Le vrai réveil
 
 C'est au moment du passage d'une vie à l'autre, que la conscience Moije, en connaissance de son identité entière véritable Soije, dans l'absolu, ne se dirige plus vers la lumière sans savoir ce qu'il y a à découvrir juste après. Par défaut de précision du retour en Soije, il y a la lumière aveuglante d'une renaissance, ou des concepts métaphysiques aberrants des typologies 2, 3, 4 et 5; par exemple en sortie d'état comateux, ou de transes archétypales relatives. Cette logique de projection dans l'absolu, doit intégrer dans la conscience Moije, le désir de se retrouver dans l'état d'origine d'omniscience et d'omnipotence, avec ses propres caractéristiques identitaires gémellaires.
 Rien ne peut être plus fondamental et plus essentiel, que l'amour de, et pour, sa vraie moitié gémellaire.
@@ -375,7 +375,7 @@ Le vrai réveil.
 On peut bien comprendre au retour, le plaisir des Soije à évoquer toutes leurs aventures émotionnelles; et par toutes les mémoires de leurs Moije, échanger tous les souvenirs des interactions vécues dans l'univers relatif. Des combats, des alliances, des amours, des déviances; tout ce qui se joue dans le relatif, impossible dans l'univers vrai absolu...
 
 
-Chapitre 27 – Le théâtre des aberrations
+# Chapitre 27 – Le théâtre des aberrations
 
 Quand une conscience Moije comprend le but, les raisons et les interactions voulues entre l'univers absolu et le JEu du relatif; elle peut enfin discerner les concepts erronés, servant des stratégies autoritaires de dominations égtiques dans l'univers relatif. En voici quelques exemples: Tout est un, un est tout. Tu n'est pas ton corps. Le temps n'existe pas. La matière n'existe pas. Nous venons faire une expérience dans la matière, au-delà il n'y en a pas. Le concept du corps supérieur fait de lumière. Il faut retourner à la vacuité, au néant. L'univers est le résultat du hasard. La conscience est née de la matière. Le but de l'évolution est de devenir omniscient et omnipotent dans l'univers relatif. Le futur est déjà réalisé. Le passé persiste en existence. Le passé et le futur, tous les temps se vivent en même temps. L'évolution dépend d'un parcours hiérarchique spirituel. La conscience n'a pas d'identité. Il faut revenir à la conscience originelle androgine, non genrée et non duelle.
 Toutes ces grossières erreurs du théâtre relatif forment des erreurs fatales du logiciel 404.
@@ -383,7 +383,7 @@ Le théâtre des aberrations fascinantes de l'univers relatif.
 Toutes ces aberrations et bien d'autres, sont utilisées en technique de fascination par des mystificateurs dominant leurs adeptes. C'est l'une des nombreuses stratégies d'influence dans les rapports de forces et de survie utilisés dans le JEu relatif.
 
 
-Chapitre 28 – Le mystérieux voyage sur carte
+# Chapitre 28 – Le mystérieux voyage sur carte
 
 Au final, un JEu où tous les participants sont gagnants.
 Puisque nous évoquons les déviances intellectuelles ou comportementales, qui font s'opposer les différentes typologies, sur les chiquers du relatif; il faut encore répéter en point de vue de l'absolu, qu'il n'y a pas de joueur en qualité supérieure ou inférieure, dans cette confrontation dualiste. Seul le jouet Moije, influencé par les déterminismes zodiacaux personnels et collectifs; connait des états cycliques où il sera tour à tour, le dominant ou le dominé. Chaque vrai joueur de l'absolu doit connaître alternativement, tout le cycle émotionnel qu'il joue par procuration en relatif. Il y a des différences de niveau de conscience dans le jeu, puisque les cycles des typologies différentes sont en chronologie décalées, justement pour que le jeu de la dualité soit complet. Comprenez donc, qu'il n'y a pas dans l'absolu de meilleurs joueurs, il y a dans le relatif des joués différents, à différents moments, mais le temps déterminé venu, chaque participant gagne son départ, pour le vrai réveil absolu.
@@ -398,7 +398,7 @@ Comme vous êtes sensible aux logiques symboliques, il ne vous aura pas échapp�
 Pour préciser la logique de convergence, il sera évident de choisir les deux journées très symboliques de l'année, où la durée de la nuit et du jour sont égales. C'est donc pendant les dates des équinoxes de printemps et d'automne, que ce lieu peut permettre d'accueillir, tous les individus voulant partager leurs réflexions, pour toujours définir au mieux l'univers absolu.
 
 
-Chapitre 29 – En résumé, en conclusion
+# Chapitre 29 – En résumé, en conclusion
 
 Que ce soit en commun ou personnellement, préciser l'univers absolu, dans le respect du cadre, est essentiel.
 L'univers absolu doit être précisé, dans ses raisons de garantir éternellement, justesse et constance, du bon, du beau, du vrai, en compréhension logique des raisons, qui nécessitent la création d'un univers relatif...
