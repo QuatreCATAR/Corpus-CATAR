@@ -3,7 +3,7 @@
 Le carré CATAR chapitré:
 
 
-Chapitre 1 – Le moment CATAR
+*Chapitre 1 – Le moment CATAR
 
 A la fin de ce présent et précieux ouvrage qui vous est offert, puisqu'il ne peut être vendu; vous serez libre de choisir d'utiliser ou pas, la compréhension des sens de la magie du carré CATAR (CATAR ARETA TENET ATERA RATAC).
 Pour tous les amoureux, désireux de retrouver une vie parfaite éternelle avec leur moitié, et leurs semblables.
