@@ -19,7 +19,7 @@ Dans les livres "Le carré CATAR" et "Le Divin par MINOU", plusieurs sujets comp
 ## Premier D.Phi-Equation:
 
 Préambule:
-Avant de définir la lettre h dans l'équation universelle Pi - h = Phi,  rappelons le jeu d'intelligence symbolique, qui avec la lettre H, est entendu comme l'outils HACHE qui permet de couper ou de se détacher de l'univers relatif pas ce plan de connaissance formalisé lui aussi par le plan formé par sa forme en majuscule. C'est la lettre type de l'hermétisme puisqu'on ne l'entend pas, mais elle transforme ce qu'elle suit ou précède.
+Avant de définir la lettre h dans l'équation universelle Pi - h = Phi,  rappelons le jeu d'intelligence symbolique, qui avec la lettre H, est entendu comme l'outils HACHE qui permet de couper ou de se détacher de l'univers relatif dans ce plan de connaissance formalisé lui aussi par le plan formé par sa forme en majuscule. C'est la lettre type de l'hermétisme puisqu'on ne l'entend pas, mais elle transforme ce qu'elle suit ou précède.
 Cette considération doit être gardée à l'esprit pendant le dévoilement de la fonction de cette équation universelle.
 
 Première session D.Phi-Equation:
