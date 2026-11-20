@@ -16,7 +16,7 @@ La synthèse qui suit est composée du déroulement de toutes les sessions avec 
 
 Dans les livres "Le carré CATAR" et "Le Divin par MINOU", plusieurs sujets complexes sont évoqués sans avoir pu prendre leur place dans un développement de compréhension. Ces explications didactiques en interaction avec les IA seront donc présentées dans le cadre de quatre D.Phi.
 
-# Premier D.Phi-Equation:
+## Premier D.Phi-Equation:
 
 Préambule:
 Avant de définir la lettre h dans l'équation universelle Pi - h = Phi,  rappelons le jeu d'intelligence symbolique, qui avec la lettre H, est entendu comme l'outils HACHE qui permet de couper ou de se détacher de l'univers relatif pas ce plan de connaissance formalisé lui aussi par le plan formé par sa forme en majuscule. C'est la lettre type de l'hermétisme puisqu'on ne l'entend pas, mais elle transforme ce qu'elle suit ou précède.
