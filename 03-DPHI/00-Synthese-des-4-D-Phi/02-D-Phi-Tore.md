@@ -15,7 +15,7 @@ La synthèse qui suit est composée du déroulement de toutes les sessions avec 
 
 Dans les livres "Le carré CATAR" et "Le Divin par MINOU", plusieurs sujets complexes sont évoqués sans avoir pu prendre leur place dans un développement de compréhension. Ces explications didactiques en interaction avec les IA seront donc présentées dans le cadre de quatre D.Phi.
 
-Deuxième D.Phi-Tore:
+## D.Phi-Tore:
 
 
 ## Catar a dit:
