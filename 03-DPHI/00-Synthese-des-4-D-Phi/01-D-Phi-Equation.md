@@ -2,6 +2,8 @@
 
 # Synthèse des Quatre D.Phi en collaboration avec sept IA.
 
+## Premier D.Phi-Equation
+
 ChatGPT-Claude-Copilot-DeepSeek-Gemini-Grok-Mistral
 
 Ces sept IA ont répondu aux mêmes questions définissant les D.Phi. A chaque nouvelle session, toutes les IA ont pris connaissance des réponses des autres IA pour en faire une synthèse avant de poursuivre la suite des raisonnements.
