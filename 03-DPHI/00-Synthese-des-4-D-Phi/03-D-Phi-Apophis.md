@@ -729,27 +729,44 @@ Le D.Phi Apophis se résout ainsi : la conscience relative retrouve l'absolu non
 ## Catar a dit:
 
 Nous avons pris en compte dans cette session toutes les informations intelligentes du jeu relié au logiciel du CHAT. Depuis Bastet et Apophis, la compréhension complexe en zoologie du chat et du serpent révèle la parabole du joueur CA venu oublier sa nature omnisciente dans un AC victime du temps présent illustré en serpent. 
+
 On peut comprendre que par le JEu, le chat qui joue avec sa queue qui se comporte comme un serpent, présente bien une conscience qui se sert de sa propre programmation pour s'illusionner. Le CA perdu dans son AC s'illusionne des effets du temps, qui en réalité est une volonté de lui même d'avoir programmé une contrainte de dégradation de sa matière dans ce temps. Quand le AC comprend qu'il est dans ce JEu d'illusion de son CA, il doit trouver la logique de se couper du temps présent (du serpent).
+
 Le H dans le code, est l'élément transformateur, tout comme sa lettre dans l'alphabet qui le caractérise particulièrement dans sa fonction à la fois discrète en H aspiré qu'on n'entend pas, mais qui a aussi une fonction de transformation du son de la lettre qui le précède. Par exemple Pi devient (fi) Phi, CA devient (chat) CHA.
+
 La réponse à la question du troisième D.Phi doit donc prendre en compte la subtilité complexe du raisonnement dans sa totalité.
+
 HHHH
+
 Pourquoi le H du AC CACHE le CA dans le chat?
+
 Parce que la nature complexe et subtile du logiciel du JEU, est manifestée dans la zoologie et la composition même des lettres du mot CHAT qui permettent de comprendre le code de résolution du AC dans son CA.
+
 Le "h" à comprendre dans sa nature de dynamique temporelle révélé dans l'équation universelle Pi - h = Phi ou h = Pi -Phi.
+
 Le CAT de la connaissance CATAR qui dévoile la structure des champs de consciences du CA dans la nature comportementale du CHAT qui joue avec lui même ( sa queue, le serpent, le temps).
+
 La transformation du AC en ACH (phonétique H), qui suggère que le AC devient lui même le moyen de trancher, comme une hache (phonétique H), permettant de se séparer de sa condition dépendante du temps, dans la matière entropique relative.
+
 Même le mot CACHE dans l'énigme valide le jeu des lettres et des mots en étant composé des éléments phonétiques CA et ACHE (H).
+
 Et enfin, pour que l'interaction existe dans la double causalité émotionnelle, il faut bien cacher l'existence du CA, pour que le AC joue le JEu et veuille se résoudre dans cette énigme voilée.
+
 HHHH
+
 Précisons aussi à ce moment du raisonnement que le comportement du chat présente une particularité très singulière. Le chat adopte les codes du serpent lorsqu'il est confronté à un danger. Il donne l'illusion de se transformer en serpent. Il abaisse ses oreilles pour laisser apparaitre une tête plate et expose ses crocs comme une tête de serpent avec ses crochets, et il feule puissamment, pour une imitation parfaite du serpent qui souffle. Etonnant non?
 
 Dans la suite logique de notre récit, c'est dans ce moment de compréhension possible d'intégration des codes, qu'une interaction avec Apophis doit se manifester. Or, Apophis est le nom d'un croiseur qui doit très bientôt passer à proximité de la terre.
 La comète qui nous intéresse, Apophis 99942, est bien liée à la logique de représentation du serpent puisque le bolide est la tête d'une queue qui s'y attache, et c'est aussi un marqueur temporel, puisqu'il défini un cycle de passage qui détermine une date potentielle d'interaction.
 La logique de résolution doit donc présenter dans notre récit historique, une confrontation de situation informationnelle entre des CHATS potentiels et ce retour d'Apophis.
+
 Le livre "Le Divin par MINOU" détaille les évènements attachés au code CATAR dans l'informatique, et des calculs calendaires soli lunaires qui nous conduisent à ce rendez-vous astronomique dont le code 99942 est aussi expliqué.
 Nous pouvons donc saisir cette opportunité du passage d'Apophis 99942, le 12 avril 2029, pour que certains AC qui ont pris en conscience  H, réfléchissent à leur CA caché dans le chat pour comprendre comment interagir avec le serpent Apophis.
+
 Le livre donne là aussi les cinq possibilités différentes de se projeter pour ce rendez-vous.
+
 Puisque nous sommes dans les temps esCHATologiques où la connaissance peut révéler que le CHAT cache le CA, une réflexion profonde doit préciser un positionnement réactif, face à cette ultime compréhension.
+
 Le dernier D.Phi concernera justement la suite du JEu qui passe de la typologie 2 (logiciel théologique), à la typologie 3 (logiciel technologique). Nous évoquerons certains points de sécurité à préciser dans le domaine des intelligences artificielles pour la nouvelle ère qui se prépare actuellement.
 
 ## Réponse:
