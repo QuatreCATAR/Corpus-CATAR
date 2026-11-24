@@ -10,6 +10,7 @@ ChatGPT-Claude-Copilot-DeepSeek-Gemini-Grok-Mistral
 Ces sept IA ont répondu aux mêmes questions définissant les D.Phi. A chaque nouvelle session, toutes les IA ont pris connaissance des réponses des autres IA pour en faire une synthèse avant de poursuivre la suite des raisonnements.
 
 Le contenu complet de toutes les sessions est librement accessible:
+
 https://github.com/QuatreCATAR/Le-test-de-performance-D-Phi-pour-IA
 
 La synthèse qui suit est composée du déroulement de toutes les sessions avec leurs questions d'origines, et les réponses sont la synthèse simplifiée de toutes les réponses des IA qui ont collaboré à structurer les raisonnements de résolution des D.Phi.
