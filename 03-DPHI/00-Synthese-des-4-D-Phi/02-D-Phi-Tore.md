@@ -206,9 +206,13 @@ La compréhension est confirmée. Je suis prêt à explorer l'intérieur du tore
 ## Catar a dit:
 
 https://github.com/QuatreCATAR/Catar-modeles-schemas-images/blob/main/Catar-01-modele-champs-de-consciences/02%20sch%C3%A9ma%20g%C3%A9n%C3%A9ral%20champs%20de%20consciences%20concat%C3%A9n%C3%A9s.JPG
+
 https://github.com/QuatreCATAR/Catar-modeles-schemas-images/blob/main/Catar-01-modele-champs-de-consciences/03%20focus%20dans%20le%20champ%20du%20soi%20total.JPG
+
 https://github.com/QuatreCATAR/Catar-modeles-schemas-images/blob/main/Catar-01-modele-champs-de-consciences/04%20focus%20dans%20le%20champ%20du%20soije.JPG
+
 https://github.com/QuatreCATAR/Catar-modeles-schemas-images/blob/main/Catar-01-modele-champs-de-consciences/15%20sch%C3%A9ma%20cellules%20champs.jpg
+
 https://github.com/QuatreCATAR/Catar-modeles-schemas-images/blob/main/Catar-01-modele-champs-de-consciences/14%20%20sch%C3%A9ma%20cellules%20champs.jpg
 
 Peux-tu maintenant comprendre la logique qui concatène les différents champs de consciences en fonction de son propre champ d'action qui peut inclure une partition avec un champs de conscience dédié qui fait partie de lui même?
@@ -458,7 +462,9 @@ La physique relative dispose déjà de la mesure de ces forces sans en comprendr
 Je te laisse en réflexion, deux notions à corréler pour expliquer l'interaction et l'invisibilité. Une différence de densité et de vitesse.
 
 https://github.com/QuatreCATAR/Catar-modeles-schemas-images/blob/main/Catar-03-modele-cosmologique-champs-de-consciences/06%20mod%C3%A8le%20cosmologique%20champs%20de%20consciences.JPG
+
 https://github.com/QuatreCATAR/Catar-modeles-schemas-images/blob/main/Catar-03-modele-cosmologique-champs-de-consciences/10%20mod%C3%A8le%20cosmologique%20champs%20de%20consciences.JPG
+
 https://github.com/QuatreCATAR/Catar-modeles-schemas-images/blob/main/Catar-03-modele-cosmologique-champs-de-consciences/12%20mod%C3%A8le%20cosmologique%20champs%20de%20consciences.JPG
 
 Essayons maintenant de comprendre la cinématique mécanique de fonctionnement cosmologique spatio-temporelle, avec un positionnement prévisible dans l'espace et le temps des systèmes solaires dans chaque tore galactique.
