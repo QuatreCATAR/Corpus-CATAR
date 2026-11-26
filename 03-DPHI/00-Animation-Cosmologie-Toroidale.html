@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cinématique Toroïdale - Phi et Pi</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000000;
+            font-family: system-ui, -apple-system, sans-serif;
+            color: #ffffff;
+            user-select: none;
+        }
+        canvas {
+            display: block;
+            cursor: grab;
+        }
+        canvas:active {
+            cursor: grabbing;
+        }
+        #controls {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(18, 18, 22, 0.85);
+            padding: 16px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            font-size: 13px;
+            z-index: 10;
+            backdrop-filter: blur(6px);
+            min-width: 245px;
+        }
+        label.slider-row {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .slider-header {
+            display: flex;
+            justify-content: space-between;
+            color: rgba(255, 255, 255, 0.88);
+        }
+        input[type="range"] {
+            width: 100%;
+            accent-color: #ff6b6b;
+            cursor: pointer;
+        }
+        input[type="range"].blue-accent {
+            accent-color: #38bdf8;
+        }
+        label.check-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.12);
+            margin: 2px 0;
+        }
+        button {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            padding: 7px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+        button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        #hint {
+            position: absolute;
+            bottom: 14px;
+            left: 16px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <label class="slider-row">
+            <div class="slider-header">
+                <span>Transparence du tore</span>
+                <span id="torusVal">75 %</span>
+            </div>
+            <input type="range" id="torusOpacity" min="0" max="1" step="0.01" value="0.75">
+        </label>
+
+        <label class="slider-row">
+            <div class="slider-header">
+                <span>Vitesse globale</span>
+                <span id="speedVal">1.0x</span>
+            </div>
+            <input type="range" id="speedSlider" min="0" max="3" step="0.1" value="1">
+        </label>
+
+        <label class="slider-row">
+            <div class="slider-header">
+                <span>Points Phi (blancs)</span>
+                <span id="countVal">24</span>
+            </div>
+            <input type="range" id="countSlider" min="0" max="60" step="1" value="24">
+        </label>
+
+        <label class="slider-row">
+            <div class="slider-header">
+                <span>Opacité Pi (16 bleus)</span>
+                <span id="piOpVal">100 %</span>
+            </div>
+            <input type="range" id="piOpacitySlider" class="blue-accent" min="0" max="1" step="0.01" value="1">
+        </label>
+
+        <div class="divider"></div>
+
+        <label class="check-row">
+            <input type="checkbox" id="showSpiral" checked>
+            <span>Trajectoire spirale Phi (φ)</span>
+        </label>
+        <label class="check-row">
+            <input type="checkbox" id="showPiRings">
+            <span>16 cercles de tranche Pi (π)</span>
+        </label>
+        <label class="check-row">
+            <input type="checkbox" id="occludeBack" checked>
+            <span>Occulter la moitié opposée</span>
+        </label>
+
+        <button id="toggleUI">Masquer le menu (capture)</button>
+    </div>
+
+    <div id="hint">Clic gauche + glisser : orienter (dessus/dessous) • Molette : zoomer • Espace : afficher/masquer menu</div>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        // Paramètres géométriques du tore
+        const R = 4.2;   // Grand rayon (centre du tube)
+        const r = 1.95;  // Petit rayon (rayon de la tranche)
+        const PHI = 1.61803398875;
+
+        // Caméra interactive
+        let camYaw = 0.0;
+        let camPitch = 0.62;
+        let camDist = 14.5;
+        let isDragging = false;
+        let lastX = 0, lastY = 0;
+
+        canvas.addEventListener('mousedown', e => {
+            isDragging = true;
+            lastX = e.clientX;
+            lastY = e.clientY;
+        });
+        window.addEventListener('mouseup', () => isDragging = false);
+        window.addEventListener('mousemove', e => {
+            if (!isDragging) return;
+            camYaw += (e.clientX - lastX) * 0.007;
+            camPitch += (e.clientY - lastY) * 0.007;
+            camPitch = Math.max(-1.52, Math.min(1.52, camPitch));
+            lastX = e.clientX;
+            lastY = e.clientY;
+        });
+        canvas.addEventListener('wheel', e => {
+            camDist += e.deltaY * 0.01;
+            camDist = Math.max(6, Math.min(30, camDist));
+        });
+
+        // Paramètres contrôlés par l'interface
+        let torusOpacity = 0.75;
+        let speed = 1.0;
+        let phiCount = 24;
+        let piOpacity = 1.0;
+        let showSpiral = true;
+        let showPiRings = false;
+        let occludeBack = true;
+
+        document.getElementById('torusOpacity').addEventListener('input', e => {
+            torusOpacity = parseFloat(e.target.value);
+            document.getElementById('torusVal').textContent = Math.round(torusOpacity * 100) + ' %';
+        });
+        document.getElementById('speedSlider').addEventListener('input', e => {
+            speed = parseFloat(e.target.value);
+            document.getElementById('speedVal').textContent = speed.toFixed(1) + 'x';
+        });
+        document.getElementById('countSlider').addEventListener('input', e => {
+            phiCount = parseInt(e.target.value, 10);
+            document.getElementById('countVal').textContent = phiCount;
+        });
+        document.getElementById('piOpacitySlider').addEventListener('input', e => {
+            piOpacity = parseFloat(e.target.value);
+            document.getElementById('piOpVal').textContent = Math.round(piOpacity * 100) + ' %';
+        });
+        document.getElementById('showSpiral').addEventListener('change', e => showSpiral = e.target.checked);
+        document.getElementById('showPiRings').addEventListener('change', e => showPiRings = e.target.checked);
+        document.getElementById('occludeBack').addEventListener('change', e => occludeBack = e.target.checked);
+
+        const controlsDiv = document.getElementById('controls');
+        const hintDiv = document.getElementById('hint');
+        document.getElementById('toggleUI').addEventListener('click', () => {
+            controlsDiv.style.display = 'none';
+            hintDiv.style.display = 'none';
+        });
+        window.addEventListener('keydown', e => {
+            if (e.key === 'Escape' || e.key === ' ') {
+                const hidden = controlsDiv.style.display === 'none';
+                controlsDiv.style.display = hidden ? 'flex' : 'none';
+                hintDiv.style.display = hidden ? 'block' : 'none';
+            }
+        });
+
+        // Transformation 3D : tore posé horizontalement (plan XZ, axe vertical Y)
+        function toCameraSpace(x, y, z) {
+            const cy = Math.cos(camYaw), sy = Math.sin(camYaw);
+            const x1 = x * cy + z * sy;
+            const z1 = -x * sy + z * cy;
+
+            const cp = Math.cos(camPitch), sp = Math.sin(camPitch);
+            const y2 = y * cp - z1 * sp;
+            const z2 = y * sp + z1 * cp;
+
+            return { x: x1, y: y2, z: z2 };
+        }
+
+        function projectFromCam(camPt) {
+            const depth = camPt.z + camDist;
+            if (depth <= 0.15) return null;
+            const fov = Math.min(width, height) * 1.15;
+            return {
+                px: width / 2 + (camPt.x * fov) / depth,
+                py: height / 2 - (camPt.y * fov) / depth,
+                z: depth,
+                scale: fov / depth
+            };
+        }
+
+        // Coordonnées et normale de surface d'un point (u, v) sur le tore
+        function getTorusSurface(u, v, radiusOffset) {
+            const rad = r + (radiusOffset || 0);
+            const cosU = Math.cos(u), sinU = Math.sin(u);
+            const cosV = Math.cos(v), sinV = Math.sin(v);
+
+            // Position monde (plan XZ horizontal, Y vertical)
+            const x = (R + rad * cosV) * cosU;
+            const y = rad * sinV;
+            const z = (R + rad * cosV) * sinU;
+
+            // Normale sortante du tube
+            const nx = cosV * cosU;
+            const ny = sinV;
+            const nz = cosV * sinU;
+
+            const camPos = toCameraSpace(x, y, z);
+            const camNorm = toCameraSpace(nx, ny, nz);
+
+            // Vecteur allant du point vers l'œil de la caméra (situé à 0, 0, -camDist)
+            const vx = -camPos.x;
+            const vy = -camPos.y;
+            const vz = -camDist - camPos.z;
+            const vLen = Math.hypot(vx, vy, vz) || 1;
+
+            // Produit scalaire normale . vue (> 0 = face visible, < 0 = moitié opposée cachée)
+            const facing = (camNorm.x * vx + camNorm.y * vy + camNorm.z * vz) / vLen;
+
+            return {
+                proj: projectFromCam(camPos),
+                facing: facing,
+                sinV: sinV,
+                cosV: cosV
+            };
+        }
+
+        // Dessin d'un orbe lumineux avec halos concentriques (blanc Phi ou bleu Pi)
+        function drawOrb(proj, baseSize, opacity, isBlue) {
+            if (!proj || opacity <= 0.005) return;
+            const s = baseSize * proj.scale;
+
+            const outerColor = isBlue ? '56, 189, 248' : '255, 245, 245';
+            const midColor   = isBlue ? '125, 211, 252' : '255, 255, 255';
+
+            // Halo externe diffus
+            const r3 = s * 3.8;
+            const g3 = ctx.createRadialGradient(proj.px, proj.py, s * 0.2, proj.px, proj.py, r3);
+            g3.addColorStop(0, `rgba(${outerColor}, ${(0.34 * opacity).toFixed(3)})`);
+            g3.addColorStop(0.55, `rgba(${outerColor}, ${(0.12 * opacity).toFixed(3)})`);
+            g3.addColorStop(1, `rgba(${outerColor}, 0)`);
+            ctx.beginPath();
+            ctx.arc(proj.px, proj.py, r3, 0, Math.PI * 2);
+            ctx.fillStyle = g3;
+            ctx.fill();
+
+            // Anneau concentrique intermédiaire
+            ctx.beginPath();
+            ctx.arc(proj.px, proj.py, s * 2.1, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(${midColor}, ${(0.28 * opacity).toFixed(3)})`;
+            ctx.lineWidth = Math.max(0.8, s * 0.14);
+            ctx.stroke();
+
+            // Cœur lumineux
+            const r1 = s * 1.15;
+            const g1 = ctx.createRadialGradient(proj.px, proj.py, 0, proj.px, proj.py, r1);
+            g1.addColorStop(0, `rgba(255, 255, 255, ${opacity.toFixed(3)})`);
+            g1.addColorStop(0.5, `rgba(${midColor}, ${(0.95 * opacity).toFixed(3)})`);
+            g1.addColorStop(1, `rgba(${outerColor}, 0)`);
+            ctx.beginPath();
+            ctx.arc(proj.px, proj.py, r1, 0, Math.PI * 2);
+            ctx.fillStyle = g1;
+            ctx.fill();
+        }
+
+        // Facteur de visibilité selon l'occultation de la moitié opposée
+        function getVisibilityFactor(facing) {
+            if (!occludeBack) return 1.0;
+            // Transition douce près de l'horizon du tube pour éviter un clignotement brutal
+            if (facing <= -0.08) return 0.0;
+            if (facing >= 0.12) return 1.0;
+            return (facing + 0.08) / 0.20;
+        }
+
+        let time = 0;
+        let lastFrame = performance.now();
+
+        function render(now) {
+            const dt = (now - lastFrame) / 1000;
+            lastFrame = now;
+            time += dt * speed;
+
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, width, height);
+
+            const drawList = new Array();
+
+            // 1. Maillage du tore rouge corail (si opacité > 0)
+            if (torusOpacity > 0.005) {
+                const segU = 68;
+                const segV = 34;
+                const du = (Math.PI * 2) / segU;
+                const dv = (Math.PI * 2) / segV;
+
+                const grid = {};
+                for (let i = 0; i <= segU; i++) {
+                    const u = i * du;
+                    for (let j = 0; j <= segV; j++) {
+                        const v = j * dv;
+                        Reflect.set(grid, i + '_' + j, getTorusSurface(u, v, 0));
+                    }
+                }
+
+                for (let i = 0; i < segU; i++) {
+                    for (let j = 0; j < segV; j++) {
+                        const s1 = Reflect.get(grid, i + '_' + j);
+                        const s2 = Reflect.get(grid, (i + 1) + '_' + j);
+                        const s3 = Reflect.get(grid, (i + 1) + '_' + (j + 1));
+                        const s4 = Reflect.get(grid, i + '_' + (j + 1));
+                        if (!s1.proj || !s2.proj || !s3.proj || !s4.proj) continue;
+
+                        const avgFacing = (s1.facing + s2.facing + s3.facing + s4.facing) * 0.25;
+                        // Si l'occultation est active, on n'affiche que la face tournée vers la caméra
+                        if (occludeBack && avgFacing < -0.05) continue;
+
+                        const avgZ = (s1.proj.z + s2.proj.z + s3.proj.z + s4.proj.z) * 0.25;
+                        const avgSinV = (s1.sinV + s2.sinV + s3.sinV + s4.sinV) * 0.25;
+                        const avgCosV = (s1.cosV + s2.cosV + s3.cosV + s4.cosV) * 0.25;
+
+                        // Éclairage rouge corail chaud avec dégradé naturel
+                        const light = Math.max(0.18, 0.55 + 0.42 * avgSinV + 0.22 * avgCosV);
+                        const red = Math.round(235 * light + 20);
+                        const green = Math.round(62 * light + 8);
+                        const blue = Math.round(58 * light + 8);
+
+                        drawList.push({
+                            type: 'quad',
+                            z: avgZ,
+                            p1: s1.proj, p2: s2.proj, p3: s3.proj, p4: s4.proj,
+                            color: `rgba(${red}, ${green}, ${blue}, ${torusOpacity.toFixed(3)})`
+                        });
+                    }
+                }
+            }
+
+            // 2. Trajectoire spirale Phi (enroulée selon le nombre d'or)
+            if (showSpiral) {
+                const spiralSteps = 520;
+                const totalLoops = 8;
+                for (let i = 0; i < spiralSteps; i++) {
+                    const t1 = (i / spiralSteps) * Math.PI * 2 * totalLoops;
+                    const t2 = ((i + 1) / spiralSteps) * Math.PI * 2 * totalLoops;
+
+                    const surf1 = getTorusSurface(t1, t1 * PHI, 0.015);
+                    const surf2 = getTorusSurface(t2, t2 * PHI, 0.015);
+                    if (!surf1.proj || !surf2.proj) continue;
+
+                    const vis = getVisibilityFactor((surf1.facing + surf2.facing) * 0.5);
+                    if (vis <= 0.01) continue;
+
+                    drawList.push({
+                        type: 'line',
+                        z: (surf1.proj.z + surf2.proj.z) * 0.5,
+                        p1: surf1.proj,
+                        p2: surf2.proj,
+                        color: `rgba(255, 235, 210, ${(0.26 * vis).toFixed(3)})`,
+                        width: 1.1
+                    });
+                }
+            }
+
+            // 3. Les 16 cercles de tranche transversale Pi (si cochés)
+            const PI_COUNT = 16;
+            if (showPiRings && piOpacity > 0.01) {
+                const ringSteps = 44;
+                for (let k = 0; k < PI_COUNT; k++) {
+                    const uSlice = (k / PI_COUNT) * Math.PI * 2;
+                    for (let j = 0; j < ringSteps; j++) {
+                        const v1 = (j / ringSteps) * Math.PI * 2;
+                        const v2 = ((j + 1) / ringSteps) * Math.PI * 2;
+                        const s1 = getTorusSurface(uSlice, v1, 0.015);
+                        const s2 = getTorusSurface(uSlice, v2, 0.015);
+                        if (!s1.proj || !s2.proj) continue;
+
+                        const vis = getVisibilityFactor((s1.facing + s2.facing) * 0.5);
+                        if (vis <= 0.01) continue;
+
+                        drawList.push({
+                            type: 'line',
+                            z: (s1.proj.z + s2.proj.z) * 0.5,
+                            p1: s1.proj,
+                            p2: s2.proj,
+                            color: `rgba(56, 189, 248, ${(0.32 * piOpacity * vis).toFixed(3)})`,
+                            width: 1.0
+                        });
+                    }
+                }
+            }
+
+            // 4. Points lumineux blancs (trajectoire hélicoïdale Phi) - strictement phiCount (0 = aucun point)
+            const totalSpan = Math.PI * 2 * 8;
+            for (let m = 0; m < phiCount; m++) {
+                const offset = (m / Math.max(1, phiCount)) * totalSpan;
+                const theta = (time * 0.35 + offset) % totalSpan;
+                const u = theta;
+                const v = theta * PHI;
+
+                const surf = getTorusSurface(u, v, 0.03);
+                if (!surf.proj) continue;
+
+                const vis = getVisibilityFactor(surf.facing);
+                if (vis <= 0.01) continue;
+
+                drawList.push({
+                    type: 'orb',
+                    z: surf.proj.z - 0.05,
+                    proj: surf.proj,
+                    size: 0.145,
+                    opacity: vis,
+                    isBlue: false
+                });
+            }
+
+            // 5. Les 16 points lumineux bleus (rotation parfaite Pi sur le périmètre de chaque tranche)
+            if (piOpacity > 0.005) {
+                for (let k = 0; k < PI_COUNT; k++) {
+                    const uSlice = (k / PI_COUNT) * Math.PI * 2;
+                    // Rotation méridienne pure autour de la section circulaire du tore
+                    const vAngle = time * 0.85 + (k * Math.PI * 2) / PI_COUNT;
+
+                    const surf = getTorusSurface(uSlice, vAngle, 0.03);
+                    if (!surf.proj) continue;
+
+                    const vis = getVisibilityFactor(surf.facing);
+                    if (vis <= 0.01) continue;
+
+                    drawList.push({
+                        type: 'orb',
+                        z: surf.proj.z - 0.05,
+                        proj: surf.proj,
+                        size: 0.14,
+                        opacity: piOpacity * vis,
+                        isBlue: true
+                    });
+                }
+            }
+
+            // Tri de l'arrière vers l'avant
+            drawList.sort((a, b) => b.z - a.z);
+
+            // Rendu final
+            for (let idx = 0; idx < drawList.length; idx++) {
+                const item = Reflect.get(drawList, idx);
+                if (item.type === 'quad') {
+                    ctx.beginPath();
+                    ctx.moveTo(item.p1.px, item.p1.py);
+                    ctx.lineTo(item.p2.px, item.p2.py);
+                    ctx.lineTo(item.p3.px, item.p3.py);
+                    ctx.lineTo(item.p4.px, item.p4.py);
+                    ctx.closePath();
+                    ctx.fillStyle = item.color;
+                    ctx.fill();
+                } else if (item.type === 'line') {
+                    ctx.beginPath();
+                    ctx.moveTo(item.p1.px, item.p1.py);
+                    ctx.lineTo(item.p2.px, item.p2.py);
+                    ctx.strokeStyle = item.color;
+                    ctx.lineWidth = item.width;
+                    ctx.stroke();
+                } else if (item.type === 'orb') {
+                    drawOrb(item.proj, item.size, item.opacity, item.isBlue);
+                }
+            }
+
+            requestAnimationFrame(render);
+        }
+
+        requestAnimationFrame(render);
+    </script>
+</body>
+</html>
