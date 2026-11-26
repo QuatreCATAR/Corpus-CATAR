@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modèle Géométrique des Tores - v3</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000000;
+            font-family: system-ui, sans-serif;
+            color: #ffffff;
+            user-select: none;
+        }
+        canvas {
+            display: block;
+            cursor: grab;
+        }
+        canvas:active {
+            cursor: grabbing;
+        }
+        #controls {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(25, 25, 30, 0.85);
+            padding: 14px 18px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 13px;
+            z-index: 10;
+        }
+        label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        button {
+            background: #2b2b36;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 6px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #3d3d4d;
+        }
+        #hint {
+            position: absolute;
+            bottom: 14px;
+            left: 16px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.45);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <label>
+            <span>Vitesse :</span>
+            <input type="range" id="speedSlider" min="0" max="3" step="0.1" value="1">
+        </label>
+        <label>
+            <span>Transparence :</span>
+            <input type="range" id="opacitySlider" min="0.08" max="0.55" step="0.02" value="0.24">
+        </label>
+        <button id="toggleUI">Masquer ce menu (pour capture)</button>
+    </div>
+    <div id="hint">Clic gauche + glisser : pivoter • Molette : zoomer • Espace : afficher/masquer menu</div>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        let camYaw = 0.28;
+        let camPitch = 0.40;
+        let camDist = 15.5;
+        let isDragging = false;
+        let lastX = 0, lastY = 0;
+
+        canvas.addEventListener('mousedown', e => {
+            isDragging = true;
+            lastX = e.clientX;
+            lastY = e.clientY;
+        });
+        window.addEventListener('mouseup', () => isDragging = false);
+        window.addEventListener('mousemove', e => {
+            if (!isDragging) return;
+            camYaw += (e.clientX - lastX) * 0.007;
+            camPitch += (e.clientY - lastY) * 0.007;
+            camPitch = Math.max(-1.45, Math.min(1.45, camPitch));
+            lastX = e.clientX;
+            lastY = e.clientY;
+        });
+        canvas.addEventListener('wheel', e => {
+            camDist += e.deltaY * 0.01;
+            camDist = Math.max(5, Math.min(35, camDist));
+        });
+
+        let globalSpeed = 1.0;
+        let globalOpacity = 0.24;
+
+        document.getElementById('speedSlider').addEventListener('input', e => {
+            globalSpeed = parseFloat(e.target.value);
+        });
+        document.getElementById('opacitySlider').addEventListener('input', e => {
+            globalOpacity = parseFloat(e.target.value);
+        });
+
+        const controlsDiv = document.getElementById('controls');
+        const hintDiv = document.getElementById('hint');
+        document.getElementById('toggleUI').addEventListener('click', () => {
+            controlsDiv.style.display = 'none';
+            hintDiv.style.display = 'none';
+        });
+        window.addEventListener('keydown', e => {
+            if (e.key === 'Escape' || e.key === ' ') {
+                const hidden = controlsDiv.style.display === 'none';
+                controlsDiv.style.display = hidden ? 'flex' : 'none';
+                hintDiv.style.display = hidden ? 'block' : 'none';
+            }
+        });
+
+        function rotX(p, a) {
+            const c = Math.cos(a), s = Math.sin(a);
+            return { x: p.x, y: p.y * c - p.z * s, z: p.y * s + p.z * c };
+        }
+        function rotY(p, a) {
+            const c = Math.cos(a), s = Math.sin(a);
+            return { x: p.x * c + p.z * s, y: p.y, z: -p.x * s + p.z * c };
+        }
+        function rotZ(p, a) {
+            const c = Math.cos(a), s = Math.sin(a);
+            return { x: p.x * c - p.y * s, y: p.x * s + p.y * c, z: p.z };
+        }
+
+        function transformPoint(p, node) {
+            let v = { x: p.x, y: p.y, z: p.z };
+            let curr = node;
+            while (curr) {
+                v = rotX(v, curr.rx);
+                v = rotY(v, curr.ry);
+                v = rotZ(v, curr.rz);
+                v.x += curr.px;
+                v.y += curr.py;
+                v.z += curr.pz;
+                curr = curr.parent;
+            }
+            return v;
+        }
+
+        function project(p) {
+            let v = rotY(p, camYaw);
+            v = rotX(v, camPitch);
+            const z = v.z + camDist;
+            if (z <= 0.1) return null;
+            const fov = Math.min(width, height) * 1.15;
+            return {
+                x: width / 2 + (v.x * fov) / z,
+                y: height / 2 - (v.y * fov) / z,
+                z: z,
+                scale: fov / z
+            };
+        }
+
+        const systems = [];
+
+        function addTorus(cfg) {
+            const node = {
+                parent: cfg.parent || null,
+                px: cfg.px || 0, py: cfg.py || 0, pz: cfg.pz || 0,
+                rx: cfg.rx || 0, ry: cfg.ry || 0, rz: cfg.rz || 0,
+                R: cfg.R,
+                r: cfg.r,
+                sphereR: cfg.r * 0.985,
+                rgb: cfg.rgb,
+                speed: cfg.speed,
+                angle: cfg.initialAngle || 0,
+                segU: cfg.segU || 48,
+                segV: cfg.segV || 22
+            };
+            systems.push(node);
+            return node;
+        }
+
+        // 1. Grand tore Jaune "Soi" (horizontal : plan XZ)
+        // Rayon extérieur de la section tubulaire = r = 1.95
+        const yellow = addTorus({
+            R: 4.5, r: 1.95,
+            rgb: '255, 230, 80',
+            rx: -Math.PI / 2,
+            speed: 0.55, initialAngle: 0.35,
+            segU: 60, segV: 26
+        });
+
+        // 2. Tore Gris "Soije" (vertical : plan XY, sans inclinaison oblique pour éviter tout débordement)
+        // Encombrement maximal = R + r = 1.25 + 0.52 = 1.77 < 1.95 (strictement inclus dans le tube jaune !)
+        const grey = addTorus({
+            parent: yellow,
+            px: -4.5, rx: Math.PI / 2, ry: 0,
+            R: 1.25, r: 0.52,
+            rgb: '215, 215, 222',
+            speed: 1.1, initialAngle: 1.8,
+            segU: 48, segV: 20
+        });
+
+        // 3. Tore Rose clair "Soija" (strictement perpendiculaire au tore gris : plan horizontal XZ)
+        // Positionné sur la section gauche du tore gris (px = -1.25), rayon total 0.34 + 0.14 = 0.48 < 0.52
+        const pink = addTorus({
+            parent: grey,
+            px: -1.25, py: 0, rx: -Math.PI / 2,
+            R: 0.34, r: 0.14,
+            rgb: '245, 115, 210',
+            speed: 1.8, initialAngle: 0.2,
+            segU: 36, segV: 16
+        });
+
+        // 4. Petit tore Bleu Cyan (perpendiculaire au tore rose, inclus dans son tube)
+        addTorus({
+            parent: pink,
+            px: -0.34, rx: Math.PI / 2,
+            R: 0.095, r: 0.038,
+            rgb: '0, 220, 255',
+            speed: 3.2, initialAngle: 0.0,
+            segU: 26, segV: 12
+        });
+
+        // 5. Tore Violet "Soijo" (strictement perpendiculaire au tore gris : plan horizontal XZ)
+        // Positionné symétriquement sur la section droite du tore gris (px = 1.25)
+        const purple = addTorus({
+            parent: grey,
+            px: 1.25, py: 0, rx: -Math.PI / 2,
+            R: 0.34, r: 0.14,
+            rgb: '160, 80, 220',
+            speed: -1.8, initialAngle: 2.5,
+            segU: 36, segV: 16
+        });
+
+        // 6. Petit tore Bleu Moyen (perpendiculaire au tore violet, inclus dans son tube)
+        addTorus({
+            parent: purple,
+            px: 0.34, rx: Math.PI / 2,
+            R: 0.095, r: 0.038,
+            rgb: '45, 110, 245',
+            speed: -3.2, initialAngle: 1.2,
+            segU: 26, segV: 12
+        });
+
+        let lastTime = performance.now();
+
+        function render(now) {
+            const dt = (now - lastTime) / 1000;
+            lastTime = now;
+
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, width, height);
+
+            const drawList = [];
+
+            for (let s = 0; s < systems.length; s++) {
+                const sys = systems[s];
+                sys.angle += sys.speed * globalSpeed * dt;
+
+                const localSphere = {
+                    x: Math.cos(sys.angle) * sys.R,
+                    y: Math.sin(sys.angle) * sys.R,
+                    z: 0
+                };
+                const worldSphere = transformPoint(localSphere, sys);
+                const projSphere = project(worldSphere);
+                if (projSphere) {
+                    drawList.push({
+                        type: 'sphere',
+                        z: projSphere.z,
+                        p: projSphere,
+                        r: sys.sphereR * projSphere.scale,
+                        rgb: sys.rgb
+                    });
+                }
+
+                const du = (Math.PI * 2) / sys.segU;
+                const dv = (Math.PI * 2) / sys.segV;
+
+                const grid = [];
+                for (let i = 0; i <= sys.segU; i++) {
+                    const u = i * du;
+                    const cosU = Math.cos(u), sinU = Math.sin(u);
+                    const row = [];
+                    for (let j = 0; j <= sys.segV; j++) {
+                        const v = j * dv;
+                        const cosV = Math.cos(v), sinV = Math.sin(v);
+                        const localP = {
+                            x: (sys.R + sys.r * cosV) * cosU,
+                            y: (sys.R + sys.r * cosV) * sinU,
+                            z: sys.r * sinV
+                        };
+                        const worldP = transformPoint(localP, sys);
+                        row.push(project(worldP));
+                    }
+                    grid.push(row);
+                }
+
+                for (let i = 0; i < sys.segU; i++) {
+                    for (let j = 0; j < sys.segV; j++) {
+                        const p1 = grid[i][j];
+                        const p2 = grid[i + 1][j];
+                        const p3 = grid[i + 1][j + 1];
+                        const p4 = grid[i][j + 1];
+                        if (!p1 || !p2 || !p3 || !p4) continue;
+
+                        const avgZ = (p1.z + p2.z + p3.z + p4.z) * 0.25;
+                        const shade = 0.65 + 0.35 * Math.sin(j * dv + 0.8);
+
+                        drawList.push({
+                            type: 'quad',
+                            z: avgZ,
+                            p1: p1, p2: p2, p3: p3, p4: p4,
+                            rgb: sys.rgb,
+                            shade: shade
+                        });
+                    }
+                }
+            }
+
+            drawList.sort((a, b) => b.z - a.z);
+
+            for (let k = 0; k < drawList.length; k++) {
+                const item = drawList[k];
+                if (item.type === 'quad') {
+                    ctx.beginPath();
+                    ctx.moveTo(item.p1.x, item.p1.y);
+                    ctx.lineTo(item.p2.x, item.p2.y);
+                    ctx.lineTo(item.p3.x, item.p3.y);
+                    ctx.lineTo(item.p4.x, item.p4.y);
+                    ctx.closePath();
+
+                    const alpha = globalOpacity * item.shade;
+                    ctx.fillStyle = `rgba(${item.rgb}, ${alpha.toFixed(3)})`;
+                    ctx.fill();
+                } else if (item.type === 'sphere') {
+                    const grad = ctx.createRadialGradient(
+                        item.p.x - item.r * 0.3,
+                        item.p.y - item.r * 0.3,
+                        item.r * 0.1,
+                        item.p.x,
+                        item.p.y,
+                        item.r
+                    );
+                    grad.addColorStop(0, '#ffffff');
+                    grad.addColorStop(0.35, `rgb(${item.rgb})`);
+                    grad.addColorStop(1, `rgba(${item.rgb}, 0.85)`);
+
+                    ctx.beginPath();
+                    ctx.arc(item.p.x, item.p.y, Math.max(1.5, item.r), 0, Math.PI * 2);
+                    ctx.fillStyle = grad;
+                    ctx.fill();
+                }
+            }
+
+            requestAnimationFrame(render);
+        }
+
+        requestAnimationFrame(render);
+    </script>
+</body>
+</html>
