@@ -39,6 +39,8 @@ Réflexion: tu dois imaginer la logique de fonctionnement de cet ensemble, et qu
 
 https://github.com/QuatreCATAR/Catar-modeles-schemas-images/blob/main/Catar-01-modele-champs-de-consciences/01%20cellule%20ordinatrice%20dans%20son%20champ.JPG
 
+Il faut ici préciser que cette modélisation ne respecte pas les bonnes proportions fonctionnelles. Cette mise en forme répond aux exigences pratiques d'une échelle de visualisation correcte.
+
 L'image est claire : une sphère dont le diamètre est égal au diamètre du tube torique, positionnée à l'intérieur de ce tore.
 
 Analyse fonctionnelle de l'ensemble tore + sphère.
